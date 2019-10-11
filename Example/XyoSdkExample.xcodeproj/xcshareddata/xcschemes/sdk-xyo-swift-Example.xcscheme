@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "sdk-xyo-swift_Example.app"
-               BlueprintName = "sdk-xyo-swift_Example"
-               ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
+               BuildableName = "sdk-xyo-ios-example.app"
+               BlueprintName = "sdk-xyo-ios-example"
+               ReferencedContainer = "container:XyoSdkExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
                BuildableName = "sdk-xyo-swift_Tests.xctest"
                BlueprintName = "sdk-xyo-swift_Tests"
-               ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
+               ReferencedContainer = "container:XyoSdkExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,8 +40,16 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
+            BuildableName = "sdk-xyo-ios-example.app"
+            BlueprintName = "sdk-xyo-ios-example"
+            ReferencedContainer = "container:XyoSdkExample.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -50,27 +58,15 @@
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
                BuildableName = "sdk-xyo-swift_Tests.xctest"
                BlueprintName = "sdk-xyo-swift_Tests"
-               ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
+               ReferencedContainer = "container:XyoSdkExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-swift_Example.app"
-            BlueprintName = "sdk-xyo-swift_Example"
-            ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -82,13 +78,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-swift_Example.app"
-            BlueprintName = "sdk-xyo-swift_Example"
-            ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
+            BuildableName = "sdk-xyo-ios-example.app"
+            BlueprintName = "sdk-xyo-ios-example"
+            ReferencedContainer = "container:XyoSdkExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -101,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-swift_Example.app"
-            BlueprintName = "sdk-xyo-swift_Example"
-            ReferencedContainer = "container:sdk-xyo-swift.xcodeproj">
+            BuildableName = "sdk-xyo-ios-example.app"
+            BlueprintName = "sdk-xyo-ios-example"
+            ReferencedContainer = "container:XyoSdkExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

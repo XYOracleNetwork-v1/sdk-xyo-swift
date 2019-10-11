@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/kevin/GitHub/xyo/sdk-xyo-swift/sdk-xyo-swift.xcodeproj">
+      location = "group:Pods/Target Support Files/Pods-sdk-xyo-swift/../../../sdk-xyo-swift.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:sdk-xyo-swift.xcodeproj">
    </FileRef>
 </Workspace>
