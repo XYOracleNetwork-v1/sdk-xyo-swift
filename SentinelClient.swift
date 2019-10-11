@@ -106,7 +106,7 @@ class SentinelClient: SentinelProtocol  {
     func doBoundWitness(withDevice: XyoBluetoothDevice) throws {
         let awaiter = Promise<Any?>.pending()
 
-        try self.doBoundWitnessWithSelf { [weak self] (boundWitness, withDevice, err) in
+        try doBoundWitness(withDevice: withDevice) { [weak self] (boundWitness, withDevice, err) in
 
             guard err == nil else {
                 return awaiter.reject(err!)
