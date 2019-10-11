@@ -22,6 +22,7 @@
 		2691B5EF2350FE1400A734B3 /* XyoTcpipClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691B5EE2350FE1400A734B3 /* XyoTcpipClient.swift */; };
 		2691B5F12350FE2700A734B3 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691B5F02350FE2700A734B3 /* XyoTcpipServer.swift */; };
 		2691B5F32351018600A734B3 /* XyoBoundWitnessTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691B5F22351018600A734B3 /* XyoBoundWitnessTarget.swift */; };
+		2691B5F52351099700A734B3 /* XyoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691B5F42351099700A734B3 /* XyoStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		2691B5EE2350FE1400A734B3 /* XyoTcpipClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyoTcpipClient.swift; sourceTree = "<group>"; };
 		2691B5F02350FE2700A734B3 /* XyoTcpipServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyoTcpipServer.swift; sourceTree = "<group>"; };
 		2691B5F22351018600A734B3 /* XyoBoundWitnessTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyoBoundWitnessTarget.swift; sourceTree = "<group>"; };
+		2691B5F42351099700A734B3 /* XyoStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XyoStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				2691B5DC2350F57C00A734B3 /* XyoNodeBuilder.swift */,
 				2691B5DA2350F08400A734B3 /* XyoSdk.swift */,
 				2691B5E62350F9DC00A734B3 /* XyoServer.swift */,
+				2691B5F42351099700A734B3 /* XyoStorage.swift */,
 				2691B5EE2350FE1400A734B3 /* XyoTcpipClient.swift */,
 				2691B5E22350F6EE00A734B3 /* XyoTcpipNetwork.swift */,
 				2691B5F02350FE2700A734B3 /* XyoTcpipServer.swift */,
@@ -179,6 +182,7 @@
 				2691B5E72350F9DC00A734B3 /* XyoServer.swift in Sources */,
 				2691B5E92350FA6700A734B3 /* XyoBleClient.swift in Sources */,
 				2691B5EB2350FA9B00A734B3 /* XyoBleServer.swift in Sources */,
+				2691B5F52351099700A734B3 /* XyoStorage.swift in Sources */,
 				2691B5D92350ECBC00A734B3 /* XyoNode.swift in Sources */,
 				2691B5F32351018600A734B3 /* XyoBoundWitnessTarget.swift in Sources */,
 				2691B5E12350F6DD00A734B3 /* XyoBleNetwork.swift in Sources */,

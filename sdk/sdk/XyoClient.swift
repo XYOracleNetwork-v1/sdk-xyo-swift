@@ -14,10 +14,6 @@ protocol XyoClient: XyoBoundWitnessTarget {
   //we need to add settings for how often to try and retries
   var autoBoundWitness: Bool {get set}
   
-  //when auto boundwitnessing, should we call the initiateBoundWitness function
-  //with the bridge parameter set to true
-  var autoBridge: Bool {get set}
-  
   //starts a boundwitness interaction with a known remote server
   //if bridge is true, then it will try to offload blocks to devices
   func initiateBoundWitness(device: XyoNetworkDevice, bridge: Bool)

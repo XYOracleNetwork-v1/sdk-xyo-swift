@@ -11,9 +11,14 @@ import Foundation
 class XyoNodeBuilder {
   init() {}
   private var networks = [XyoNetwork]()
+  private var storage: XyoStorage?
   
   public func addNetwork(_ network: XyoNetwork) {
     networks.append(network)
+  }
+  
+  public func setStorage(_ storage: XyoStorage) {
+    self.storage = storage
   }
   
   public func build() throws -> XyoNode {
@@ -25,7 +30,11 @@ class XyoNodeBuilder {
       setDefaultNetworks()
     }
     
-    let node = XyoNode(networks: networks)
+    if (self.storage == nil) {
+      setDefaultStorage()
+    }
+    
+    let node = XyoNode(storage: storage!, networks: networks)
     XyoSdk.nodes.append(node)
     return node
   }
@@ -33,5 +42,9 @@ class XyoNodeBuilder {
   private func setDefaultNetworks() {
     addNetwork(XyoBleNetwork())
     addNetwork(XyoTcpipNetwork())
+  }
+  
+  private func setDefaultStorage() {
+    setStorage(XyoStorage())
   }
 }

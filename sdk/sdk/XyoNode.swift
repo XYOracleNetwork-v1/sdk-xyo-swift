@@ -10,8 +10,10 @@ import Foundation
 
 class XyoNode {
   public let networks: [XyoNetwork]
+  public let storage: XyoStorage
   
-  internal init(networks: [XyoNetwork]) {
+  internal init(storage: XyoStorage, networks: [XyoNetwork]) {
+    self.storage = storage
     self.networks = networks
   }
 }

@@ -10,5 +10,5 @@ import Foundation
 
 class XyoBleNetwork: XyoNetwork {
   var client: XyoClient = XyoBleClient(autoBoundWitness: false, autoBridge: false, acceptBridging: false)
-  var server: XyoServer = XyoBleServer(acceptBridging: false)
+  var server: XyoServer = XyoBleServer(autoBridge: false, acceptBridging: false, listen: false)
 }

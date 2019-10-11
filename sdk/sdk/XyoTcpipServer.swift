@@ -9,10 +9,13 @@
 import Foundation
 
 class XyoTcpipServer: XyoServer {
+  var autoBridge: Bool
   var acceptBridging: Bool
   
-  init(acceptBridging: Bool) {
+  internal init(autoBridge: Bool, acceptBridging: Bool, listen: Bool) {
+    self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
+    self.listen = listen
   }
   
   var listen: Bool {

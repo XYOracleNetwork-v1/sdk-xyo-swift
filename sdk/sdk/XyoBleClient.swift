@@ -10,13 +10,21 @@ import Foundation
 
 class XyoBleClient: XyoClient {
   var acceptBridging: Bool
-  var autoBoundWitness: Bool
   var autoBridge: Bool
   
   init(autoBoundWitness: Bool, autoBridge: Bool, acceptBridging: Bool) {
-    self.autoBoundWitness = autoBoundWitness
     self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
+    self.autoBoundWitness = autoBoundWitness
+  }
+  
+  var autoBoundWitness: Bool {
+    get {
+      return false //replace with auto enabled state
+    }
+    set {
+      //enable/disable auto
+    }
   }
   
   func initiateBoundWitness(device: XyoNetworkDevice, bridge: Bool) {

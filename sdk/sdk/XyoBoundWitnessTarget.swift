@@ -15,6 +15,9 @@ protocol XyoBoundWitnessTarget {
   
   //accept boundwitnesses that have bridges payloads
   var acceptBridging: Bool { get set }
+  
+  //when auto boundwitnessing, should we bridge our chain
+  var autoBridge: Bool {get set}
 }
 
 extension XyoBoundWitnessTarget {
