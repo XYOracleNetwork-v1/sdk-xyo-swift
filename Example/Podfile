@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'sdk-xyo-swift_Example' do
+  pod 'sdk-xyo-swift', :path => '../'
+
+  target 'sdk-xyo-swift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,16 @@
+PODS:
+  - sdk-xyo-swift (0.1.0)
+
+DEPENDENCIES:
+  - sdk-xyo-swift (from `../`)
+
+EXTERNAL SOURCES:
+  sdk-xyo-swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  sdk-xyo-swift: 0c0eed3499ea550749b277e8dd5af186e9b2e010
+
+PODFILE CHECKSUM: 560400eb008f7483a5bd2b261afe4095cda92fae
+
+COCOAPODS: 1.7.5
