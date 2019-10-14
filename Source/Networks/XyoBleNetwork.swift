@@ -7,8 +7,16 @@
 //
 
 import Foundation
+import sdk_core_swift
 
-class XyoBleNetwork: XyoNetwork {
-  var client: XyoClient = XyoBleClient(autoBoundWitness: false, autoBridge: false, acceptBridging: false)
-  var server: XyoServer = XyoBleServer(autoBridge: false, acceptBridging: false, listen: false)
+class XyoBleNetwork: XyoNetwork { 
+  var type: XyoNetworkType
+  
+  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
+    type = .ble
+    client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog)
+    server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog)
+  }
+  var client: XyoClient
+  var server: XyoServer
 }

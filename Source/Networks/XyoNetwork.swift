@@ -7,8 +7,13 @@
 //
 
 import Foundation
-
+enum XyoNetworkType {
+  case ble
+  case tcp
+  case other
+}
 protocol XyoNetwork {
+  var type : XyoNetworkType { get }
   var client: XyoClient { get }
   var server: XyoServer { get }
 }

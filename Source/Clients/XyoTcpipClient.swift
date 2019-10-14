@@ -7,27 +7,31 @@
 //
 
 import Foundation
+import sdk_core_swift
 
 class XyoTcpipClient: XyoClient {
-  var acceptBridging: Bool
-  var autoBridge: Bool
+  var scan: Bool = false
   
-  init(autoBoundWitness: Bool, autoBridge: Bool, acceptBridging: Bool) {
+  var delegate: BoundWitnessDelegate?
+  
+  var relayNode: XyoRelayNode
+  
+  var procedureCatalog: XyoProcedureCatalog
+  var acceptBridging: Bool = false
+  var autoBridge: Bool = false
+  
+  required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
+    self.procedureCatalog = procedureCatalog
+    self.relayNode = relayNode
+  }
+  
+
+  
+  convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBoundWitness: Bool, autoBridge: Bool, acceptBridging: Bool) {
+    self.init(relayNode: relayNode, procedureCatalog: procedureCatalog)
     self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
-    self.autoBoundWitness = autoBoundWitness
   }
   
-  var autoBoundWitness: Bool {
-    get {
-      return false //replace with auto enabled state
-    }
-    set {
-      //enable/disable auto
-    }
-  }
-  
-  func initiateBoundWitness(device: XyoNetworkDevice, bridge: Bool) {
-    
-  }
+
 }

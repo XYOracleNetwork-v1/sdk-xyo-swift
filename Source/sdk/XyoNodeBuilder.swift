@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import sdk_core_swift
+import sdk_xyobleinterface_swift
 
 class XyoNodeBuilder {
   init() {}
-  private var networks = [XyoNetwork]()
+  private var networks = [String: XyoNetwork]()
   private var storage: XyoStorage?
+  private var relayNode: XyoRelayNode?
+  private var procedureCatalog: XyoProcedureCatalog?
   
-  public func addNetwork(_ network: XyoNetwork) {
-    networks.append(network)
+  public func addNetwork(name: String, _ network: XyoNetwork) {
+    networks[name] = network
   }
   
   public func setStorage(_ storage: XyoStorage) {
@@ -40,11 +44,22 @@ class XyoNodeBuilder {
   }
   
   private func setDefaultNetworks() {
-    addNetwork(XyoBleNetwork())
-    addNetwork(XyoTcpipNetwork())
+    if let rn = relayNode {
+      if let pc = procedureCatalog {
+        addNetwork(name: "ble", XyoBleNetwork(relayNode: rn, procedureCatalog: pc))
+        addNetwork(name: "tcpip", XyoTcpipNetwork(relayNode: rn, procedureCatalog: pc))
+        return
+      }
+      print("Missing procedure catalog")
+      return
+    }
+    print("Missing relay node")
   }
   
   private func setDefaultStorage() {
     setStorage(XyoStorage())
   }
 }
+
+
+

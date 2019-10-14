@@ -7,23 +7,30 @@
 //
 
 import Foundation
+import sdk_core_swift
 
 class XyoBleServer: XyoServer {
-  var autoBridge: Bool
-  var acceptBridging: Bool
+  var delegate: BoundWitnessDelegate?
   
-  init(autoBridge: Bool, acceptBridging: Bool, listen: Bool) {
+  var relayNode: XyoRelayNode
+  
+  var procedureCatalog: XyoProcedureCatalog
+  
+  var autoBridge: Bool = false
+  var acceptBridging: Bool = false
+  
+  required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
+    self.procedureCatalog = procedureCatalog
+    self.relayNode = relayNode
+  }
+  
+
+  
+  convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBoundWitness: Bool, autoBridge: Bool, acceptBridging: Bool) {
+    self.init(relayNode: relayNode, procedureCatalog: procedureCatalog)
     self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
-    self.listen = listen
   }
   
-  var listen: Bool {
-    get {
-      return false //replace with server enabled state
-    }
-    set {
-      //enable/disable server
-    }
-  }
+ 
 }

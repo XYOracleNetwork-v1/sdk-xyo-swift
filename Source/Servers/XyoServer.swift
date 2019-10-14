@@ -9,5 +9,7 @@
 import Foundation
 
 protocol XyoServer: XyoBoundWitnessTarget {
-  var listen: Bool { get set }
 }
+
+
+

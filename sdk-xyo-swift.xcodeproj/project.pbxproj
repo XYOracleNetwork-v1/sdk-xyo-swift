@@ -10,21 +10,17 @@
 		0A1450842351485100AB2E76 /* XyoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506A2351485100AB2E76 /* XyoClient.swift */; };
 		0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506B2351485100AB2E76 /* XyoBleClient.swift */; };
 		0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */; };
-		0A1450872351485100AB2E76 /* BridgeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506D2351485100AB2E76 /* BridgeClient.swift */; };
-		0A1450882351485100AB2E76 /* SentinelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506E2351485100AB2E76 /* SentinelClient.swift */; };
 		0A1450892351485100AB2E76 /* sdk_xyo_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450712351485100AB2E76 /* XyoTcpipNetwork.swift */; };
 		0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450722351485100AB2E76 /* XyoBleNetwork.swift */; };
 		0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450732351485100AB2E76 /* XyoNetwork.swift */; };
 		0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */; };
-		0A14508E2351485100AB2E76 /* BoundWitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450762351485100AB2E76 /* BoundWitness.swift */; };
 		0A14508F2351485100AB2E76 /* HeuristicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450772351485100AB2E76 /* HeuristicWrapper.swift */; };
 		0A1450902351485100AB2E76 /* XyoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450782351485100AB2E76 /* XyoNode.swift */; };
 		0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */; };
 		0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507A2351485100AB2E76 /* XyoStorage.swift */; };
 		0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */; };
 		0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507C2351485100AB2E76 /* XyoSdk.swift */; };
-		0A1450952351485100AB2E76 /* XyoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507E2351485100AB2E76 /* XyoProtocol.swift */; };
 		0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450802351485100AB2E76 /* XyoTcpipServer.swift */; };
 		0A1450972351485100AB2E76 /* XyoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450812351485100AB2E76 /* XyoServer.swift */; };
 		0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450822351485100AB2E76 /* XyoBleServer.swift */; };
@@ -46,14 +42,12 @@
 		0A14506A2351485100AB2E76 /* XyoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoClient.swift; sourceTree = "<group>"; };
 		0A14506B2351485100AB2E76 /* XyoBleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleClient.swift; sourceTree = "<group>"; };
 		0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipClient.swift; sourceTree = "<group>"; };
-		0A14506D2351485100AB2E76 /* BridgeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeClient.swift; sourceTree = "<group>"; };
 		0A14506E2351485100AB2E76 /* SentinelClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentinelClient.swift; sourceTree = "<group>"; };
 		0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdk_xyo_swift.h; sourceTree = "<group>"; };
 		0A1450712351485100AB2E76 /* XyoTcpipNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipNetwork.swift; sourceTree = "<group>"; };
 		0A1450722351485100AB2E76 /* XyoBleNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleNetwork.swift; sourceTree = "<group>"; };
 		0A1450732351485100AB2E76 /* XyoNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNetwork.swift; sourceTree = "<group>"; };
 		0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNetworkDevice.swift; sourceTree = "<group>"; };
-		0A1450762351485100AB2E76 /* BoundWitness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundWitness.swift; sourceTree = "<group>"; };
 		0A1450772351485100AB2E76 /* HeuristicWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeuristicWrapper.swift; sourceTree = "<group>"; };
 		0A1450782351485100AB2E76 /* XyoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNode.swift; sourceTree = "<group>"; };
 		0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNodeBuilder.swift; sourceTree = "<group>"; };
@@ -116,7 +110,6 @@
 				0A14506A2351485100AB2E76 /* XyoClient.swift */,
 				0A14506B2351485100AB2E76 /* XyoBleClient.swift */,
 				0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */,
-				0A14506D2351485100AB2E76 /* BridgeClient.swift */,
 				0A14506E2351485100AB2E76 /* SentinelClient.swift */,
 			);
 			path = Clients;
@@ -136,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */,
-				0A1450762351485100AB2E76 /* BoundWitness.swift */,
 				0A1450772351485100AB2E76 /* HeuristicWrapper.swift */,
 				0A1450782351485100AB2E76 /* XyoNode.swift */,
 				0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */,
@@ -406,11 +398,8 @@
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
-				0A14508E2351485100AB2E76 /* BoundWitness.swift in Sources */,
 				0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
-				0A1450952351485100AB2E76 /* XyoProtocol.swift in Sources */,
-				0A1450872351485100AB2E76 /* BridgeClient.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,
 				0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */,
@@ -420,7 +409,6 @@
 				0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */,
 				0A1450902351485100AB2E76 /* XyoNode.swift in Sources */,
 				0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */,
-				0A1450882351485100AB2E76 /* SentinelClient.swift in Sources */,
 				0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
