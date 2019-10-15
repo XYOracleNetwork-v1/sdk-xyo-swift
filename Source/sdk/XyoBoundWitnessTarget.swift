@@ -12,9 +12,9 @@ import sdk_core_swift
 import XyBleSdk
 
 protocol BoundWitnessDelegate {
-    func boundWitness(didStart withDevice: XYBluetoothDevice)
-    func boundWitness(didComplete withBoundWitness: BoundWitnessParseable, withDevice: XYBluetoothDevice)
-    func boundWitness(didFail withError: Error)
+  func boundWitnessDidStart()
+  func boundWitness(didComplete withBoundWitness: XyoBoundWitness)
+  func boundWitness(didFail withError: XyoError)
 }
 
 
@@ -36,6 +36,6 @@ protocol XyoBoundWitnessTarget {
 
 extension BoundWitnessDelegate {
   func boundWitness(didStart withDevice: XYBluetoothDevice) { print("Bound Witness Started") }
-  func boundWitness(didComplete withBoundWitness: BoundWitnessParseable, withDevice: XYBluetoothDevice) { print("Bound Witness Completed")  }
-  func boundWitness(didFail withError: Error) { print("Bound Witness Failed")  }
+  func boundWitness(didComplete withBoundWitness: XyoBoundWitness, withDevice: XYBluetoothDevice) { print("Bound Witness Completed")  }
+  func boundWitness(didFail withError: XyoError) { print("Bound Witness Failed")  }
 }

@@ -2,17 +2,11 @@ PODS:
   - PromisesObjC (1.2.8)
   - PromisesSwift (1.2.8):
     - PromisesObjC (= 1.2.8)
-  - sdk-bletcpbridge-swift (3.0.2):
-    - PromisesSwift (~> 1.2.4)
-    - sdk-core-swift (~> 3.0.1)
-    - sdk-objectmodel-swift (~> 3.0)
-    - sdk-xyobleinterface-swift (~> 3.0.3)
-    - XyBleSdk (~> 3.0.1)
   - sdk-core-swift (3.0.1):
     - sdk-objectmodel-swift (~> 3.0)
     - secp256k1.swift
   - sdk-objectmodel-swift (3.0.1)
-  - sdk-xyobleinterface-swift (3.0.5):
+  - sdk-xyobleinterface-swift (3.0.6):
     - PromisesSwift (~> 1.2.4)
     - sdk-core-swift (~> 3.0.1)
     - sdk-objectmodel-swift (~> 3.0)
@@ -22,14 +16,12 @@ PODS:
     - PromisesSwift
 
 DEPENDENCIES:
-  - sdk-bletcpbridge-swift
   - sdk-xyobleinterface-swift (~> 3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - PromisesObjC
     - PromisesSwift
-    - sdk-bletcpbridge-swift
     - sdk-core-swift
     - sdk-objectmodel-swift
     - sdk-xyobleinterface-swift
@@ -39,13 +31,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
-  sdk-bletcpbridge-swift: ea056da460237e7bf708e17a7da10d6e87402375
   sdk-core-swift: 6b089045fe8483388bd3c82d2d1375d796c29745
   sdk-objectmodel-swift: ef0331719d7fb2249a883928286c4746dbcf9067
-  sdk-xyobleinterface-swift: dcea17536826c927953356db55338a9d42d70e41
+  sdk-xyobleinterface-swift: b7acec1795645081493ffac10d3152710ec03627
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   XyBleSdk: 4e14b20fe77760cecca63888813c52aae46894d4
 
-PODFILE CHECKSUM: a736be507e248f85922d80e928184f883dcbcddf
+PODFILE CHECKSUM: 2062e2eb434e2c04aa34d95543427937b806d9ec
 
 COCOAPODS: 1.7.5

@@ -13,7 +13,7 @@ import sdk_core_swift
 import XyBleSdk
 
 class XyoBleClient: XyoClient {
-  var scan: Bool
+  var scan: Bool = false
   
   var acceptBridging: Bool
   
@@ -28,6 +28,8 @@ class XyoBleClient: XyoClient {
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.autoBridge = false
     self.acceptBridging = false
+    self.relayNode = relayNode
+    self.procedureCatalog = procedureCatalog
   }
   
   func doBoundWitness(withDevice: XyoBluetoothDevice) throws {
@@ -39,7 +41,7 @@ class XyoBleClient: XyoClient {
           return awaiter.reject(err!)
       }
       guard let bw = boundWitness, let strong = self else {
-          self?.delegate?.boundWitness(didFail: NSError(domain: "XyoBleClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
+        self?.delegate?.boundWitness(didFail: XyoError.RESPONSE_IS_NULL)
           return
       }
       strong.delegate?.boundWitness(didComplete: bw, withDevice: withDevice!)
@@ -49,40 +51,39 @@ class XyoBleClient: XyoClient {
     _ = try await(awaiter)
   }
   
-  func doBoundWitness(withDevice: XyoBluetoothDevice, withCompletion: (BoundWitnessParseable?, XyoBluetoothDevice?, Error?) -> ()) throws {
+  typealias BoundWitnessCallback = ((_ boundWitness: XyoBoundWitness?, _ device: XyoBluetoothDevice?, _ error: Error?) -> Void)?
+  
+  func doBoundWitness(withDevice: XyoBluetoothDevice, withCompletion: BoundWitnessCallback) throws {
 
       withDevice.connection {
       
         withDevice.connect()
 
         guard let pipe = withDevice.tryCreatePipe() else {
-            withCompletion(nil, withDevice, NSError(domain: "XyoBleClient", code: 1001, userInfo: ["message": "Can't create pipe"]))
-
+          withCompletion?(nil, withDevice, XyoError.UNKNOWN_ERROR)
             return
         }
-        
+
         let handler = XyoNetworkHandler(pipe: pipe)
 
          
-         DispatchQueue.global().async {
-           self.relayNode.boundWitness(handler: handler, procedureCatalogue: XyoFlagProcedureCatalog(forOther: UInt32(XyoProcedureCatalogFlags.BOUND_WITNESS), withOther: UInt32(XyoProcedureCatalogFlags.BOUND_WITNESS)), completion: { [weak self] (boundWitness, error)  in
-              
-              
-             guard error == nil else {
-                withCompletion(nil, withDevice, error)
-                 return
-             }
-             
-             guard let bw = boundWitness else {
-                 self?.delegate?.boundWitness(didFail: NSError(domain: "XyoBleClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
-                 return
-             }
-            
-             withCompletion(BoundWitness(_boundWitness: bw, _options: nil), withDevice, nil)
-             pipe.close()
+        self.relayNode.boundWitness(handler: handler, procedureCatalogue: self.procedureCatalog) { [weak self] (boundWitness, error)  in
+          
+          
+           guard error == nil else {
+              withCompletion?(nil, withDevice, error)
+               return
+           }
+           
+           guard let bw = boundWitness else {
+            self?.delegate?.boundWitness(didFail: XyoError.RESPONSE_IS_NULL)
+               return
+           }
+          
+           withCompletion?(bw, withDevice, nil)
+           pipe.close()
 
-         })
-       }
+         }
       }
   }
 }

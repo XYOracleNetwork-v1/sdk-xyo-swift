@@ -7,7 +7,7 @@ use_frameworks!
 
 target 'sdk-xyo-swift' do
   pod 'sdk-xyobleinterface-swift', '~> 3.0'
-  pod 'sdk-bletcpbridge-swift'
+#  pod 'sdk-bletcpbridge-swift'
   # Pods for sdk-xyo-swift
 
 end

@@ -15,7 +15,6 @@
 		0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450722351485100AB2E76 /* XyoBleNetwork.swift */; };
 		0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450732351485100AB2E76 /* XyoNetwork.swift */; };
 		0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */; };
-		0A14508F2351485100AB2E76 /* HeuristicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450772351485100AB2E76 /* HeuristicWrapper.swift */; };
 		0A1450902351485100AB2E76 /* XyoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450782351485100AB2E76 /* XyoNode.swift */; };
 		0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */; };
 		0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507A2351485100AB2E76 /* XyoStorage.swift */; };
@@ -394,7 +393,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A14508F2351485100AB2E76 /* HeuristicWrapper.swift in Sources */,
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
