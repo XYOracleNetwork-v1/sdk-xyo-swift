@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import sdk_core_swift
 
 class XyoNode {
   public let networks: [String: XyoNetwork]
-  public let storage: XyoStorage
+  public let storage: XyoStorageProvider
   
-  internal init(storage: XyoStorage, networks: [String: XyoNetwork]) {
+  internal init(storage: XyoStorageProvider, networks: [String: XyoNetwork]) {
     self.storage = storage
     
     self.networks = networks

@@ -17,7 +17,6 @@
 		0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */; };
 		0A1450902351485100AB2E76 /* XyoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450782351485100AB2E76 /* XyoNode.swift */; };
 		0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */; };
-		0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507A2351485100AB2E76 /* XyoStorage.swift */; };
 		0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */; };
 		0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507C2351485100AB2E76 /* XyoSdk.swift */; };
 		0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450802351485100AB2E76 /* XyoTcpipServer.swift */; };
@@ -50,7 +49,6 @@
 		0A1450772351485100AB2E76 /* HeuristicWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeuristicWrapper.swift; sourceTree = "<group>"; };
 		0A1450782351485100AB2E76 /* XyoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNode.swift; sourceTree = "<group>"; };
 		0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNodeBuilder.swift; sourceTree = "<group>"; };
-		0A14507A2351485100AB2E76 /* XyoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoStorage.swift; sourceTree = "<group>"; };
 		0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBoundWitnessTarget.swift; sourceTree = "<group>"; };
 		0A14507C2351485100AB2E76 /* XyoSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoSdk.swift; sourceTree = "<group>"; };
 		0A14507E2351485100AB2E76 /* XyoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoProtocol.swift; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				0A1450772351485100AB2E76 /* HeuristicWrapper.swift */,
 				0A1450782351485100AB2E76 /* XyoNode.swift */,
 				0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */,
-				0A14507A2351485100AB2E76 /* XyoStorage.swift */,
 				0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */,
 				0A14507C2351485100AB2E76 /* XyoSdk.swift */,
 			);
@@ -396,7 +393,6 @@
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
-				0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,

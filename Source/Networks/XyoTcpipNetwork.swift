@@ -11,12 +11,22 @@ import sdk_core_swift
 
 class XyoTcpipNetwork: XyoNetwork {
   var type: XyoNetworkType
+  var client: XyoClient
+  var server: XyoServer
   
   init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     type = .tcpIp
-    client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog)
-    server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog)
+
+    client = XyoTcpipClient(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: true, acceptBridging: false, autoBoundWitness: true)
+    
+    server = XyoTcpipServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: true, acceptBridging: false)
+    
+    if (client.knownBridges == nil) {
+      client.knownBridges = ["ws://alpha-peers.xyo.network:11000"]
+    }
+    client.scan = true
+    server.listen = true
+    
   }
-  var client: XyoClient
-  var server: XyoServer
+
 }
