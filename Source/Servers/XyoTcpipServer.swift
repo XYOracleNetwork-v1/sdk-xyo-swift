@@ -18,6 +18,8 @@ class XyoTcpipServer: XyoServer {
   var autoBridge: Bool = false
   var acceptBridging: Bool = false
   
+  var listen: Bool = false 
+  
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.relayNode = relayNode
     self.procedureCatalog = procedureCatalog

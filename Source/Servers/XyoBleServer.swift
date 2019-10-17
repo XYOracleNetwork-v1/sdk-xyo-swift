@@ -12,11 +12,21 @@ import sdk_xyobleinterface_swift
 import XyBleSdk
 
 class XyoBleServer: XyoServer {
-  var delegate: BoundWitnessDelegate?
+  weak var delegate: BoundWitnessDelegate?
   
   var relayNode: XyoRelayNode
   
   var procedureCatalog: XyoProcedureCatalog
+  
+  var listen: Bool = false {
+    didSet(value) {
+      if (value) {
+        startListening()
+      } else {
+        stopListening()
+      }
+    }
+  }
   
   var autoBridge: Bool = false
   var acceptBridging: Bool = false
@@ -36,34 +46,33 @@ class XyoBleServer: XyoServer {
     advertiser?.stop()
   }
   
-  convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBoundWitness: Bool, autoBridge: Bool, acceptBridging: Bool) {
+  convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBridge: Bool, acceptBridging: Bool) {
     self.init(relayNode: relayNode, procedureCatalog: procedureCatalog)
     self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
   }
-  
- 
 }
 
 extension XyoBleServer : XyoPipeCharacteristicListener {
   
     // If acting as server
   func onPipe(pipe: XyoNetworkPipe) {
-    delegate?.boundWitnessDidStart()
+    delegate?.boundWitness(started: self)
     
     let handler = XyoNetworkHandler(pipe: pipe)
     
     self.relayNode.boundWitness(handler: handler, procedureCatalogue: self.procedureCatalog, completion: { [weak self] (boundWitness, error)  in
         guard error == nil else {
-          self?.delegate?.boundWitness(didFail: error!)
+          self?.delegate?.boundWitness(failed: self, withError: error!)
             return
         }
         
         guard let bw = boundWitness, let strong = self else {
-          self?.delegate?.boundWitness(didFail: XyoError.RESPONSE_IS_NULL)
+          self?.delegate?.boundWitness(failed: self, withError: XyoError.RESPONSE_IS_NULL)
             return
         }
-        strong.delegate?.boundWitness(didComplete: bw)
+      
+        self?.delegate?.boundWitness(completed: strong, withBoundWitness: bw)
       
         pipe.close()
 

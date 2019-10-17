@@ -112,7 +112,7 @@ class SentinelClient: SentinelProtocol  {
                 return awaiter.reject(err!)
             }
             guard let bw = boundWitness, let strong = self else {
-                self?.delegate.boundWitness(didFail: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
+                self?.delegate.boundWitness(failed: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
                 return
             }
             strong.delegate.boundWitnessSuccess(boundWitness: bw, withDevice: withDevice!)
@@ -148,7 +148,7 @@ class SentinelClient: SentinelProtocol  {
                      }
                      
                      guard let bw = boundWitness else {
-                         self?.delegate.boundWitness(didFail: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
+                         self?.delegate.boundWitness(failed: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
                          return
                      }
                     
@@ -197,12 +197,12 @@ extension SentinelClient : XyoPipeCharacteristicLisitner {
         DispatchQueue.global().async {
             self.originChain.boundWitness(handler: handler, procedureCatalogue: XyoFlagProcedureCatalog(forOther: UInt32(XyoProcedureCatalogFlags.BOUND_WITNESS), withOther: UInt32(XyoProcedureCatalogFlags.BOUND_WITNESS)), completion: { [weak self] (boundWitness, error)  in
                 guard error == nil else {
-                    self?.delegate.boundWitness(didFail: error!)
+                    self?.delegate.boundWitness(failed: error!)
                     return
                 }
                 
                 guard let bw = boundWitness, let strong = self else {
-                    self?.delegate.boundWitness(didFail: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
+                    self?.delegate.boundWitness(failed: NSError(domain: "SentinelClient", code: 1001, userInfo: ["message": "No bound witness returned as server"]))
                     return
                 }
                 strong.delegate.boundWitnessSuccess(boundWitness: BoundWitness(_boundWitness: bw, _options: nil), withDevice:strong.device )

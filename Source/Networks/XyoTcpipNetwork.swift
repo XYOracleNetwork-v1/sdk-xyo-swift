@@ -13,7 +13,7 @@ class XyoTcpipNetwork: XyoNetwork {
   var type: XyoNetworkType
   
   init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
-    type = .tcp
+    type = .tcpIp
     client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog)
     server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog)
   }

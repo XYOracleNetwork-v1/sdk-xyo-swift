@@ -15,6 +15,6 @@ enum XyoSdkError: Error {
 class XyoSdk {
   private init() {}
   
-  //I am usiug an array here to support future multiple nodes
+  // Support future multiple nodes
   static public var nodes = [XyoNode]()
 }

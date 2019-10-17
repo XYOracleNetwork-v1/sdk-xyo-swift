@@ -66,7 +66,7 @@ protocol SentinelDelegate {
     func sentinelScan(detected device: XYBluetoothDevice, rssi: Int, family: XYDeviceFamily)
 
     func boundWitness(didSucceed withBoundWitness: BoundWitnessParseable, withDevice: XYBluetoothDevice)
-    func boundWitness(didFail withError: Error)
+    func boundWitness(failed withError: Error)
 }
 
 extension SentinelDelegate {

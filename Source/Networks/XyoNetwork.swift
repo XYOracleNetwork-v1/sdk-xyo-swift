@@ -8,8 +8,8 @@
 
 import Foundation
 enum XyoNetworkType {
-  case ble
-  case tcp
+  case bluetoothLe
+  case tcpIp
   case other
 }
 protocol XyoNetwork {

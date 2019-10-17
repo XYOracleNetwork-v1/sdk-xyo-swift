@@ -11,12 +11,18 @@ import sdk_core_swift
 
 class XyoBleNetwork: XyoNetwork { 
   var type: XyoNetworkType
-  
-  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
-    type = .ble
-    client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog)
-    server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog)
-  }
   var client: XyoClient
   var server: XyoServer
+  
+  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
+    type = .bluetoothLe
+    
+    client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false, autoBoundWitness: true)
+    
+    server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false)
+    
+    client.scan = true
+    server.listen = true
+  }
+
 }

@@ -11,12 +11,14 @@ import sdk_objectmodel_swift
 import sdk_core_swift
 import XyBleSdk
 
-protocol BoundWitnessDelegate {
-  func boundWitnessDidStart()
-  func boundWitness(didComplete withBoundWitness: XyoBoundWitness)
-  func boundWitness(didFail withError: XyoError)
-}
+protocol BoundWitnessDelegate : AnyObject {
+  // Retrieves client data to pass in a bound witness
+  func getPayloadData() -> [UInt8]?
 
+  func boundWitness(started withTarget: XyoBoundWitnessTarget)
+  func boundWitness(completed withTarget: XyoBoundWitnessTarget, withBoundWitness: XyoBoundWitness?)
+  func boundWitness(failed withTarget: XyoBoundWitnessTarget?, withError: XyoError)
+}
 
 protocol XyoBoundWitnessTarget {
   //accept boundwitnesses that have bridges payloads
@@ -35,7 +37,11 @@ protocol XyoBoundWitnessTarget {
 }
 
 extension BoundWitnessDelegate {
+  func getPayloadData() -> [UInt8]? {
+    return nil
+  }
+
   func boundWitness(didStart withDevice: XYBluetoothDevice) { print("Bound Witness Started") }
-  func boundWitness(didComplete withBoundWitness: XyoBoundWitness, withDevice: XYBluetoothDevice) { print("Bound Witness Completed")  }
-  func boundWitness(didFail withError: XyoError) { print("Bound Witness Failed")  }
+  func boundWitness(completed withBoundWitness: XyoBoundWitness, withDevice: XYBluetoothDevice) { print("Bound Witness Completed")  }
+  func boundWitness(failed withError: XyoError) { print("Bound Witness Failed")  }
 }
