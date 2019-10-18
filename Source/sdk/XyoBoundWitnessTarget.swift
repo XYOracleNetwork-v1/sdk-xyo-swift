@@ -11,7 +11,7 @@ import sdk_objectmodel_swift
 import sdk_core_swift
 import XyBleSdk
 
-protocol BoundWitnessDelegate : AnyObject {
+public protocol BoundWitnessDelegate : AnyObject {
   // Retrieves client data to pass in a bound witness
   func getPayloadData() -> [UInt8]?
 
@@ -20,7 +20,7 @@ protocol BoundWitnessDelegate : AnyObject {
   func boundWitness(failed withTarget: XyoBoundWitnessTarget?, withError: XyoError)
 }
 
-protocol XyoBoundWitnessTarget {
+public protocol XyoBoundWitnessTarget {
   //accept boundwitnesses that have bridges payloads
   var acceptBridging: Bool { get set }
 

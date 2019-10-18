@@ -38,7 +38,7 @@ class XyoTcpipClient: XyoClient {
   
   func bridge() -> String? {
     var errorMessage : String? = nil
-    print("bridge - started: ${knownBridges.length}")
+    print("bridge - started: \(String(describing: knownBridges?.count))")
     if let bridges = knownBridges, knownBridges!.count > 0  {
       bridges.forEach { (bridge) in
         delegate?.boundWitness(didStart: self)
@@ -48,7 +48,7 @@ class XyoTcpipClient: XyoClient {
           let pipe = XyoTcpSocketPipe(socket: socket, initiationData: nil)
           let handler = XyoNetworkHandler(pipe: pipe)
 
-          print("Trying to bridge [info]: ${url.host}:${url.port}")
+          print("Trying to bridge [info]: \(String(describing: url.host)):\(String(describing: url.port))")
           relayNode.boundWitness(handler: handler, procedureCatalogue: procedureCatalog) { [weak self] (boundWitness, err) in
             if (err != nil) {
               self?.delegate?.boundWitness(failed: err!)

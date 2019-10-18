@@ -9,7 +9,7 @@
 import Foundation
 import sdk_core_swift
 
-protocol XyoClient: XyoBoundWitnessTarget {
+public protocol XyoClient: XyoBoundWitnessTarget {
   var scan: Bool {get set}
   var autoBoundWitness: Bool {get set}
   var knownBridges: [String]? {get set}

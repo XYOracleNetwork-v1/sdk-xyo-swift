@@ -7,13 +7,13 @@
 //
 
 import Foundation
-enum XyoNetworkType {
+public enum XyoNetworkType {
   case bluetoothLe
   case tcpIp
   case other
 }
-protocol XyoNetwork {
+public protocol XyoNetwork {
   var type : XyoNetworkType { get }
-  var client: XyoClient { get }
-  var server: XyoServer { get }
+  var client: XyoClient { get set }
+  var server: XyoServer { get set }
 }

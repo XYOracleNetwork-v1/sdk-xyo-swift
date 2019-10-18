@@ -10,8 +10,8 @@ import Foundation
 import sdk_core_swift
 import sdk_xyobleinterface_swift
 
-class XyoNodeBuilder {
-  init() {}
+public class XyoNodeBuilder {
+  public init() {}
   private var networks = [String: XyoNetwork]()
   private var storage: XyoStorageProvider?
   private var relayNode: XyoRelayNode?
@@ -32,7 +32,9 @@ class XyoNodeBuilder {
   }
   
   public func setBoundWitnessDelegate(_ delegate: BoundWitnessDelegate) {
+    
     self.delegate = delegate
+    
   }
   
   public func build() throws -> XyoNode {
@@ -79,6 +81,9 @@ class XyoNodeBuilder {
     
     let node = XyoNode(storage: storage!, networks: networks)
     XyoSdk.nodes.append(node)
+    if let d = delegate {
+      node.setAllDelegates(delegate: d)
+    }
     
     return node
   }

@@ -9,10 +9,10 @@
 import Foundation
 import sdk_core_swift
 
-class XyoBleNetwork: XyoNetwork { 
-  var type: XyoNetworkType
-  var client: XyoClient
-  var server: XyoServer
+public class XyoBleNetwork: XyoNetwork { 
+  public var type: XyoNetworkType
+  public var client: XyoClient
+  public var server: XyoServer
   
   init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     type = .bluetoothLe
