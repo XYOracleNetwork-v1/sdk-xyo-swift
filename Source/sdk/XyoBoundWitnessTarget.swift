@@ -41,7 +41,7 @@ extension BoundWitnessDelegate {
     return nil
   }
 
-  func boundWitness(didStart withDevice: XYBluetoothDevice) { print("Bound Witness Started") }
-  func boundWitness(completed withBoundWitness: XyoBoundWitness, withDevice: XYBluetoothDevice) { print("Bound Witness Completed")  }
+  func boundWitness(didStart withDevice: XyoBoundWitnessTarget) { print("Bound Witness Started") }
+  func boundWitness(completed withBoundWitness: XyoBoundWitness, withDevice: XyoBoundWitnessTarget) { print("Bound Witness Completed")  }
   func boundWitness(failed withError: XyoError) { print("Bound Witness Failed")  }
 }

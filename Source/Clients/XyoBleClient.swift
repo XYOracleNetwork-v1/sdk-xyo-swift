@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import sdk_xyobleinterface_swift
 import Promises
 import sdk_core_swift
 import XyBleSdk
+import sdk_xyobleinterface_swift
 
 class XyoBleClient: XyoClient {
   

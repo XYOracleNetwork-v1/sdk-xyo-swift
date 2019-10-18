@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "sdk-xyo-ios-example.app"
-               BlueprintName = "sdk-xyo-ios-example"
-               ReferencedContainer = "container:XyoSdkExample.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "sdk-xyo-swift_Tests.xctest"
-               BlueprintName = "sdk-xyo-swift_Tests"
+               BlueprintIdentifier = "0AEC989823592F4900E47796"
+               BuildableName = "iOSExample.app"
+               BlueprintName = "iOSExample"
                ReferencedContainer = "container:XyoSdkExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -41,23 +27,14 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-ios-example.app"
-            BlueprintName = "sdk-xyo-ios-example"
-            ReferencedContainer = "container:XyoSdkExample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "sdk-xyo-swift_Tests.xctest"
-               BlueprintName = "sdk-xyo-swift_Tests"
+               BlueprintIdentifier = "0AEC98B023592F4A00E47796"
+               BuildableName = "iOSExampleUITests.xctest"
+               BlueprintName = "iOSExampleUITests"
                ReferencedContainer = "container:XyoSdkExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -77,9 +54,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-ios-example.app"
-            BlueprintName = "sdk-xyo-ios-example"
+            BlueprintIdentifier = "0AEC989823592F4900E47796"
+            BuildableName = "iOSExample.app"
+            BlueprintName = "iOSExample"
             ReferencedContainer = "container:XyoSdkExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -94,9 +71,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "sdk-xyo-ios-example.app"
-            BlueprintName = "sdk-xyo-ios-example"
+            BlueprintIdentifier = "0AEC989823592F4900E47796"
+            BuildableName = "iOSExample.app"
+            BlueprintName = "iOSExample"
             ReferencedContainer = "container:XyoSdkExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

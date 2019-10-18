@@ -31,7 +31,45 @@ class XyoTcpipClient: XyoClient {
     self.autoBridge = autoBridge
     self.acceptBridging = acceptBridging
     self.autoBoundWitness = autoBoundWitness
+    if (autoBridge) {
+        bridge()
+    }
   }
   
+  func bridge() -> String? {
+    var errorMessage : String? = nil
+    print("bridge - started: ${knownBridges.length}")
+    if let bridges = knownBridges, knownBridges!.count > 0  {
+      bridges.forEach { (bridge) in
+        delegate?.boundWitness(didStart: self)
+        if let url = URL(string: bridge) {
+          let tcpDevice = XyoTcpPeer(ip: url.host!, port: UInt32(url.port!))
+          let socket = XyoTcpSocket.create(peer: tcpDevice)
+          let pipe = XyoTcpSocketPipe(socket: socket, initiationData: nil)
+          let handler = XyoNetworkHandler(pipe: pipe)
+
+          print("Trying to bridge [info]: ${url.host}:${url.port}")
+          relayNode.boundWitness(handler: handler, procedureCatalogue: procedureCatalog) { [weak self] (boundWitness, err) in
+            if (err != nil) {
+              self?.delegate?.boundWitness(failed: err!)
+              return
+            }
+            if let bw = boundWitness, let strong = self {
+              strong.delegate?.boundWitness(completed: strong, withBoundWitness: bw)
+            }
+            
+            pipe.close()
+            if (self?.autoBridge == true) {
+               self?.bridge()
+            }
+          }
+        }
+      }
+    } else {
+      print("No known bridges, skipping bridging!")
+      errorMessage = "No Known Bridges"
+    }
+    return errorMessage
+  }
 
 }
