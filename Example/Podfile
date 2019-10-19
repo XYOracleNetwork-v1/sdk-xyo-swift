@@ -1,7 +1,7 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
 use_frameworks!
 
-target 'sdk-xyo-ios-example' do
+target 'iOSExample' do
   pod 'sdk-xyo-swift', :path => '../'
-
-
 end

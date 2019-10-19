@@ -7,13 +7,22 @@
 //
 
 import Foundation
+import sdk_core_swift
 
-class XyoNode {
-  public let networks: [XyoNetwork]
-  public let storage: XyoStorage
+public class XyoNode {
+  public var networks: [String: XyoNetwork]
+  public let storage: XyoStorageProvider
   
-  internal init(storage: XyoStorage, networks: [XyoNetwork]) {
+  internal init(storage: XyoStorageProvider, networks: [String: XyoNetwork]) {
     self.storage = storage
+    
     self.networks = networks
+  }
+  
+  func setAllDelegates(delegate: BoundWitnessDelegate) {
+    for (key, _) in networks {
+      networks[key]?.client.delegate = delegate
+      networks[key]?.server.delegate = delegate
+    }
   }
 }

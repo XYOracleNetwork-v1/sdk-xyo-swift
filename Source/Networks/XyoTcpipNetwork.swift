@@ -7,8 +7,26 @@
 //
 
 import Foundation
+import sdk_core_swift
 
-class XyoTcpipNetwork: XyoNetwork {
-  var client: XyoClient = XyoTcpipClient(autoBoundWitness: false, autoBridge: false, acceptBridging: false)
-  var server: XyoServer = XyoTcpipServer(autoBridge: false, acceptBridging: false, listen: false)
+public class XyoTcpipNetwork: XyoNetwork {
+  public var type: XyoNetworkType
+  public var client: XyoClient
+  public var server: XyoServer
+  
+  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
+    type = .tcpIp
+
+    client = XyoTcpipClient(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: true, acceptBridging: false, autoBoundWitness: true)
+    
+    server = XyoTcpipServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: true, acceptBridging: false)
+    
+    if (client.knownBridges == nil) {
+      client.knownBridges = ["ws://alpha-peers.xyo.network:11000"]
+    }
+    client.scan = true
+    server.listen = true
+    
+  }
+
 }

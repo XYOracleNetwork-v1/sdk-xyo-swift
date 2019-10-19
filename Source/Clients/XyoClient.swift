@@ -7,15 +7,10 @@
 //
 
 import Foundation
+import sdk_core_swift
 
-protocol XyoClient: XyoBoundWitnessTarget {
-  
-  //automatically does boundwitnesses with remote servers
-  //we need to add settings for how often to try and retries
+public protocol XyoClient: XyoBoundWitnessTarget {
+  var scan: Bool {get set}
   var autoBoundWitness: Bool {get set}
-  
-  //starts a boundwitness interaction with a known remote server
-  //if bridge is true, then it will try to offload blocks to devices
-  func initiateBoundWitness(device: XyoNetworkDevice, bridge: Bool)
-  
+  var knownBridges: [String]? {get set}
 }

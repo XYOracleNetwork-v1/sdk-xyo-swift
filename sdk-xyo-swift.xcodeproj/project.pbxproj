@@ -10,25 +10,19 @@
 		0A1450842351485100AB2E76 /* XyoClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506A2351485100AB2E76 /* XyoClient.swift */; };
 		0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506B2351485100AB2E76 /* XyoBleClient.swift */; };
 		0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */; };
-		0A1450872351485100AB2E76 /* BridgeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506D2351485100AB2E76 /* BridgeClient.swift */; };
-		0A1450882351485100AB2E76 /* SentinelClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14506E2351485100AB2E76 /* SentinelClient.swift */; };
 		0A1450892351485100AB2E76 /* sdk_xyo_swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450712351485100AB2E76 /* XyoTcpipNetwork.swift */; };
 		0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450722351485100AB2E76 /* XyoBleNetwork.swift */; };
 		0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450732351485100AB2E76 /* XyoNetwork.swift */; };
 		0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */; };
-		0A14508E2351485100AB2E76 /* BoundWitness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450762351485100AB2E76 /* BoundWitness.swift */; };
-		0A14508F2351485100AB2E76 /* HeuristicWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450772351485100AB2E76 /* HeuristicWrapper.swift */; };
 		0A1450902351485100AB2E76 /* XyoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450782351485100AB2E76 /* XyoNode.swift */; };
 		0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */; };
-		0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507A2351485100AB2E76 /* XyoStorage.swift */; };
 		0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */; };
 		0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507C2351485100AB2E76 /* XyoSdk.swift */; };
-		0A1450952351485100AB2E76 /* XyoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A14507E2351485100AB2E76 /* XyoProtocol.swift */; };
 		0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450802351485100AB2E76 /* XyoTcpipServer.swift */; };
 		0A1450972351485100AB2E76 /* XyoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450812351485100AB2E76 /* XyoServer.swift */; };
 		0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450822351485100AB2E76 /* XyoBleServer.swift */; };
-		5CE12F0D3B5CD17496E5D997 /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CD234B24EA8A2128D95A7F /* Pods_sdk_xyo_swift.framework */; };
+		E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,42 +40,45 @@
 		0A14506A2351485100AB2E76 /* XyoClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoClient.swift; sourceTree = "<group>"; };
 		0A14506B2351485100AB2E76 /* XyoBleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleClient.swift; sourceTree = "<group>"; };
 		0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipClient.swift; sourceTree = "<group>"; };
-		0A14506D2351485100AB2E76 /* BridgeClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeClient.swift; sourceTree = "<group>"; };
-		0A14506E2351485100AB2E76 /* SentinelClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentinelClient.swift; sourceTree = "<group>"; };
 		0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sdk_xyo_swift.h; sourceTree = "<group>"; };
 		0A1450712351485100AB2E76 /* XyoTcpipNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipNetwork.swift; sourceTree = "<group>"; };
 		0A1450722351485100AB2E76 /* XyoBleNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleNetwork.swift; sourceTree = "<group>"; };
 		0A1450732351485100AB2E76 /* XyoNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNetwork.swift; sourceTree = "<group>"; };
 		0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNetworkDevice.swift; sourceTree = "<group>"; };
-		0A1450762351485100AB2E76 /* BoundWitness.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundWitness.swift; sourceTree = "<group>"; };
-		0A1450772351485100AB2E76 /* HeuristicWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeuristicWrapper.swift; sourceTree = "<group>"; };
 		0A1450782351485100AB2E76 /* XyoNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNode.swift; sourceTree = "<group>"; };
 		0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoNodeBuilder.swift; sourceTree = "<group>"; };
-		0A14507A2351485100AB2E76 /* XyoStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoStorage.swift; sourceTree = "<group>"; };
 		0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBoundWitnessTarget.swift; sourceTree = "<group>"; };
 		0A14507C2351485100AB2E76 /* XyoSdk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoSdk.swift; sourceTree = "<group>"; };
-		0A14507E2351485100AB2E76 /* XyoProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoProtocol.swift; sourceTree = "<group>"; };
 		0A1450802351485100AB2E76 /* XyoTcpipServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipServer.swift; sourceTree = "<group>"; };
 		0A1450812351485100AB2E76 /* XyoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoServer.swift; sourceTree = "<group>"; };
 		0A1450822351485100AB2E76 /* XyoBleServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleServer.swift; sourceTree = "<group>"; };
-		0A1450832351485100AB2E76 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A999FF83CFBC6537BCD2FC14A5BD718 /* Pods-sdk-xyo-ios-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.release.xcconfig"; sourceTree = "<group>"; };
 		0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XyoSdkExample.xcodeproj; path = ../XyoSdkExample.xcodeproj; sourceTree = "<group>"; };
-		186FD90875893C98A933055E /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		0AEC99242359375D00E47796 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Promises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993523593AE700E47796 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993723593AE700E47796 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Promises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993823593AE700E47796 /* sdk_core_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_core_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993923593AE700E47796 /* sdk_objectmodel_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_objectmodel_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993A23593AE700E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993B23593AE700E47796 /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC993C23593AE700E47796 /* XyBleSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XyBleSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AEC995B235A2BC200E47796 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = info.plist; path = "../../../../../.Trash/XyoSdkExample-czuczsocnjvgqzdmomspqrhhqvao/info.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3ABB74A71CB0F42DC0FB6C37F7AABCB2 /* Pods-sdk-xyo-ios-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-acknowledgements.plist"; sourceTree = "<group>"; };
 		491E3E9DE9FA603A6ED93528D8D3C686 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		69E66DA789A661671CC5CF79 /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
-		79B6A94B37E02AA9499230AED457BA57 /* sdk-xyo-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "sdk-xyo-swift.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		79B6A94B37E02AA9499230AED457BA57 /* sdk-xyo-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "sdk-xyo-swift.podspec"; sourceTree = "<group>"; tabWidth = 2; };
 		8CEE246B5667FB9712A47039694F5F8F /* Pods-sdk-xyo-ios-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE0330358CBD6ACD228AAA4F13D0409 /* Pods-sdk-xyo-ios-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sdk-xyo-ios-example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		95FDE82458D5605CEB58DDABFC3513DE /* sdk-xyo-swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "sdk-xyo-swift.xcconfig"; sourceTree = "<group>"; };
 		965CE630912E663F2BBAAF4489BA1C97 /* Pods-sdk-xyo-ios-example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-Info.plist"; sourceTree = "<group>"; };
 		9A8CAAF8D9BB6AD4CD82457F1E151D3B /* Pods-sdk-xyo-ios-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sdk-xyo-ios-example-dummy.m"; sourceTree = "<group>"; };
 		BCA1AD9C7000C93E5002DDBDC4CBCE14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
 		D77C3823E93CA8B352BDB65BFB592723 /* Pods-sdk-xyo-ios-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sdk-xyo-ios-example.modulemap"; sourceTree = "<group>"; };
 		E213F1BC38F12C4172E84C3F67B68739 /* Pods-sdk-xyo-ios-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sdk-xyo-ios-example-umbrella.h"; sourceTree = "<group>"; };
-		F2CD234B24EA8A2128D95A7F /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE12F0D3B5CD17496E5D997 /* Pods_sdk_xyo_swift.framework in Frameworks */,
+				E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,9 +100,7 @@
 				0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */,
 				0A1450702351485100AB2E76 /* Networks */,
 				0A1450742351485100AB2E76 /* sdk */,
-				0A14507D2351485100AB2E76 /* Protocols */,
 				0A14507F2351485100AB2E76 /* Servers */,
-				0A1450832351485100AB2E76 /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -116,8 +111,6 @@
 				0A14506A2351485100AB2E76 /* XyoClient.swift */,
 				0A14506B2351485100AB2E76 /* XyoBleClient.swift */,
 				0A14506C2351485100AB2E76 /* XyoTcpipClient.swift */,
-				0A14506D2351485100AB2E76 /* BridgeClient.swift */,
-				0A14506E2351485100AB2E76 /* SentinelClient.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -136,23 +129,12 @@
 			isa = PBXGroup;
 			children = (
 				0A1450752351485100AB2E76 /* XyoNetworkDevice.swift */,
-				0A1450762351485100AB2E76 /* BoundWitness.swift */,
-				0A1450772351485100AB2E76 /* HeuristicWrapper.swift */,
 				0A1450782351485100AB2E76 /* XyoNode.swift */,
 				0A1450792351485100AB2E76 /* XyoNodeBuilder.swift */,
-				0A14507A2351485100AB2E76 /* XyoStorage.swift */,
 				0A14507B2351485100AB2E76 /* XyoBoundWitnessTarget.swift */,
 				0A14507C2351485100AB2E76 /* XyoSdk.swift */,
 			);
 			path = sdk;
-			sourceTree = "<group>";
-		};
-		0A14507D2351485100AB2E76 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				0A14507E2351485100AB2E76 /* XyoProtocol.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0A14507F2351485100AB2E76 /* Servers */ = {
@@ -220,6 +202,7 @@
 		89C20D3C1E23E3634392C63462CD80B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				0AEC995B235A2BC200E47796 /* info.plist */,
 				95FDE82458D5605CEB58DDABFC3513DE /* sdk-xyo-swift.xcconfig */,
 			);
 			name = "Support Files";
@@ -257,8 +240,17 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AEC993523593AE700E47796 /* FBLPromises.framework */,
+				0AEC993723593AE700E47796 /* Promises.framework */,
+				0AEC993823593AE700E47796 /* sdk_core_swift.framework */,
+				0AEC993923593AE700E47796 /* sdk_objectmodel_swift.framework */,
+				0AEC993A23593AE700E47796 /* sdk_xyobleinterface_swift.framework */,
+				0AEC993B23593AE700E47796 /* secp256k1.framework */,
+				0AEC993C23593AE700E47796 /* XyBleSdk.framework */,
+				0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */,
+				0AEC99242359375D00E47796 /* Promises.framework */,
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-				F2CD234B24EA8A2128D95A7F /* Pods_sdk_xyo_swift.framework */,
+				4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,8 +258,8 @@
 		D21ABAC83CEB0E0A6DDF3A5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				186FD90875893C98A933055E /* Pods-sdk-xyo-swift.debug.xcconfig */,
-				69E66DA789A661671CC5CF79 /* Pods-sdk-xyo-swift.release.xcconfig */,
+				4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */,
+				BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -299,7 +291,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A145061235145C800AB2E76 /* Build configuration list for PBXNativeTarget "sdk-xyo-swift" */;
 			buildPhases = (
-				37DB753964F7CF8D43E630EE /* [CP] Check Pods Manifest.lock */,
+				D3993BF54BAF7EB3C187E9C5 /* [CP] Check Pods Manifest.lock */,
 				0A145057235145C800AB2E76 /* Headers */,
 				0A145058235145C800AB2E76 /* Sources */,
 				0A145059235145C800AB2E76 /* Frameworks */,
@@ -373,7 +365,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37DB753964F7CF8D43E630EE /* [CP] Check Pods Manifest.lock */ = {
+		D3993BF54BAF7EB3C187E9C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,15 +394,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A14508F2351485100AB2E76 /* HeuristicWrapper.swift in Sources */,
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
-				0A14508E2351485100AB2E76 /* BoundWitness.swift in Sources */,
-				0A1450922351485100AB2E76 /* XyoStorage.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
-				0A1450952351485100AB2E76 /* XyoProtocol.swift in Sources */,
-				0A1450872351485100AB2E76 /* BridgeClient.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,
 				0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */,
@@ -420,7 +407,6 @@
 				0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */,
 				0A1450902351485100AB2E76 /* XyoNode.swift in Sources */,
 				0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */,
-				0A1450882351485100AB2E76 /* SentinelClient.swift in Sources */,
 				0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,7 +416,7 @@
 /* Begin XCBuildConfiguration section */
 		0A145062235145C800AB2E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 186FD90875893C98A933055E /* Pods-sdk-xyo-swift.debug.xcconfig */;
+			baseConfigurationReference = 4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -460,7 +446,7 @@
 		};
 		0A145063235145C800AB2E76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69E66DA789A661671CC5CF79 /* Pods-sdk-xyo-swift.release.xcconfig */;
+			baseConfigurationReference = BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -533,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -595,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
