@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A34941A23610167003C4C39 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A34941923610167003C4C39 /* DemoViewController.swift */; };
 		0AEC989C23592F4900E47796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC989B23592F4900E47796 /* AppDelegate.swift */; };
 		0AEC98A123592F4900E47796 /* iOSExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0AEC989F23592F4900E47796 /* iOSExample.xcdatamodeld */; };
 		0AEC98A523592F4A00E47796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEC98A423592F4A00E47796 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A34941923610167003C4C39 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		0AEC989923592F4900E47796 /* iOSExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC989B23592F4900E47796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AEC98A023592F4900E47796 /* iOSExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iOSExample.xcdatamodel; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				0AEC98A623592F4A00E47796 /* Preview Content */,
 				0AEC9920235935DB00E47796 /* XyoExampleViewController.swift */,
 				0AEC995D235A3EAE00E47796 /* Main.storyboard */,
+				0A34941923610167003C4C39 /* DemoViewController.swift */,
 			);
 			path = iOSExample;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				0AEC989C23592F4900E47796 /* AppDelegate.swift in Sources */,
 				0AEC9921235935DB00E47796 /* XyoExampleViewController.swift in Sources */,
 				0AEC98A123592F4900E47796 /* iOSExample.xcdatamodeld in Sources */,
+				0A34941A23610167003C4C39 /* DemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

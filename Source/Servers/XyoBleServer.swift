@@ -19,8 +19,8 @@ class XyoBleServer: XyoServer {
   var procedureCatalog: XyoProcedureCatalog
   
   var listen: Bool = false {
-    didSet(newValue) {
-      if (newValue) {
+    didSet {
+      if (listen) {
         startListening()
       } else {
         stopListening()

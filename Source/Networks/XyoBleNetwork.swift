@@ -20,9 +20,7 @@ public class XyoBleNetwork: XyoNetwork {
     client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false, autoBoundWitness: true)
     
     server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false)
-    
-    client.scan = true
-    server.listen = true
+
   }
 
 }
