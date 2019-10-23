@@ -16,10 +16,11 @@ PODS:
     - PromisesSwift
 
 DEPENDENCIES:
-  - sdk-xyobleinterface-swift (~> 3.0)
+  - sdk-xyobleinterface-swift
+  - XyBleSdk (~> 3.0.4)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - PromisesObjC
     - PromisesSwift
     - sdk-core-swift
@@ -37,6 +38,6 @@ SPEC CHECKSUMS:
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   XyBleSdk: 4e14b20fe77760cecca63888813c52aae46894d4
 
-PODFILE CHECKSUM: 9d282960074f5e8bf1dde2bcb684ebf7cb9eece9
+PODFILE CHECKSUM: f2c782e3d245ec462de32c8eee4cfcd55bf9da00
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4

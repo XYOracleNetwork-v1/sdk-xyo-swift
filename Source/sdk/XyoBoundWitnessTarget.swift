@@ -15,9 +15,9 @@ public protocol BoundWitnessDelegate : AnyObject {
   // Retrieves client data to pass in a bound witness
   func getPayloadData() -> [UInt8]?
 
-  func boundWitness(started withTarget: XyoBoundWitnessTarget)
-  func boundWitness(completed withTarget: XyoBoundWitnessTarget, withBoundWitness: XyoBoundWitness?)
-  func boundWitness(failed withTarget: XyoBoundWitnessTarget?, withError: XyoError)
+  func boundWitness(started withDeviceId: String)
+  func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?)
+  func boundWitness(failed withDeviceId: String?, withError: XyoError)
 }
 
 public protocol XyoBoundWitnessTarget {

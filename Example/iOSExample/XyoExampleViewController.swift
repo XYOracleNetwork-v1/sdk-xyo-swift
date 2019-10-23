@@ -11,24 +11,25 @@ import sdk_xyo_swift
 import sdk_core_swift
 
 class XyoExampleViewController: UIViewController, BoundWitnessDelegate {
+  func boundWitness(started withDeviceId: String) {
+    print("Started BW with \(withDeviceId)")
+  }
+  
+  func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?) {
+    print("Completed BW with \(withDeviceId)")
+
+  }
+  
+  func boundWitness(failed withDeviceId: String?, withError: XyoError) {
+    print("Errored BW with \(String(describing: withDeviceId))")
+  }
+  
   func getPayloadData() -> [UInt8]? {
     let test = "Test"
     return [UInt8](test.utf8)
   }
   
-  func boundWitness(started withTarget: XyoBoundWitnessTarget) {
-    print("Started BW")
-  }
-  
-  func boundWitness(completed withTarget: XyoBoundWitnessTarget, withBoundWitness: XyoBoundWitness?) {
-    print("Completed BW")
 
-  }
-  
-  func boundWitness(failed withTarget: XyoBoundWitnessTarget?, withError: XyoError) {
-    print("Errored BW")
-
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,12 +39,10 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate {
       let node = try builder.build()
       let bleNetwork = node.networks["ble"] as? XyoBleNetwork
       bleNetwork?.client.scan = true
+//      bleNetwork?.server.listen = true
     }
     catch {
       print("Caught Error")
     }
-// start scanning
-  
-    
   }
 }

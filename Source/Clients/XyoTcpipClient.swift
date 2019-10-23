@@ -32,7 +32,7 @@ class XyoTcpipClient: XyoClient {
     self.acceptBridging = acceptBridging
     self.autoBoundWitness = autoBoundWitness
     if (autoBridge) {
-        bridge()
+        _ = bridge()
     }
   }
   
@@ -55,12 +55,12 @@ class XyoTcpipClient: XyoClient {
               return
             }
             if let bw = boundWitness, let strong = self {
-              strong.delegate?.boundWitness(completed: strong, withBoundWitness: bw)
+              strong.delegate?.boundWitness(completed: tcpDevice.ip, withBoundWitness: bw)
             }
             
             pipe.close()
             if (self?.autoBridge == true) {
-               self?.bridge()
+               _ = self?.bridge()
             }
           }
         }
