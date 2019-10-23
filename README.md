@@ -56,8 +56,9 @@ Once you have a build, you have access to properties to help you shape your node
 Client
 
 ```swift
-// select the network
-let network = node.networks["this can be "ble" or "tcpip""] as? XyoBleNetwork
+// select the network - examples
+let bleNetwork = node.networks["ble"] as? XyoBleNetwork
+let tcpipNetwork = node.networks["tcpip"] as? XyoTcpipNetwork
 
 // a flag to tell the client to automatically scan
 bleNetwork?.client.scan = true
@@ -65,6 +66,35 @@ bleNetwork?.client.scan = true
 
 These will allow your app to actively seek devices to bound witness with and bridge from the client to the server.
 
+You can set bridges for the tcp/ip client for bridging. 
+
+```swift
+// set local bridges for the tcpip client
+tcpipNetwork?.client.localBridges = ["public key of bridge", "public key of other bridge"]
+```
+You can set the bound witness delegate
+
+```swift
+  func boundWitness(started withDeviceId: String) {
+    print("Started BW with (withDeviceId)")
+  }
+
+  func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?) {
+    print("Completed BW with (withDeviceId)")
+
+  }
+```
+
+You can also get payload data from bound witness. 
+
+```swift
+    class XyoExampleViewController: UIViewController, BoundWitnessDelegate {
+        ...
+        func getPayloadData() {
+            return [UInt8]
+        }
+    }
+```
 This will return a byteArray.
 
 There are other properties from the client and server which you can find in the source code as well as a reference guide that we have prepared. 
