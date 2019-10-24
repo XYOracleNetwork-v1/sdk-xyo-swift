@@ -4,8 +4,6 @@
 
 # sdk-xyo-swift
 
-[![](https://travis-ci.org/XYOracleNetwork/sdk-core-swift.svg?branch=master)](https://travis-ci.org/XYOracleNetwork/sdk-xyo-swift)[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2fb2eb69c1db455299ffce57b0216aa6)](https://www.codacy.com/app/XYOracleNetwork/sdk-xyo-swift?utm_source=github.com&utm_medium=referral&utm_content=XYOracleNetwork/sdk-xyo-swift&utm_campaign=Badge_Grade) [![Maintainability](https://api.codeclimate.com/v1/badges/af641257b27ecea22a9f/maintainability)](https://codeclimate.com/github/XYOracleNetwork/sdk-xyo-swift/maintainability) [![](https://img.shields.io/gitter/room/XYOracleNetwork/Stardust.svg)](https://gitter.im/XYOracleNetwork/Dev)
-
 ## Table of Contents
 
 -   [Title](#sdk-xyo-swift)
@@ -34,7 +32,6 @@ let builder = XyoNodeBuilder().setBoundWitnessDelegate(self)
 
 For a more complex test, create a listener callback.
 
-
 You can also configure to your specific roles.
 
 ## Usage
@@ -62,9 +59,10 @@ let tcpipNetwork = node.networks["tcpip"] as? XyoTcpipNetwork
 
 // a flag to tell the client to automatically scan
 bleNetwork?.client.scan = true
-```
 
-These will allow your app to actively seek devices to bound witness with and bridge from the client to the server.
+// a flag to tell the server to listen
+bleNetwork?.server.listen = true
+```
 
 You can set bridges for the tcp/ip client for bridging. 
 
