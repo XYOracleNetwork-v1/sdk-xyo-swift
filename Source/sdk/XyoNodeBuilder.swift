@@ -37,6 +37,15 @@ public class XyoNodeBuilder {
     
   }
   
+  deinit {
+//    XyoSdk.nodes.forEach { (node) in
+//      node.networks.forEach { (networkName: String, value: XyoNetwork) in
+//        node.networks[networkName] = nil;
+//      }
+//    }
+    XyoSdk.nodes.removeAll()
+  }
+  
   public func build() throws -> XyoNode {
     if (XyoSdk.nodes.count > 0) {
       throw NSError(domain: "XyoNodeBuilder", code: 10, userInfo: ["message": "already nodes"])

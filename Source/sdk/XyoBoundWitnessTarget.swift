@@ -34,6 +34,20 @@ public protocol XyoBoundWitnessTarget {
   var procedureCatalog: XyoProcedureCatalog {get}
   
   init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog)
+  
+  func publicKey() -> String?
+}
+
+extension XyoBoundWitnessTarget {
+  func publicKey() -> String? {
+    if (relayNode.originState.getSigners().count == 0) {
+        return nil
+    }
+    guard let bytes = relayNode.originState.getSigners().first?.getPublicKey().getBuffer().toByteArray() else {
+      return nil
+    }
+    return bytes.toBase58String()
+  }
 }
 
 extension BoundWitnessDelegate {

@@ -11,6 +11,12 @@ import Promises
 import sdk_core_swift
 import XyBleSdk
 import sdk_xyobleinterface_swift
+struct XyoBleClientError: Error {
+    enum ErrorKind {
+        case cannotConnect
+    }
+    let kind: ErrorKind
+}
 
 class XyoBleClient: XyoClient {
   
@@ -23,8 +29,8 @@ class XyoBleClient: XyoClient {
   var autoBoundWitness: Bool = false
   var autoBridge: Bool = false
   var scan: Bool = false {
-    didSet(newValue) {
-      if (newValue) {
+    didSet {
+      if (scan) {
         startScanningForDevices()
       } else {
         stopScanningForDevices()
@@ -33,8 +39,11 @@ class XyoBleClient: XyoClient {
   }
   
   private let scanner = XYSmartScan.instance
-  private var minBWTimeGap = 10 //ten seconds
+  private var minBWTimeGap = 6 //ten seconds
   private var lastBoundWitnessTime = Date()
+  
+//  private var semaphore = DispatchSemaphore(value: 1)
+  private var semaphore = true
 
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.relayNode = relayNode
@@ -60,21 +69,6 @@ class XyoBleClient: XyoClient {
     scanner.stop()
   }
 
-  func doBoundWitness(withDevice: XyoBluetoothDevice) throws {
-    let awaiter = Promise<Any?>.pending()
-
-    try doBoundWitness(withDevice: withDevice) { (boundWitness, withDevice, err) in
-      guard err == nil else {
-          return awaiter.reject(err!)
-      }
-      guard let bw = boundWitness else {
-          return
-      }
-      return awaiter.fulfill(bw)
-
-    }
-    _ = try await(awaiter)
-  }
   
   typealias BoundWitnessCallback = ((_ boundWitness: XyoBoundWitness?, _ device: XyoBluetoothDevice?, _ error: Error?) -> Void)?
   
@@ -82,37 +76,42 @@ class XyoBleClient: XyoClient {
       self.delegate?.boundWitness(started: withDevice.id)
 //    DispatchQueue.main.sync {
       withDevice.connection {
+        [weak self] in
         withDevice.connect()
-        guard let pipe = withDevice.tryCreatePipe() else {
+        guard let pipe = withDevice.tryCreatePipe(), let strong = self else {
+          DispatchQueue.main.async {
+
           withCompletion?(nil, withDevice, XyoError.UNKNOWN_ERROR)
-            return
+          }
+          return
+
         }
 
         let handler = XyoNetworkHandler(pipe: pipe)
-        self.relayNode.boundWitness(handler: handler, procedureCatalogue: self.procedureCatalog) { [weak self] (boundWitness, error)  in
-          
-           guard error == nil else {
-              withCompletion?(nil, withDevice, error)
-               return
-           }
-           
-           guard let bw = boundWitness else {
-            self?.delegate?.boundWitness(failed: withDevice.id, withError: XyoError.RESPONSE_IS_NULL)
-             return
-           }
-            
-           self?.lastBoundWitnessTime = Date()
-          self?.delegate?.boundWitness(completed: withDevice.id, withBoundWitness: bw)
-           withCompletion?(bw, withDevice, nil)
-          print("Closing pipe")
+        strong.relayNode.boundWitness(handler: handler, procedureCatalogue: strong.procedureCatalog) { (boundWitness, error)  in
 
-           pipe.close()
+          print("Disconnecting device")
+          withDevice.disconnect()
+          DispatchQueue.main.async {
+                       guard error == nil else {
+                withCompletion?(nil, withDevice, error)
+                 return
+             }
+             
+             guard let bw = boundWitness else {
+              strong.delegate?.boundWitness(failed: withDevice.id, withError: XyoError.RESPONSE_IS_NULL)
+               return
+             }
+              
+            strong.delegate?.boundWitness(completed: withDevice.id, withBoundWitness: bw)
+             withCompletion?(bw, withDevice, nil)
+          }
 
          }
       }.then {
-        print("Disconnecting device")
         withDevice.disconnect()
       }.catch { (err) in
+        withDevice.disconnect()
         print("CAUGHT ERROR \(err)")
         withCompletion?(nil, nil, err)
     }
@@ -134,27 +133,36 @@ extension XyoBleClient : XYSmartScanDelegate {
     func smartScan(status: XYSmartScanStatus) {}
     func smartScan(location: XYLocationCoordinate2D) {}
     func smartScan(detected device: XYBluetoothDevice, rssi: Int, family: XYDeviceFamily) {
-      DispatchQueue.main.async{
-//        guard let self = self else {
-//          return
-//        }
-      print("device detected")
-      if (self.autoBoundWitness) {
-        if let xyoDevice = device as? XyoBluetoothDevice {
-          if (Int(Date().timeIntervalSince(self.lastBoundWitnessTime)) > self.minBWTimeGap) {
-            print("Initiatiting auto-boundwithness from scan")
+      if (self.autoBoundWitness && self.semaphore) {
 
-            do {
-              try self.doBoundWitness(withDevice: xyoDevice)
-              
-            } catch {
-              print("Error Recieved in bound witness")
+      if let xyoDevice = device as? XyoBluetoothDevice {
+        if (Int(Date().timeIntervalSince(self.lastBoundWitnessTime)) > self.minBWTimeGap) {
+          self.semaphore = false
+          print("Initiatiting auto-boundwithness from scan")
+
+          do {
+            self.lastBoundWitnessTime = Date()
+            try self.doBoundWitness(withDevice: xyoDevice)
+            {
+              [weak self]
+              _,_,_ in
+              print("FINISHED")
+              self?.semaphore = true
             }
+
+          } catch {
+            self.semaphore = true
+
+            print("Error Recieved in bound witness")
           }
+
         }
+
       }
-      }
+
+    }
   }
-    func smartScan(exiting device: XYBluetoothDevice) {}
-    func smartScan(exited device: XYBluetoothDevice) {}
+  
+  func smartScan(exiting device: XYBluetoothDevice) {}
+  func smartScan(exited device: XYBluetoothDevice) {}
 }
