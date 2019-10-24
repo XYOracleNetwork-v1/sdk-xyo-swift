@@ -12,10 +12,11 @@ enum XyoSdkError: Error {
     case tooManyNodes
 }
 
-class XyoSdk {
+public class XyoSdk {
   private init() {}
 
   // Support future multiple nodes
   static public var nodes = [XyoNode]()
+  
   
 }

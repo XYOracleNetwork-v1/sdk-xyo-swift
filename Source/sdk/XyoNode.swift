@@ -10,19 +10,27 @@ import Foundation
 import sdk_core_swift
 
 public class XyoNode {
-  public var networks: [String: XyoNetwork]
+  
+  public var networks = [String: XyoNetwork]()
   public let storage: XyoStorageProvider
   
-  internal init(storage: XyoStorageProvider, networks: [String: XyoNetwork]) {
+  internal init(storage: XyoStorageProvider, _networks: [String: XyoNetwork]) {
     self.storage = storage
-    
-    self.networks = networks
+    for (key, value) in _networks {
+      networks[key] = value
+    }
+  }
+  
+  deinit {
+    print("XyoNode deinit")
+    networks.removeAll()
   }
   
   func setAllDelegates(delegate: BoundWitnessDelegate) {
     for (key, _) in networks {
-      networks[key]?.client.delegate = delegate
-      networks[key]?.server.delegate = delegate
+      networks[key]?.client?.delegate = delegate
+      networks[key]?.server?.delegate = delegate
     }
   }
 }
+

@@ -71,5 +71,7 @@ class XyoTcpipClient: XyoClient {
     }
     return errorMessage
   }
-
+  deinit {
+    print("Deallocing Tcpip Network")
+  }
 }

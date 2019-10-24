@@ -38,7 +38,7 @@ class XyoBleClient: XyoClient {
     }
   }
   
-  private let scanner = XYSmartScan.instance
+  private weak var scanner = XYSmartScan.instance
   private var minBWTimeGap = 6 //ten seconds
   private var lastBoundWitnessTime = Date()
   
@@ -60,15 +60,18 @@ class XyoBleClient: XyoClient {
   }
   
   func startScanningForDevices() {
-    scanner.setDelegate(self, key: "xyo_client")
-    scanner.start(mode: XYSmartScanMode.foreground)
+    scanner?.setDelegate(self, key: "xyo_client")
+    scanner?.start(mode: XYSmartScanMode.foreground)
   }
   
   func stopScanningForDevices() {
-    scanner.removeDelegate(for: "xyo_client")
-    scanner.stop()
+    scanner?.removeDelegate(for: "xyo_client")
+    scanner?.stop()
   }
 
+  deinit {
+    print("XyoBleClient deinit")
+  }
   
   typealias BoundWitnessCallback = ((_ boundWitness: XyoBoundWitness?, _ device: XyoBluetoothDevice?, _ error: Error?) -> Void)?
   
@@ -88,7 +91,7 @@ class XyoBleClient: XyoClient {
         }
 
         let handler = XyoNetworkHandler(pipe: pipe)
-        strong.relayNode.boundWitness(handler: handler, procedureCatalogue: strong.procedureCatalog) { (boundWitness, error)  in
+        strong.relayNode.boundWitness(handler: handler, procedureCatalogue: strong.procedureCatalog) {  (boundWitness, error)  in
 
           print("Disconnecting device")
           withDevice.disconnect()

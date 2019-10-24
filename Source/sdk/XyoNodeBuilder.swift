@@ -10,6 +10,13 @@ import Foundation
 import sdk_core_swift
 import sdk_xyobleinterface_swift
 
+struct XyoNodeBuilderError : Error {
+  enum ErrorKind {
+    case alreadyNodes
+  }
+  let kind: ErrorKind
+}
+
 public class XyoNodeBuilder {
   public init() {}
   private var networks = [String: XyoNetwork]()
@@ -32,23 +39,24 @@ public class XyoNodeBuilder {
   }
   
   public func setBoundWitnessDelegate(_ delegate: BoundWitnessDelegate) {
-    
     self.delegate = delegate
-    
   }
   
   deinit {
-//    XyoSdk.nodes.forEach { (node) in
-//      node.networks.forEach { (networkName: String, value: XyoNetwork) in
-//        node.networks[networkName] = nil;
-//      }
-//    }
-    XyoSdk.nodes.removeAll()
+    print("Deallocing XYO Builder")
+    networks.removeAll()
+//    relayNode = nil
+//    storage = nil
+//    blockRepository = nil
+//    procedureCatalog = nil
+//    hashingProvider = nil
+//    bridgeQueueRepository = nil
+//    stateRepository = nil
   }
   
   public func build() throws -> XyoNode {
     if (XyoSdk.nodes.count > 0) {
-      throw NSError(domain: "XyoNodeBuilder", code: 10, userInfo: ["message": "already nodes"])
+      throw XyoNodeBuilderError(kind: .alreadyNodes)
     }
     if (self.storage == nil) {
       setDefaultStorage()
@@ -88,7 +96,7 @@ public class XyoNodeBuilder {
       setDefaultNetworks()
     }
     
-    let node = XyoNode(storage: storage!, networks: networks)
+    let node = XyoNode(storage: storage!, _networks: networks)
     XyoSdk.nodes.append(node)
     if let d = delegate {
       node.setAllDelegates(delegate: d)
@@ -127,6 +135,7 @@ public class XyoNodeBuilder {
   private func setDefaultHashingProvider() {
       hashingProvider = XyoSha256()
   }
+  
   private func setDefaultBridgeQueueRepository() {
     if let st = storage {
       bridgeQueueRepository = XyoStorageBridgeQueueRepository(storage: st)
