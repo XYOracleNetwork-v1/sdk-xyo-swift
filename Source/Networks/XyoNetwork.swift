@@ -23,6 +23,12 @@ public class XyoNetwork {
     print("Deallocing Xyo Network")
     client?.scan = false
     server?.listen = false
+    // TODO fix the retain cycles in relay node
+    // Make them hold weak references to the heuristics delegates and listeners so we don't have to clean up here
+    client?.relayNode.removeListeners()
+    client?.relayNode.removeHeuristics()
+    server?.relayNode.removeListeners()
+    server?.relayNode.removeHeuristics()
   }
 }
 
