@@ -73,20 +73,24 @@ tcpipNetwork?.client.localBridges = ["public key of bridge", "public key of othe
 You can set the bound witness delegate
 
 ```swift
+
+class SomeViewController: UIViewController, BoundWitnessDelegate {
   func boundWitness(started withDeviceId: String) {
     print("Started BW with (withDeviceId)")
   }
 
   func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?) {
     print("Completed BW with (withDeviceId)")
-
   }
+
+}
+
 ```
 
 You can also get payload data from bound witness. 
 
 ```swift
-    class XyoExampleViewController: UIViewController, BoundWitnessDelegate {
+    class SomeViewController: UIViewController, BoundWitnessDelegate {
         ...
         func getPayloadData() {
             return [UInt8]
