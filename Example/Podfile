@@ -3,5 +3,5 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'iOSExample' do
-  pod 'sdk-xyo-swift', :path => '../sdk-xyo-swift/'
+  pod 'sdk-xyo-swift', :path => '../'
 end
