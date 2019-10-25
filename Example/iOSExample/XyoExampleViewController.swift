@@ -15,7 +15,7 @@ struct BoundWitnessResult {
   var dataString: String;
 }
 
-class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableViewDelegate, UITableViewDataSource {
+class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   public var isClient: Bool = true
   
   @IBOutlet weak var scanLabel: UILabel!
@@ -33,20 +33,37 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableV
     return cell;
   }
   
-
+  @IBAction func autoBridgeToggled(_ sender: UISwitch) {
+    updateBridging(on: sender.isOn)
+  }
   
-  @IBAction func changed(_ sender: UISwitch) {
+  
+  @IBAction func scanListenToggled(_ sender: UISwitch) {
+    updateScanning(on: sender.isOn)
+  }
+  
+  func updateScanning(on: Bool) {
+    let ble = xyoNode?.networks["ble"] as? XyoBleNetwork
+
     if isClient {
-      bleNetwork?.client?.scan = sender.isOn
+      ble?.client?.scan = on
     } else {
-      bleNetwork?.server?.listen = sender.isOn
+      ble?.server?.listen = on
     }
   }
   
-  weak var bleNetwork : XyoBleNetwork?
-  var xyoNode : XyoNode?
-  
+  func updateBridging(on: Bool) {
+    let tcp = xyoNode?.networks["tcpip"] as? XyoTcpipNetwork
 
+    if isClient {
+      tcp?.client?.autoBridge = on
+    } else {
+      tcp?.server?.autoBridge = on
+    }
+  }
+  
+  // Strong ref to xyonode here  
+  var xyoNode : XyoNode?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,12 +73,11 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableV
     builder.setBoundWitnessDelegate(self)
     do {
       xyoNode = try builder.build()
-      bleNetwork = xyoNode?.networks["ble"] as? XyoBleNetwork
-      bleNetwork?.client?.scan = isClient
-      bleNetwork?.server?.listen = !isClient
+      updateScanning(on: true)
+      updateBridging(on: false)
     }
     catch {
-      print("Caught Error")
+      print("Caught Error \(error)")
     }
   }
   
@@ -74,7 +90,9 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableV
   deinit {
     print("XyoExampleViewController deinit")
   }
-  
+}
+
+extension XyoExampleViewController : BoundWitnessDelegate {
   func boundWitness(started withDeviceId: String) {
     print("Started BW with \(withDeviceId)")
   }

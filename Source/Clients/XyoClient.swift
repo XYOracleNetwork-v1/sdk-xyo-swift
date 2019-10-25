@@ -12,5 +12,5 @@ import sdk_core_swift
 public protocol XyoClient: XyoBoundWitnessTarget {
   var scan: Bool {get set}
   var autoBoundWitness: Bool {get set}
-  var knownBridges: [String]? {get set}
+  var knownBridges: [String] {get set}
 }
