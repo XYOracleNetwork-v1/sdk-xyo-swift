@@ -28,6 +28,10 @@ class XyoBleServer: XyoServer {
     }
   }
   
+  deinit {
+    print("Deallocing XyoBleServer")
+  }
+  
   var autoBridge: Bool = false
   var acceptBridging: Bool = false
   var advertiser: XyoBluetoothServer

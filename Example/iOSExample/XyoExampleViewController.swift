@@ -37,13 +37,14 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableV
   
   @IBAction func changed(_ sender: UISwitch) {
     if isClient {
-      bleNetwork?.client.scan = sender.isOn
+      bleNetwork?.client?.scan = sender.isOn
     } else {
-      bleNetwork?.server.listen = sender.isOn
+      bleNetwork?.server?.listen = sender.isOn
     }
   }
   
-  var bleNetwork : XyoBleNetwork?
+  weak var bleNetwork : XyoBleNetwork?
+  var xyoNode : XyoNode?
   
 
   
@@ -54,19 +55,24 @@ class XyoExampleViewController: UIViewController, BoundWitnessDelegate, UITableV
     let builder = XyoNodeBuilder()
     builder.setBoundWitnessDelegate(self)
     do {
-      let node = try builder.build()
-      bleNetwork = node.networks["ble"] as? XyoBleNetwork
-      bleNetwork?.client.scan = isClient
-      bleNetwork?.server.listen = !isClient
+      xyoNode = try builder.build()
+      bleNetwork = xyoNode?.networks["ble"] as? XyoBleNetwork
+      bleNetwork?.client?.scan = isClient
+      bleNetwork?.server?.listen = !isClient
     }
     catch {
       print("Caught Error")
     }
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    print("Xyo VC going away, remove retain cycle")
+    XyoSdk.nodes.removeAll()
+    xyoNode = nil
+  }
+  
   deinit {
-    bleNetwork?.client.scan = false
-    bleNetwork?.server.listen = false
-    bleNetwork = nil
+    print("XyoExampleViewController deinit")
   }
   
   func boundWitness(started withDeviceId: String) {

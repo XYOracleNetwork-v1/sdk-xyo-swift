@@ -9,18 +9,21 @@
 import Foundation
 import sdk_core_swift
 
-public class XyoBleNetwork: XyoNetwork { 
-  public var type: XyoNetworkType
-  public var client: XyoClient
-  public var server: XyoServer
+public class XyoBleNetwork: XyoNetwork {
   
   init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
-    type = .bluetoothLe
+    super.init(_type: .bluetoothLe)
     
     client = XyoBleClient(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false, autoBoundWitness: true)
     
     server = XyoBleServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: false, acceptBridging: false)
 
   }
+  
+  deinit {
+    print("Deallocing BLE Network")
+  }
 
 }
+
+

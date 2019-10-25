@@ -12,8 +12,23 @@ public enum XyoNetworkType {
   case tcpIp
   case other
 }
-public protocol XyoNetwork {
-  var type : XyoNetworkType { get }
-  var client: XyoClient { get set }
-  var server: XyoServer { get set }
+public class XyoNetwork {
+  public var type : XyoNetworkType
+  public var client : XyoClient?
+  public var server : XyoServer?
+  init(_type: XyoNetworkType) {
+    type = _type
+  }
+  deinit {
+    print("Deallocing Xyo Network")
+    client?.scan = false
+    server?.listen = false
+    // TODO fix the retain cycles in relay node
+    // Make them hold weak references to the heuristics delegates and listeners so we don't have to clean up here
+    client?.relayNode.removeListeners()
+    client?.relayNode.removeHeuristics()
+    server?.relayNode.removeListeners()
+    server?.relayNode.removeHeuristics()
+  }
 }
+
