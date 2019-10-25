@@ -8,6 +8,7 @@
 
 -   [Title](#sdk-xyo-swift)
 -   [Description](#description)
+-   [Start Here](#start-here)
 -   [Usage](#usage)
 -   [Architecture](#architecture)
 -   [Maintainers](#maintainers)
