@@ -15,14 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bound Witness Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-8G-hWy">
-                                <rect key="frame" x="20" y="192" width="374" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bound Witness Results:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P9-8G-hWy">
+                                <rect key="frame" x="20" y="190" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-gP-O1y">
-                                <rect key="frame" x="0.0" y="225" width="414" height="637"/>
+                                <rect key="frame" x="0.0" y="221" width="414" height="641"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BoundWitnessCelId" textLabel="FSZ-iQ-nEr" detailTextLabel="nf1-1s-RRN" style="IBUITableViewCellStyleSubtitle" id="wpU-28-2Ej">
@@ -56,31 +56,47 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbF-Tk-4lb">
-                                <rect key="frame" x="20" y="122" width="39" height="21"/>
+                                <rect key="frame" x="20" y="108" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wPl-We-TpS">
-                                <rect key="frame" x="343" y="117" width="51" height="31"/>
+                                <rect key="frame" x="343" y="103" width="51" height="31"/>
                                 <connections>
-                                    <action selector="changed:" destination="cUC-ru-rul" eventType="valueChanged" id="EW2-Gb-75V"/>
+                                    <action selector="scanListenToggled:" destination="cUC-ru-rul" eventType="valueChanged" id="EW2-Gb-75V"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto Bridge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eft-oU-Ok4">
+                                <rect key="frame" x="20" y="149" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FNA-OB-t1r">
+                                <rect key="frame" x="343" y="144" width="51" height="31"/>
+                                <connections>
+                                    <action selector="autoBridgeToggled:" destination="cUC-ru-rul" eventType="valueChanged" id="r7y-Kd-i6t"/>
                                 </connections>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6P9-8G-hWy" firstAttribute="top" secondItem="tbF-Tk-4lb" secondAttribute="bottom" constant="49" id="0rC-M4-QeO"/>
                             <constraint firstItem="7p3-M4-8zX" firstAttribute="trailing" secondItem="6P9-8G-hWy" secondAttribute="trailing" constant="20" id="3i7-1N-zbM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DMM-gP-O1y" secondAttribute="trailing" constant="-20" id="6ih-CC-xu8"/>
                             <constraint firstItem="wPl-We-TpS" firstAttribute="centerY" secondItem="tbF-Tk-4lb" secondAttribute="centerY" id="79J-IO-ttE"/>
                             <constraint firstItem="6P9-8G-hWy" firstAttribute="leading" secondItem="7p3-M4-8zX" secondAttribute="leading" constant="20" id="H7L-rM-gtr"/>
                             <constraint firstItem="7p3-M4-8zX" firstAttribute="trailing" secondItem="wPl-We-TpS" secondAttribute="trailing" constant="22" id="JCj-Re-9mD"/>
-                            <constraint firstItem="DMM-gP-O1y" firstAttribute="top" secondItem="6P9-8G-hWy" secondAttribute="bottom" constant="12" id="N0z-Hr-img"/>
+                            <constraint firstItem="DMM-gP-O1y" firstAttribute="top" secondItem="6P9-8G-hWy" secondAttribute="bottom" constant="10" id="N0z-Hr-img"/>
                             <constraint firstAttribute="leadingMargin" secondItem="tbF-Tk-4lb" secondAttribute="leading" id="OrD-JQ-VZ2"/>
+                            <constraint firstItem="6P9-8G-hWy" firstAttribute="top" secondItem="Eft-oU-Ok4" secondAttribute="bottom" constant="20" id="QeC-Md-ofU"/>
                             <constraint firstItem="DMM-gP-O1y" firstAttribute="leading" secondItem="fmP-aH-AhR" secondAttribute="leadingMargin" constant="-20" id="dW1-gW-D1N"/>
-                            <constraint firstItem="tbF-Tk-4lb" firstAttribute="top" secondItem="7p3-M4-8zX" secondAttribute="top" constant="34" id="meQ-i8-eKV"/>
+                            <constraint firstItem="tbF-Tk-4lb" firstAttribute="top" secondItem="7p3-M4-8zX" secondAttribute="top" constant="20" id="meQ-i8-eKV"/>
+                            <constraint firstItem="FNA-OB-t1r" firstAttribute="centerY" secondItem="Eft-oU-Ok4" secondAttribute="centerY" id="o6f-pJ-pM0"/>
+                            <constraint firstItem="Eft-oU-Ok4" firstAttribute="leading" secondItem="tbF-Tk-4lb" secondAttribute="leading" id="rgr-bN-6NC"/>
+                            <constraint firstItem="Eft-oU-Ok4" firstAttribute="top" secondItem="tbF-Tk-4lb" secondAttribute="bottom" constant="20" id="s9v-pV-mkv"/>
                             <constraint firstAttribute="bottomMargin" secondItem="DMM-gP-O1y" secondAttribute="bottom" id="uiW-l0-rsQ"/>
+                            <constraint firstItem="FNA-OB-t1r" firstAttribute="leading" secondItem="wPl-We-TpS" secondAttribute="leading" id="xnt-LU-y43"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7p3-M4-8zX"/>
                     </view>

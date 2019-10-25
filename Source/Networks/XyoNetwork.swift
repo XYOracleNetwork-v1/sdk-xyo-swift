@@ -7,6 +7,9 @@
 //
 
 import Foundation
+
+import sdk_core_swift
+
 public enum XyoNetworkType {
   case bluetoothLe
   case tcpIp
@@ -25,10 +28,8 @@ public class XyoNetwork {
     server?.listen = false
     // TODO fix the retain cycles in relay node
     // Make them hold weak references to the heuristics delegates and listeners so we don't have to clean up here
-    client?.relayNode.removeListeners()
-    client?.relayNode.removeHeuristics()
-    server?.relayNode.removeListeners()
-    server?.relayNode.removeHeuristics()
+    client?.relayNode.removeListener(key: "RELAY_NODE")
+    server?.relayNode.removeListener(key: "RELAY_NODE")
   }
 }
 

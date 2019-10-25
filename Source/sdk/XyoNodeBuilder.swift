@@ -45,13 +45,6 @@ public class XyoNodeBuilder {
   deinit {
     print("Deallocing XYO Builder")
     networks.removeAll()
-//    relayNode = nil
-//    storage = nil
-//    blockRepository = nil
-//    procedureCatalog = nil
-//    hashingProvider = nil
-//    bridgeQueueRepository = nil
-//    stateRepository = nil
   }
   
   public func build() throws -> XyoNode {

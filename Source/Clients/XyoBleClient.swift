@@ -19,8 +19,7 @@ struct XyoBleClientError: Error {
 }
 
 class XyoBleClient: XyoClient {
-  
-  var knownBridges: [String]?
+  var knownBridges: [String] = []
   var relayNode: XyoRelayNode
   var procedureCatalog: XyoProcedureCatalog
   weak var delegate: BoundWitnessDelegate?
@@ -39,7 +38,7 @@ class XyoBleClient: XyoClient {
   }
   
   private weak var scanner = XYSmartScan.instance
-  private var minBWTimeGap = 6 //ten seconds
+  private var minBWTimeGap = 6 //seconds
   private var lastBoundWitnessTime = Date()
   
 //  private var semaphore = DispatchSemaphore(value: 1)
@@ -149,14 +148,12 @@ extension XyoBleClient : XYSmartScanDelegate {
             {
               [weak self]
               _,_,_ in
-              print("FINISHED")
               self?.semaphore = true
             }
 
           } catch {
             self.semaphore = true
-
-            print("Error Recieved in bound witness")
+            print("Error Recieved in bound witness \(error)")
           }
 
         }

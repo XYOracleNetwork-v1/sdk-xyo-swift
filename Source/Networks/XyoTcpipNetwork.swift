@@ -18,11 +18,11 @@ public class XyoTcpipNetwork: XyoNetwork {
     
     server = XyoTcpipServer(relayNode: relayNode, procedureCatalog: procedureCatalog, autoBridge: true, acceptBridging: false)
     
-    if (client?.knownBridges == nil) {
-      client?.knownBridges = ["ws://alpha-peers.xyo.network:11000"]
+    if (client?.knownBridges.count == 0) {
+      client?.knownBridges.append("ws://alpha-peers.xyo.network:11000")
     }
-    client?.scan = true
-    server?.listen = true
+    client?.scan = false
+    server?.listen = false
     
   }
   deinit {
