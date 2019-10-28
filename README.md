@@ -23,7 +23,15 @@ Including BLE, TCP/IP, Bound Witnessing, and Bridging. 
 
 ## Start Here
 
-Copy this code to test. Look below for specific usage. 
+Include the library in your Podfile 
+
+```Podfile
+target 'YourAppName' do
+  pod 'sdk-xyo-swift', '~> 3.0.0'
+
+```
+
+Try some code to test. Look below for specific usage. 
 
 One line is all it takes to start your node 
 
