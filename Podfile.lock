@@ -5,18 +5,18 @@ PODS:
   - sdk-core-swift (3.0.1):
     - sdk-objectmodel-swift (~> 3.0)
     - secp256k1.swift
-  - sdk-objectmodel-swift (3.0.1)
-  - sdk-xyobleinterface-swift (3.0.7):
+  - sdk-objectmodel-swift (3.0.2)
+  - sdk-xyobleinterface-swift (3.0.8):
     - PromisesSwift (~> 1.2.4)
     - sdk-core-swift (~> 3.0.1)
     - sdk-objectmodel-swift (~> 3.0)
-    - XyBleSdk (~> 3.0.6)
+    - XyBleSdk (~> 3.0.7)
   - secp256k1.swift (0.1.4)
-  - XyBleSdk (3.0.6):
+  - XyBleSdk (3.0.7):
     - PromisesSwift
 
 DEPENDENCIES:
-  - sdk-xyobleinterface-swift (~> 3.0.7)
+  - sdk-xyobleinterface-swift (~> 3.0.8)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -32,11 +32,11 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   sdk-core-swift: 6b089045fe8483388bd3c82d2d1375d796c29745
-  sdk-objectmodel-swift: ef0331719d7fb2249a883928286c4746dbcf9067
-  sdk-xyobleinterface-swift: 15af443a0e54d4aaad54c927cbecb8d6902d15c0
+  sdk-objectmodel-swift: 8d880c7871ab0ce16fed958d782c737fd495dd53
+  sdk-xyobleinterface-swift: ba891f790841a9c9a503f60548586f3efadc8b23
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  XyBleSdk: 4dc44b737643a564cd77610c96725d0532e07616
+  XyBleSdk: 8d63d5cba164fa7d05d662fca0231f065fddccbe
 
-PODFILE CHECKSUM: 47ce584c4270d4cf2e88475fa2b0a620e6cdc20d
+PODFILE CHECKSUM: 4cd34505a6bd8a4620ba0efc764e1f457d8c73d4
 
 COCOAPODS: 1.8.4

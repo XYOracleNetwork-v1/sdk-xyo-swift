@@ -39,7 +39,15 @@ public protocol XyoBoundWitnessTarget {
 }
 
 extension XyoBoundWitnessTarget {
-  func publicKey() -> String? {
+  public func getHeuristic() -> XyoObjectStructure? {
+     if let bytes = delegate?.getPayloadData() {
+      // TODO add identifier for parsing data
+       return XyoObjectStructure.newInstance(schema: XyoSchemas.BLOB, bytes: XyoBuffer.init(data: bytes))
+     }
+     return nil
+   }
+  
+  public func publicKey() -> String? {
     if (relayNode.originState.getSigners().count == 0) {
         return nil
     }
