@@ -10,7 +10,7 @@ import Foundation
 import sdk_core_swift
 import sdk_objectmodel_swift
 
-struct XyoHumanName {
+public struct XyoHumanName {
     static func getHumanName (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {
         do {
             guard let numberOfParties = try boundWitmess.getNumberOfParties() else {

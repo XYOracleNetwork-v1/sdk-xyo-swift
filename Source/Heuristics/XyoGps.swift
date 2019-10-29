@@ -11,7 +11,7 @@ import sdk_core_swift
 import sdk_objectmodel_swift
 import CoreLocation
 
-struct XyoGps: XyoHueresticGetter {
+public struct XyoGps: XyoHueresticGetter {
     let locManager = CLLocationManager()
 
     init() {
@@ -21,7 +21,7 @@ struct XyoGps: XyoHueresticGetter {
         locManager.startUpdatingLocation()
     }
 
-    func getHeuristic() -> XyoObjectStructure? {
+    public func getHeuristic() -> XyoObjectStructure? {
         guard let lat: Double = locManager.location?.coordinate.latitude else {
             return nil
         }
@@ -36,7 +36,7 @@ struct XyoGps: XyoHueresticGetter {
         return XyoIterableStructure.createUntypedIterableObject(schema: XyoSchemas.GPS, values: [encodedLat, encodedLng])
     }
 
-    func anyToBytes<T>(_ value: T) -> [UInt8] {
+    public func anyToBytes<T>(_ value: T) -> [UInt8] {
         var value = value
         return withUnsafeBytes(of: &value) { Array($0) }.reversed()
     }
