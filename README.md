@@ -108,7 +108,45 @@ You can also get payload data from bound witness.
 ```
 This will return a byteArray.
 
-There are other properties from the client and server which you can find in the source code as well as a reference guide that we have prepared. 
+You can also try particular heuristic resolvers with the data you get, whether they are pre-made GPS, RSSI, or Time. You can also resolve heuristic data to a custom human readable form.
+
+**Time example**
+
+Bring in the time resolver
+
+```swift
+func resolveTimePayload() {
+    let resolver = TimeResolver()
+    XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
+    let key = resolver.getHumanKey(partyIndex: 1)
+    return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
+  
+}
+```
+
+Bring in the RSSI resolver
+
+```swift
+func resolveRssiPayload() {
+  let resolver = RssiResolver()
+  XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
+  let key = resolver.getHumanKey(partyIndex: 1)
+  return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
+}
+```
+
+You can see more heuristic resolvers in the source code: 
+
+[GPS](./Heuristics/GpsResolver.swift)
+
+[RSSI](./Heuristics/RssiResolver.swift)
+
+[Time](./Heuristics/TimeResolver.swift)
+
+The Human Heursitics Protocols can be found here
+
+[HumanHeuristics](./Heuristics/XyoHumanHeuristics.swift)
+
 
 ## Architecture
 
