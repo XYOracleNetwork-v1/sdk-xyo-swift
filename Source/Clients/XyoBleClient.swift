@@ -11,6 +11,8 @@ import Promises
 import sdk_core_swift
 import XyBleSdk
 import sdk_xyobleinterface_swift
+import sdk_objectmodel_swift
+
 struct XyoBleClientError: Error {
     enum ErrorKind {
         case cannotConnect
@@ -61,11 +63,13 @@ class XyoBleClient: XyoClient {
   func startScanningForDevices() {
     scanner?.setDelegate(self, key: "xyo_client")
     scanner?.start(mode: XYSmartScanMode.foreground)
+    relayNode.addHeuristic(key: "XyoBleClient", getter: self)
   }
   
   func stopScanningForDevices() {
     scanner?.removeDelegate(for: "xyo_client")
     scanner?.stop()
+    relayNode.removeHeuristic(key: "XyoBleClient")
   }
 
   deinit {
@@ -120,6 +124,7 @@ class XyoBleClient: XyoClient {
 //    }
   }
 }
+
 
 extension XyoBleClient : XYSmartScanDelegate {
     func smartScan(entered device: XYBluetoothDevice) {

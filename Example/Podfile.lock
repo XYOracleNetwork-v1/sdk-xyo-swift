@@ -5,16 +5,16 @@ PODS:
   - sdk-core-swift (3.0.1):
     - sdk-objectmodel-swift (~> 3.0)
     - secp256k1.swift
-  - sdk-objectmodel-swift (3.0.1)
-  - sdk-xyo-swift (0.1.0):
+  - sdk-objectmodel-swift (3.0.2)
+  - sdk-xyo-swift (1.0.0):
     - sdk-xyobleinterface-swift
-  - sdk-xyobleinterface-swift (3.0.6):
+  - sdk-xyobleinterface-swift (3.0.8):
     - PromisesSwift (~> 1.2.4)
     - sdk-core-swift (~> 3.0.1)
     - sdk-objectmodel-swift (~> 3.0)
-    - XyBleSdk (~> 3.0.3)
+    - XyBleSdk (~> 3.0.7)
   - secp256k1.swift (0.1.4)
-  - XyBleSdk (3.0.4):
+  - XyBleSdk (3.0.7):
     - PromisesSwift
 
 DEPENDENCIES:
@@ -38,11 +38,11 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   PromisesSwift: 37bad6f4daddb02f7c9c531efe91e8b21c13ee2f
   sdk-core-swift: 6b089045fe8483388bd3c82d2d1375d796c29745
-  sdk-objectmodel-swift: ef0331719d7fb2249a883928286c4746dbcf9067
-  sdk-xyo-swift: 2704ec2aa72ee7e80c4e3e4126ae1a07ea717871
-  sdk-xyobleinterface-swift: b7acec1795645081493ffac10d3152710ec03627
+  sdk-objectmodel-swift: 8d880c7871ab0ce16fed958d782c737fd495dd53
+  sdk-xyo-swift: 780c39bcbf87c2210173105981b201305ad4cfe9
+  sdk-xyobleinterface-swift: ba891f790841a9c9a503f60548586f3efadc8b23
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  XyBleSdk: 4e14b20fe77760cecca63888813c52aae46894d4
+  XyBleSdk: 8d63d5cba164fa7d05d662fca0231f065fddccbe
 
 PODFILE CHECKSUM: f531a2e099b848766eda319130d7ab1bc35cd6a2
 

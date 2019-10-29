@@ -43,10 +43,12 @@ class XyoBleServer: XyoServer {
   }
   
   func startListening() {
+    relayNode.addHeuristic(key: "XyoBleServer", getter: self)
     advertiser.start(listener: self)
   }
   
   func stopListening() {
+    relayNode.removeHeuristic(key: "XyoBleServer")
     advertiser.stop()
   }
   

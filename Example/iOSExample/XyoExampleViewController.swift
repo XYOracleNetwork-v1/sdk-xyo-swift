@@ -11,13 +11,49 @@ import sdk_xyo_swift
 import sdk_core_swift
 
 struct BoundWitnessResult {
-  var device: String;
-  var dataString: String;
+  var device: String
+  var dataString: String?
+  var debugString: String?
 }
 
 class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   public var isClient: Bool = true
+  public var isLockedOnBottom: Bool = true
   
+  var isScrolling = false
+
+  func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+      isScrolling = true
+  }
+
+  func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      if !decelerate { scrollViewDidEndScrolling(scrollView) }
+  }
+
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+      scrollViewDidEndScrolling(scrollView)
+  }
+
+  func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+      scrollViewDidEndScrolling(scrollView)
+  }
+
+  func scrollViewDidEndScrolling(_ scrollView: UIScrollView) {
+      isScrolling = false
+  }
+  
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let scrollViewHeight = scrollView.frame.size.height
+    let scrollContentSizeHeight = scrollView.contentSize.height
+    let scrollOffset = scrollView.contentOffset.y
+    if (scrollOffset + scrollViewHeight + 100 >= scrollContentSizeHeight)
+    {
+        isLockedOnBottom = true
+    } else {
+      isLockedOnBottom = false
+    }
+  }
+
   @IBOutlet weak var scanLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   var boundWitnesses : [BoundWitnessResult] = []
@@ -29,7 +65,17 @@ class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableVi
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "BoundWitnessCelId", for: indexPath)
     cell.textLabel?.text = boundWitnesses[indexPath.item].device;
-    cell.detailTextLabel?.text = boundWitnesses[indexPath.item].dataString;
+    var detail = ""
+    if let data = boundWitnesses[indexPath.item].dataString {
+      detail.append(data)
+    }
+    if let debug = boundWitnesses[indexPath.item].debugString {
+      if detail.count > 0 {
+        detail.append(" - ")
+      }
+      detail.append(debug)
+    }
+    cell.detailTextLabel?.text = detail;
     return cell;
   }
   
@@ -92,6 +138,8 @@ class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableVi
   }
 }
 
+
+
 extension XyoExampleViewController : BoundWitnessDelegate {
   func boundWitness(started withDeviceId: String) {
     print("Started BW with \(withDeviceId)")
@@ -99,8 +147,18 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   
   func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?) {
     print("Completed BW with \(withDeviceId)")
-    boundWitnesses.append(BoundWitnessResult(device: withDeviceId, dataString: withBoundWitness.debugDescription))
+    
+    let resolveStr = withBoundWitness?.resolvePayloadData()
+    boundWitnesses.append(BoundWitnessResult(device: withDeviceId, dataString: resolveStr, debugString: withBoundWitness.debugDescription))
     tableView.reloadData()
+    
+    // Scroll to bottom
+    if (isLockedOnBottom && !isScrolling) {
+      DispatchQueue.main.async {
+        self.tableView.scrollToRow(at: IndexPath(item: self.boundWitnesses.count-1, section: 0), at: UITableView.ScrollPosition.bottom, animated: true)
+      }
+    }
+
   }
   
   func boundWitness(failed withDeviceId: String?, withError: XyoError) {
@@ -108,7 +166,23 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   }
   
   func getPayloadData() -> [UInt8]? {
-    let test = "Test"
-    return [UInt8](test.utf8)
+    if isClient {
+//      let data = ("Is Client".cString(using: .utf8))
+      let data = [UInt8]("Is Client".utf8)
+      return data
+    }
+    return nil
+  }
+}
+
+
+
+extension XyoBoundWitness {
+  // TODO Blob Resolver
+  func resolvePayloadData() -> String {
+    let resolver = TimeResolver()
+    XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
+    let key = resolver.getHumanKey(partyIndex: 1)
+    return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
   }
 }
