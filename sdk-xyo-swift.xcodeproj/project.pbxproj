@@ -22,6 +22,13 @@
 		0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450802351485100AB2E76 /* XyoTcpipServer.swift */; };
 		0A1450972351485100AB2E76 /* XyoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450812351485100AB2E76 /* XyoServer.swift */; };
 		0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450822351485100AB2E76 /* XyoBleServer.swift */; };
+		0ABBECE52368BACB0054BCEE /* RssiResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECDE2368BACA0054BCEE /* RssiResolver.swift */; };
+		0ABBECE62368BACB0054BCEE /* XyoUnixTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECDF2368BACA0054BCEE /* XyoUnixTime.swift */; };
+		0ABBECE72368BACB0054BCEE /* XyoGps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECE02368BACA0054BCEE /* XyoGps.swift */; };
+		0ABBECE82368BACB0054BCEE /* GpsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECE12368BACA0054BCEE /* GpsResolver.swift */; };
+		0ABBECE92368BACB0054BCEE /* XyoHumanHeuristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECE22368BACA0054BCEE /* XyoHumanHeuristics.swift */; };
+		0ABBECEA2368BACB0054BCEE /* TimeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECE32368BACA0054BCEE /* TimeResolver.swift */; };
+		0ABBECEB2368BACB0054BCEE /* XyoHumanName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBECE42368BACA0054BCEE /* XyoHumanName.swift */; };
 		E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +60,13 @@
 		0A1450812351485100AB2E76 /* XyoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoServer.swift; sourceTree = "<group>"; };
 		0A1450822351485100AB2E76 /* XyoBleServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleServer.swift; sourceTree = "<group>"; };
 		0A999FF83CFBC6537BCD2FC14A5BD718 /* Pods-sdk-xyo-ios-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.release.xcconfig"; sourceTree = "<group>"; };
+		0ABBECDE2368BACA0054BCEE /* RssiResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssiResolver.swift; sourceTree = "<group>"; };
+		0ABBECDF2368BACA0054BCEE /* XyoUnixTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoUnixTime.swift; sourceTree = "<group>"; };
+		0ABBECE02368BACA0054BCEE /* XyoGps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoGps.swift; sourceTree = "<group>"; };
+		0ABBECE12368BACA0054BCEE /* GpsResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsResolver.swift; sourceTree = "<group>"; };
+		0ABBECE22368BACA0054BCEE /* XyoHumanHeuristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoHumanHeuristics.swift; sourceTree = "<group>"; };
+		0ABBECE32368BACA0054BCEE /* TimeResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeResolver.swift; sourceTree = "<group>"; };
+		0ABBECE42368BACA0054BCEE /* XyoHumanName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoHumanName.swift; sourceTree = "<group>"; };
 		0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XyoSdkExample.xcodeproj; path = ../XyoSdkExample.xcodeproj; sourceTree = "<group>"; };
 		0AEC99242359375D00E47796 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Promises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +110,7 @@
 		0A1450682351485100AB2E76 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				0ABBECDD2368BACA0054BCEE /* Heuristics */,
 				0A1450692351485100AB2E76 /* Clients */,
 				0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */,
 				0A1450702351485100AB2E76 /* Networks */,
@@ -146,6 +161,20 @@
 			);
 			path = Servers;
 			sourceTree = "<group>";
+		};
+		0ABBECDD2368BACA0054BCEE /* Heuristics */ = {
+			isa = PBXGroup;
+			children = (
+				0ABBECDE2368BACA0054BCEE /* RssiResolver.swift */,
+				0ABBECDF2368BACA0054BCEE /* XyoUnixTime.swift */,
+				0ABBECE02368BACA0054BCEE /* XyoGps.swift */,
+				0ABBECE12368BACA0054BCEE /* GpsResolver.swift */,
+				0ABBECE22368BACA0054BCEE /* XyoHumanHeuristics.swift */,
+				0ABBECE32368BACA0054BCEE /* TimeResolver.swift */,
+				0ABBECE42368BACA0054BCEE /* XyoHumanName.swift */,
+			);
+			path = Heuristics;
+			sourceTree = SOURCE_ROOT;
 		};
 		0AC06A54235140D6001FEBCC /* Products */ = {
 			isa = PBXGroup;
@@ -398,16 +427,23 @@
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
+				0ABBECE92368BACB0054BCEE /* XyoHumanHeuristics.swift in Sources */,
+				0ABBECE72368BACB0054BCEE /* XyoGps.swift in Sources */,
+				0ABBECE52368BACB0054BCEE /* RssiResolver.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,
 				0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */,
+				0ABBECEA2368BACB0054BCEE /* TimeResolver.swift in Sources */,
+				0ABBECEB2368BACB0054BCEE /* XyoHumanName.swift in Sources */,
 				0A1450972351485100AB2E76 /* XyoServer.swift in Sources */,
 				0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */,
 				0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */,
+				0ABBECE82368BACB0054BCEE /* GpsResolver.swift in Sources */,
 				0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */,
 				0A1450902351485100AB2E76 /* XyoNode.swift in Sources */,
 				0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */,
 				0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */,
+				0ABBECE62368BACB0054BCEE /* XyoUnixTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
