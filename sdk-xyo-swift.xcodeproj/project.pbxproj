@@ -81,19 +81,14 @@
 		0AEC993A23593AE700E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993B23593AE700E47796 /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993C23593AE700E47796 /* XyBleSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XyBleSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0AEC995B235A2BC200E47796 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = info.plist; path = "../../../../../.Trash/XyoSdkExample-czuczsocnjvgqzdmomspqrhhqvao/info.plist"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3ABB74A71CB0F42DC0FB6C37F7AABCB2 /* Pods-sdk-xyo-ios-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-acknowledgements.plist"; sourceTree = "<group>"; };
-		491E3E9DE9FA603A6ED93528D8D3C686 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
-		79B6A94B37E02AA9499230AED457BA57 /* sdk-xyo-swift.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "sdk-xyo-swift.podspec"; sourceTree = "<group>"; tabWidth = 2; };
 		8CEE246B5667FB9712A47039694F5F8F /* Pods-sdk-xyo-ios-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE0330358CBD6ACD228AAA4F13D0409 /* Pods-sdk-xyo-ios-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sdk-xyo-ios-example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		95FDE82458D5605CEB58DDABFC3513DE /* sdk-xyo-swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "sdk-xyo-swift.xcconfig"; sourceTree = "<group>"; };
 		965CE630912E663F2BBAAF4489BA1C97 /* Pods-sdk-xyo-ios-example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-Info.plist"; sourceTree = "<group>"; };
 		9A8CAAF8D9BB6AD4CD82457F1E151D3B /* Pods-sdk-xyo-ios-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sdk-xyo-ios-example-dummy.m"; sourceTree = "<group>"; };
-		BCA1AD9C7000C93E5002DDBDC4CBCE14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
 		D77C3823E93CA8B352BDB65BFB592723 /* Pods-sdk-xyo-ios-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sdk-xyo-ios-example.modulemap"; sourceTree = "<group>"; };
 		E213F1BC38F12C4172E84C3F67B68739 /* Pods-sdk-xyo-ios-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sdk-xyo-ios-example-umbrella.h"; sourceTree = "<group>"; };
@@ -190,14 +185,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		269AED3FA738C5E21E0887E96F64F11A /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6C1CFA96EBCA073430C42A0DD0F96FD0 /* sdk-xyo-swift */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		2D85C207F3C7298430CBF6818F75B1ED /* Pods-sdk-xyo-ios-example */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,36 +199,6 @@
 			);
 			name = "Pods-sdk-xyo-ios-example";
 			path = "Target Support Files/Pods-sdk-xyo-ios-example";
-			sourceTree = "<group>";
-		};
-		61A894D60FC2DD5504B86FD65438177B /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				BCA1AD9C7000C93E5002DDBDC4CBCE14 /* LICENSE */,
-				491E3E9DE9FA603A6ED93528D8D3C686 /* README.md */,
-				79B6A94B37E02AA9499230AED457BA57 /* sdk-xyo-swift.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		6C1CFA96EBCA073430C42A0DD0F96FD0 /* sdk-xyo-swift */ = {
-			isa = PBXGroup;
-			children = (
-				61A894D60FC2DD5504B86FD65438177B /* Pod */,
-				89C20D3C1E23E3634392C63462CD80B3 /* Support Files */,
-			);
-			name = "sdk-xyo-swift";
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		89C20D3C1E23E3634392C63462CD80B3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0AEC995B235A2BC200E47796 /* info.plist */,
-				95FDE82458D5605CEB58DDABFC3513DE /* sdk-xyo-swift.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/sdk-xyo-swift";
 			sourceTree = "<group>";
 		};
 		8A44CDBE27480A443BAB45E4E89344D8 /* Products */ = {
@@ -264,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				0A1450682351485100AB2E76 /* Source */,
-				269AED3FA738C5E21E0887E96F64F11A /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				8A44CDBE27480A443BAB45E4E89344D8 /* Products */,
 				E9D8D4BFC452049F67769084B98735BB /* Targets Support Files */,
