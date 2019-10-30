@@ -71,7 +71,7 @@ You can set bridges for the tcp/ip client for bridging.
 
 ```swift
 // set local bridges for the tcpip client
-tcpipNetwork?.client.localBridges = ["public key of bridge", "public key of other bridge"]
+tcpipNetwork?.client.knownBridges = ["public address of bridge", "public address of other bridge"]
 ```
 You can set the bound witness delegate
 
@@ -105,11 +105,23 @@ You can also get payload data from bound witness.
 ```
 This will return a byteArray.
 
-You can also try particular heuristic resolvers with the data you get, whether they are pre-made GPS, RSSI, or Time. You can also resolve heuristic data to a custom human readable form.  The following extensions can be used to pull data from a bound witness.  Party index 0 is the server, party 1 is the client.
+The following extensions can be used to pull data from a bound witness.  Party index 0 is the server, party 1 is the client.
 
-**Time example**
+**Payload parsing**
 
-Bring in the time resolver
+Given the above example of passing strings, you can resolve those strings for client/server using:
+
+```swift
+    if let resolveStr = withBoundWitness?.resolveString(forParty: 0) {
+      dataStr += "Server: " + resolveStr
+    }
+    if let resolveStr1 = withBoundWitness?.resolveString(forParty: 1) {
+      dataStr += " Client: " + resolveStr1
+    }
+```
+
+
+You can create your own data serializers and deserializers.
 
 ```swift
 extension XyoBoundWitness {
@@ -122,11 +134,10 @@ extension XyoBoundWitness {
 }
 ```
 
-Bring in the RSSI resolver
+Create a bound witness RSSI parser
 
 ```swift
 extension XyoBoundWitness {
-
     func resolveRssiPayload() {
       let resolver = RssiResolver()
       XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
