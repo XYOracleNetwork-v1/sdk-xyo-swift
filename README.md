@@ -27,7 +27,7 @@ Include the library in your Podfile
 
 ```Podfile
 target 'YourAppName' do
-  pod 'sdk-xyo-swift', '~> 3.0.0'
+  pod 'sdk-xyo-swift'
 
 ```
 
@@ -45,13 +45,7 @@ You can also configure to your specific roles.
 
 ## Usage
 
-Build an XYO Node 
-
-```swift
-let builder = XYONodeBuilder()
-```
-
-After calling the node builder, you can start the build
+After creating the node builder, you will create your node with
 
 ```swift
 let node = try builder.build()
@@ -102,36 +96,43 @@ You can also get payload data from bound witness.
     class SomeViewController: UIViewController, BoundWitnessDelegate {
         ...
         func getPayloadData() {
-            return [UInt8]
+        if isClient {
+          return [UInt8]("Hey, I'm client".utf8)
+        }
+        return [UInt8]("Yo, I'm the server".utf8)
         }
     }
 ```
 This will return a byteArray.
 
-You can also try particular heuristic resolvers with the data you get, whether they are pre-made GPS, RSSI, or Time. You can also resolve heuristic data to a custom human readable form.
+You can also try particular heuristic resolvers with the data you get, whether they are pre-made GPS, RSSI, or Time. You can also resolve heuristic data to a custom human readable form.  The following extensions can be used to pull data from a bound witness.  Party index 0 is the server, party 1 is the client.
 
 **Time example**
 
 Bring in the time resolver
 
 ```swift
-func resolveTimePayload() {
-    let resolver = TimeResolver()
-    XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
-    let key = resolver.getHumanKey(partyIndex: 1)
-    return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
-  
+extension XyoBoundWitness {
+    func resolveTimePayload() {
+        let resolver = TimeResolver()
+        XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
+        let key = resolver.getHumanKey(partyIndex: 1)
+        return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
+    }
 }
 ```
 
 Bring in the RSSI resolver
 
 ```swift
-func resolveRssiPayload() {
-  let resolver = RssiResolver()
-  XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
-  let key = resolver.getHumanKey(partyIndex: 1)
-  return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
+extension XyoBoundWitness {
+
+    func resolveRssiPayload() {
+      let resolver = RssiResolver()
+      XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
+      let key = resolver.getHumanKey(partyIndex: 1)
+      return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
+    }
 }
 ```
 
