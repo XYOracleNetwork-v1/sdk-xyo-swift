@@ -71,35 +71,36 @@ class XyoTcpipClient: XyoClient {
     semaphore = false
     
     knownBridges.forEach { (bridge) in
-      delegate?.boundWitness(didStart: self)
-        let url = URL(string: bridge)!
-        let tcpDevice = XyoTcpPeer(ip: url.host!, port: UInt32(url.port!))
-        let socket = XyoTcpSocket.create(peer: tcpDevice)
-        let pipe = XyoTcpSocketPipe(socket: socket, initiationData: nil)
-        let handler = XyoNetworkHandler(pipe: pipe)
+      let url = URL(string: bridge)!
+      let tcpDevice = XyoTcpPeer(ip: url.host!, port: UInt32(url.port!))
+      
+      delegate?.boundWitness(started: url.host!)
 
-        print("Trying to bridge: \(String(describing: url.host)):\(String(describing: url.port))")
-        relayNode.boundWitness(handler: handler, procedureCatalogue: procedureCatalog) { [weak self] (boundWitness, err) in
-          guard let strong = self else {return}
-          if (err != nil) {
-            DispatchQueue.main.async {
-              strong.delegate?.boundWitness(failed: err!)
-            }
-            strong.semaphore = true
-            return
-          }
-          strong.ignoreLastBridgeBW = try? boundWitness?.getHash(hasher: strong.relayNode.hasher).getBuffer().toByteArray().toHexString()
+      let socket = XyoTcpSocket.create(peer: tcpDevice)
+      let pipe = XyoTcpSocketPipe(socket: socket, initiationData: nil)
+      let handler = XyoNetworkHandler(pipe: pipe)
 
-          pipe.close()
-
-          if let bw = boundWitness, let strong = self {
-            DispatchQueue.main.async {
-              strong.delegate?.boundWitness(completed: tcpDevice.ip, withBoundWitness: bw)
-            }
+      relayNode.boundWitness(handler: handler, procedureCatalogue: procedureCatalog) { [weak self] (boundWitness, err) in
+        guard let strong = self else {return}
+        if (err != nil) {
+          DispatchQueue.main.async {
+            strong.delegate?.boundWitness(failed: tcpDevice.ip, withError: err!)
           }
           strong.semaphore = true
+          return
         }
+        strong.ignoreLastBridgeBW = try? boundWitness?.getHash(hasher: strong.relayNode.hasher).getBuffer().toByteArray().toHexString()
+
+        pipe.close()
+
+        if let bw = boundWitness, let strong = self {
+          DispatchQueue.main.async {
+            strong.delegate?.boundWitness(completed: tcpDevice.ip, withBoundWitness: bw)
+          }
+        }
+        strong.semaphore = true
       }
+    }
   }
   
   deinit {

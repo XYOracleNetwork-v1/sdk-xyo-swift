@@ -172,7 +172,7 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   }
   
   func boundWitness(failed withDeviceId: String?, withError: XyoError) {
-    print("Errored BW with \(String(describing: withDeviceId))")
+    print("Errored BW with \(String(describing: withDeviceId)) \(String(describing: withError))")
   }
   
   func getPayloadData() -> [UInt8]? {
