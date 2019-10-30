@@ -12,9 +12,36 @@ Pod::Spec.new do |s|
   s.summary          = 'An easy to use XYO Platform wrapper for swift developers.'
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
 
+  Add the pod to your Podfile:
+
+  pod 'sdk-xyo-swift'
+  
+  Import the sdk in your controller to control the node:
+
+  import sdk_xyo_swift
+  
+  You can make any iOS device a node with the XyoNodeBuilder:
+
+  let builder = XyoNodeBuilder()
+  do {
+    xyoNode = try builder.build()
+  }
+  catch {
+    print("Caught Error Building Xyo Node\(error)")
+  }
+  
+  Make that node scan for devices to start bound witnessing and passing secure data over bluetooth or tcpip.
+
+  let ble = xyoNode?.networks["ble"] as? XyoBleNetwork
+  if isClient {
+    ble?.client?.scan = on
+  } else {
+    ble?.server?.listen = on
+  }
+  
+                       DESC
+  s.swift_version = '4.0'
   s.homepage         = 'https://github.com/XYOracleNetwork/sdk-xyo-swift'
   s.license          = { :type => 'LGPL3', :file => 'LICENSE' }
   s.authors = { 'XY - The Persistent Company' => 'developers@xyo.network' }
