@@ -41,8 +41,7 @@ public protocol XyoBoundWitnessTarget {
 extension XyoBoundWitnessTarget {
   public func getHeuristic() -> XyoObjectStructure? {
      if let bytes = delegate?.getPayloadData() {
-      // TODO add identifier for parsing data
-       return XyoObjectStructure.newInstance(schema: XyoSchemas.BLOB, bytes: XyoBuffer.init(data: bytes))
+      return XyoString(bytes: bytes).getHeuristic()
      }
      return nil
    }

@@ -16,12 +16,100 @@ struct BoundWitnessResult {
   var debugString: String?
 }
 
-class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-  public var isClient: Bool = true
-  public var isLockedOnBottom: Bool = true
+class XyoExampleViewController: UIViewController {
+  @IBOutlet weak var scanLabel: UILabel!
+  @IBOutlet weak var tableView: UITableView!
   
+  public var isClient: Bool = true
+  
+  var isLockedOnBottom: Bool = true
   var isScrolling = false
+  var boundWitnesses : [BoundWitnessResult] = []
+  var xyoNode : XyoNode?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    title = isClient ? "Client" : "Server"
+    scanLabel.text = isClient ? "Scan" : "Listen"
+    
+    let builder = XyoNodeBuilder()
+    builder.setBoundWitnessDelegate(self)
+    do {
+      xyoNode = try builder.build()
+    }
+    catch {
+      print("Caught Error Building Xyo Node\(error)")
+    }
+    
+    // Start client/server scanning and listening
+    setupNodeScanningListening(on: true)
+    updateBridging(on: false)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    print("Xyo VC going away, remove retain cycle")
+    XyoSdk.nodes.removeAll()
+    xyoNode = nil
+  }
+  
+  deinit {
+    print("XyoExampleViewController deinit")
+  }
 
+  @IBAction func autoBridgeToggled(_ sender: UISwitch) {
+    updateBridging(on: sender.isOn)
+  }
+  
+  
+  @IBAction func scanListenToggled(_ sender: UISwitch) {
+    setupNodeScanningListening(on: sender.isOn)
+  }
+  
+  
+  
+  func setupNodeScanningListening(on: Bool) {
+    let ble = xyoNode?.networks["ble"] as? XyoBleNetwork
+
+    if isClient {
+      ble?.client?.scan = on
+    } else {
+      ble?.server?.listen = on
+    }
+  }
+  
+  func updateBridging(on: Bool) {
+    let tcp = xyoNode?.networks["tcpip"] as? XyoTcpipNetwork
+
+    if isClient {
+      tcp?.client?.autoBridge = on
+    } else {
+      tcp?.server?.autoBridge = on
+    }
+  }
+    
+  
+}
+
+extension XyoExampleViewController : UITableViewDelegate, UITableViewDataSource {
+  
+  /// Table view datasource/delegate
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return boundWitnesses.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "BoundWitnessCelId", for: indexPath)
+    cell.textLabel?.text = boundWitnesses[indexPath.item].device;
+    var detail = ""
+    if let data = boundWitnesses[indexPath.item].dataString {
+      detail.append(data)
+    }
+    
+    cell.detailTextLabel?.text = detail;
+    return cell;
+  }
+  
+  /// Scroll view delegation
   func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
       isScrolling = true
   }
@@ -53,92 +141,7 @@ class XyoExampleViewController: UIViewController, UITableViewDelegate, UITableVi
       isLockedOnBottom = false
     }
   }
-
-  @IBOutlet weak var scanLabel: UILabel!
-  @IBOutlet weak var tableView: UITableView!
-  var boundWitnesses : [BoundWitnessResult] = []
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return boundWitnesses.count
-  }
-  
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "BoundWitnessCelId", for: indexPath)
-    cell.textLabel?.text = boundWitnesses[indexPath.item].device;
-    var detail = ""
-    if let data = boundWitnesses[indexPath.item].dataString {
-      detail.append(data)
-    }
-    if let debug = boundWitnesses[indexPath.item].debugString {
-      if detail.count > 0 {
-        detail.append(" - ")
-      }
-      detail.append(debug)
-    }
-    cell.detailTextLabel?.text = detail;
-    return cell;
-  }
-  
-  @IBAction func autoBridgeToggled(_ sender: UISwitch) {
-    updateBridging(on: sender.isOn)
-  }
-  
-  
-  @IBAction func scanListenToggled(_ sender: UISwitch) {
-    updateScanning(on: sender.isOn)
-  }
-  
-  func updateScanning(on: Bool) {
-    let ble = xyoNode?.networks["ble"] as? XyoBleNetwork
-
-    if isClient {
-      ble?.client?.scan = on
-    } else {
-      ble?.server?.listen = on
-    }
-  }
-  
-  func updateBridging(on: Bool) {
-    let tcp = xyoNode?.networks["tcpip"] as? XyoTcpipNetwork
-
-    if isClient {
-      tcp?.client?.autoBridge = on
-    } else {
-      tcp?.server?.autoBridge = on
-    }
-  }
-  
-  // Strong ref to xyonode here  
-  var xyoNode : XyoNode?
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    title = isClient ? "Client" : "Server"
-    scanLabel.text = isClient ? "Scan" : "Listen"
-    let builder = XyoNodeBuilder()
-    builder.setBoundWitnessDelegate(self)
-    do {
-      xyoNode = try builder.build()
-      updateScanning(on: true)
-      updateBridging(on: false)
-    }
-    catch {
-      print("Caught Error \(error)")
-    }
-  }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    print("Xyo VC going away, remove retain cycle")
-    XyoSdk.nodes.removeAll()
-    xyoNode = nil
-  }
-  
-  deinit {
-    print("XyoExampleViewController deinit")
-  }
 }
-
-
 
 extension XyoExampleViewController : BoundWitnessDelegate {
   func boundWitness(started withDeviceId: String) {
@@ -148,8 +151,15 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   func boundWitness(completed withDeviceId: String, withBoundWitness: XyoBoundWitness?) {
     print("Completed BW with \(withDeviceId)")
     
-    let resolveStr = withBoundWitness?.resolvePayloadData()
-    boundWitnesses.append(BoundWitnessResult(device: withDeviceId, dataString: resolveStr, debugString: withBoundWitness.debugDescription))
+    var dataStr = ""
+
+    if let resolveStr = withBoundWitness?.resolveString(forParty: 0) {
+      dataStr += "Server: " + resolveStr
+    }
+    if let resolveStr1 = withBoundWitness?.resolveString(forParty: 1) {
+      dataStr += " Client: " + resolveStr1
+    }
+    boundWitnesses.append(BoundWitnessResult(device: withDeviceId, dataString: dataStr, debugString: withBoundWitness.debugDescription))
     tableView.reloadData()
     
     // Scroll to bottom
@@ -167,22 +177,12 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   
   func getPayloadData() -> [UInt8]? {
     if isClient {
-//      let data = ("Is Client".cString(using: .utf8))
-      let data = [UInt8]("Is Client".utf8)
-      return data
+      return [UInt8]("Hey, I'm client".utf8)
     }
-    return nil
+    return [UInt8]("Yo, I'm the server".utf8)
   }
 }
 
 
 
-extension XyoBoundWitness {
-  // TODO Blob Resolver
-  func resolvePayloadData() -> String {
-    let resolver = TimeResolver()
-    XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
-    let key = resolver.getHumanKey(partyIndex: 1)
-    return XyoHumanHeuristics.getHumanHeuristics(boundWitness: self).index(forKey: key).debugDescription
-  }
-}
+
