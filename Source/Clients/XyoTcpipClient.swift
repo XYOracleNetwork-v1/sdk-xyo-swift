@@ -89,7 +89,7 @@ class XyoTcpipClient: XyoClient {
           strong.semaphore = true
           return
         }
-        strong.ignoreLastBridgeBW = try? boundWitness?.getHash(hasher: strong.relayNode.hasher).getBuffer().toByteArray().toHexString()
+        strong.ignoreLastBridgeBW = try? boundWitness?.getHash(hasher: strong.relayNode.hasher).getBuffer().toByteArray().toHexString() ?? ""
 
         pipe.close()
 
