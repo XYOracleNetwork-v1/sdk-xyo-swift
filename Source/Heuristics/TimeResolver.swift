@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import sdk_core_swift
 import sdk_objectmodel_swift
 
 public struct TimeResolver: XyoHumanHeuristicResolver {
-  public init() {
-    
+  private let dateFormat : String
+  public init(format :String = "MM-dd-yyyy HH:mm") {
+    dateFormat = format
   }
     public func getHumanKey(partyIndex: Int) -> String {
         return String(format: NSLocalizedString("Time %d", comment: "time value"), partyIndex)
@@ -25,8 +27,16 @@ public struct TimeResolver: XyoHumanHeuristicResolver {
 
         let mills = objectValue.getUInt64(offset: 0)
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        formatter.dateFormat = dateFormat
 
         return formatter.string(from: NSDate(timeIntervalSince1970: Double(mills) / 1000) as Date)
     }
+}
+
+extension XyoBoundWitness {
+  public func resolveTime(forParty: Int) -> String {
+    let resolver = TimeResolver()
+    XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
+    return resolver.getName(forParty: forParty, boundWitness: self)
+  }
 }
