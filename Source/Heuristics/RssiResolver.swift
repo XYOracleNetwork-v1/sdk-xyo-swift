@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import sdk_core_swift
 import sdk_objectmodel_swift
 
 public struct RssiResolver: XyoHumanHeuristicResolver {
@@ -24,5 +25,14 @@ public struct RssiResolver: XyoHumanHeuristicResolver {
         }
 
         return nil
+    }
+}
+
+extension XyoBoundWitness {
+    public func resolveRssiPayload(forParty: Int) -> String {
+      let resolver = RssiResolver()
+    XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
+      
+      return resolver.getName(forParty: forParty, boundWitness: self)
     }
 }

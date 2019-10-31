@@ -14,16 +14,14 @@ struct TcpipClientError : Error {
     case noBridges
   }
   let kind : ErrorKind
-  
 }
 
-
-class XyoTcpipClient: XyoClient {
+class XyoTcpipClient: XyoClient {  
   var knownBridges: [String] = []
   var relayNode: XyoRelayNode
   var procedureCatalog: XyoProcedureCatalog
   weak var delegate: BoundWitnessDelegate?
-
+  public var pollingInterval : Int = 10// Not used in this client
   var acceptBridging: Bool = false
   var autoBridge: Bool = false {
     didSet {

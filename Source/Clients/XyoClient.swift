@@ -10,6 +10,7 @@ import Foundation
 import sdk_core_swift
 
 public protocol XyoClient: XyoBoundWitnessTarget, XyoHeuristicGetter {
+  var pollingInterval: Int {get set}
   var scan: Bool {get set}
   var autoBoundWitness: Bool {get set}
   var knownBridges: [String] {get set}
