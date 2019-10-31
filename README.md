@@ -4,6 +4,9 @@
 
 # sdk-xyo-swift
 
+[![](https://img.shields.io/cocoapods/v/sdk-xyo-swift.svg?style=flat)](https://cocoapods.org/pods/sdk-xyo-swift)
+
+
 ## Table of Contents
 
 -   [Title](#sdk-xyo-swift)
