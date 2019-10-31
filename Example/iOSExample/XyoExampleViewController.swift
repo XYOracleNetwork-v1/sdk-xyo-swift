@@ -40,6 +40,9 @@ class XyoExampleViewController: UIViewController {
     catch {
       print("Caught Error Building Xyo Node\(error)")
     }
+    if var bleClient = (xyoNode?.networks["ble"] as? XyoBleNetwork)?.client {
+      bleClient.pollingInterval = 10
+    }
     
     // Start client/server scanning and listening
     setupNodeScanningListening(on: true)

@@ -13,11 +13,24 @@ public protocol XyoHueresticGetter {
     func getHeuristic () -> XyoObjectStructure?
 }
 
+extension XyoHumanHeuristicResolver {
+  public func getName (forParty: Int, boundWitness: XyoBoundWitness) -> String {
+    let key = self.getHumanKey(partyIndex: forParty)
+
+    let heuristics = XyoHumanHeuristics.getHumanHeuristics(boundWitness: boundWitness)
+    
+    return heuristics[key] ?? ""
+  }
+}
 
 public protocol XyoHumanHeuristicResolver {
-    func getHumanKey (partyIndex: Int) -> String
-    func getHumanName (object: XyoObjectStructure, partyIndex: Int) throws -> String?
+  func getHumanKey (partyIndex: Int) -> String
+  func getHumanName (object: XyoObjectStructure, partyIndex: Int) throws -> String?
+  func getName (forParty: Int, boundWitness: XyoBoundWitness) -> String
+  
 }
+
+
 
 public struct XyoHumanHeuristics {
     public static var resolvers: [UInt8: XyoHumanHeuristicResolver] = [:]
@@ -67,6 +80,8 @@ public struct XyoHumanHeuristics {
 
         return (key, value)
     }
+  
+  
 }
 
 

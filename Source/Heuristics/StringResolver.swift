@@ -29,13 +29,8 @@ public struct StringResolver: XyoHumanHeuristicResolver {
 extension XyoBoundWitness {
 
   public func resolveString(forParty: Int) -> String {
-  
     let resolver = StringResolver()
     XyoHumanHeuristics.resolvers[XyoSchemas.BLOB.id] = resolver
-    
-    let heuristics = XyoHumanHeuristics.getHumanHeuristics(boundWitness: self)
-    
-    let key = resolver.getHumanKey(partyIndex: forParty)
-    return heuristics[key] ?? ""
+    return resolver.getName(forParty: forParty, boundWitness: self)
   }
 }
