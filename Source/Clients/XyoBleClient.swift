@@ -20,7 +20,10 @@ struct XyoBleClientError: Error {
     let kind: ErrorKind
 }
 
+
 class XyoBleClient: XyoClient {
+  static let DefaultPollingTime = 6 // seconds
+
   var knownBridges: [String] = []
   var relayNode: XyoRelayNode
   var procedureCatalog: XyoProcedureCatalog
@@ -40,8 +43,8 @@ class XyoBleClient: XyoClient {
   }
   
   private weak var scanner = XYSmartScan.instance
-  private var minBWTimeGap = 6 //seconds
-  private var lastBoundWitnessTime = Date()
+  public var pollingInterval = DefaultPollingTime // seconds
+  private var lastBoundWitnessTime = Date().addingTimeInterval(TimeInterval(-1 * DefaultPollingTime))
   
 //  private var semaphore = DispatchSemaphore(value: 1)
   private var semaphore = true
@@ -143,7 +146,7 @@ extension XyoBleClient : XYSmartScanDelegate {
       if (self.autoBoundWitness && self.semaphore) {
 
       if let xyoDevice = device as? XyoBluetoothDevice {
-        if (Int(Date().timeIntervalSince(self.lastBoundWitnessTime)) > self.minBWTimeGap) {
+        if (Int(Date().timeIntervalSince(self.lastBoundWitnessTime)) > self.pollingInterval) {
           self.semaphore = false
           print("Initiatiting auto-boundwithness from scan")
 
