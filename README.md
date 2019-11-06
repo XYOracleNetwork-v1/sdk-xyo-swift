@@ -30,7 +30,7 @@ Include the library in your Podfile
 
 ```Podfile
 target 'YourAppName' do
-  pod 'sdk-xyo-swift'
+  pod 'sdk-xyo-swift', '~> 1.0.1'
 
 ```
 
