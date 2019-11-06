@@ -9,7 +9,7 @@ before_install:
   - pod repo update
 
 install:
-  - gem install slather
+  - travis_wait gem install slather
 
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
