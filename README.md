@@ -1,6 +1,6 @@
-[logo]: https://cdn.xy.company/img/brand/XY_Logo_GitHub.png
+[logo]:https://cdn.xy.company/img/brand/XYO_full_colored.png
 
-![logo]
+[![logo]](https://xyo.network)
 
 # sdk-xyo-swift
 
@@ -27,7 +27,7 @@ Include the library in your Podfile
 
 ```Podfile
 target 'YourAppName' do
-  pod 'sdk-xyo-swift'
+  pod 'sdk-xyo-swift', '1.0.2'
 
 ```
 
@@ -216,5 +216,5 @@ See the [LICENSE](LICENSE) file for license details.
 
 ## Credits
 
-Made with 🔥and ❄️ by [XY - The Persistent Company](https://www.xy.company)
+Made with 🔥and ❄️ by [XYO](https://www.xyo.network)
 
