@@ -45,10 +45,10 @@ public protocol XyoBoundWitnessTarget : AnyObject, XyoStringHueuristicDelegate {
   func publicKey() -> String?
   
   // enable heuristics for given type
-  public func enableHeursitics(heuristics: [XyoHeuristicEnum], enabled: Bool)
+  func enableHeursitics(heuristics: [XyoHeuristicEnum], enabled: Bool)
   
   // to be called in on deinit until we use weak reference array on heuristic getters
-  public func disableHeuristics()
+  func disableHeuristics()
   
   // dict of the heuristic fetcher wrappers
   var enabledHeuristics: [XyoHeuristicEnum: XyoHeuristicGetter] { get set }
@@ -56,10 +56,10 @@ public protocol XyoBoundWitnessTarget : AnyObject, XyoStringHueuristicDelegate {
 
 public protocol XyoStringHueuristicDelegate {
   // set this to control dynamic string heuristic on a node
-  public var stringHeuristic: String? { get set }
+  var stringHeuristic: String? { get set }
   
   // allows fetching of heuristic from the XyoHeuristicGetter
-  private func getStringHeuristic() ->  String?
+  func getStringHeuristic() ->  String?
 }
 
 extension XyoBoundWitnessTarget {
