@@ -22,37 +22,48 @@ public protocol BoundWitnessDelegate : AnyObject {
   func boundWitness(failed withDeviceId: String?, withError: XyoError)
 }
 
-
-
 public protocol XyoBoundWitnessTarget : AnyObject, XyoStringHueuristicDelegate {
-  //accept boundwitnesses that have bridges payloads
+  
+  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog)
+  
+  // callbacks on bound witness events
+  var delegate: BoundWitnessDelegate? { get set }
+
+  // accept boundwitnesses that have bridges payloads
   var acceptBridging: Bool { get set }
 
   //when auto boundwitnessing, should we bridge our chain
   var autoBridge: Bool {get set}
   
-  var delegate: BoundWitnessDelegate? { get set }
-
+  // wrap this shared node
   var relayNode: XyoRelayNode { get }
   
+  // configuration for this bound witness node
   var procedureCatalog: XyoProcedureCatalog {get}
   
-  init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog)
-  
+  // the public address for this node's origin chain
   func publicKey() -> String?
   
-  // heuristics
-  func enableHeursitics(heuristics: [XyoHeuristicEnum], enabled: Bool)
-  func disableHeuristics()
+  // enable heuristics for given type
+  public func enableHeursitics(heuristics: [XyoHeuristicEnum], enabled: Bool)
+  
+  // to be called in on deinit until we use weak reference array on heuristic getters
+  public func disableHeuristics()
+  
+  // dict of the heuristic fetcher wrappers
   var enabledHeuristics: [XyoHeuristicEnum: XyoHeuristicGetter] { get set }
 }
 
 public protocol XyoStringHueuristicDelegate {
-  var stringHeuristic: String? {get set}
-  func getStringHeuristic() ->  String?
+  // set this to control dynamic string heuristic on a node
+  public var stringHeuristic: String? { get set }
+  
+  // allows fetching of heuristic from the XyoHeuristicGetter
+  private func getStringHeuristic() ->  String?
 }
 
 extension XyoBoundWitnessTarget {
+
   func getStringHeuristic() ->  String? {
     return stringHeuristic
   }

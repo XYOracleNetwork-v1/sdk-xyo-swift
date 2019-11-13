@@ -54,7 +54,6 @@ class XyoExampleViewController: UIViewController {
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-    print("Xyo VC going away, remove retain cycle")
     XyoSdk.nodes.removeAll()
     xyoNode = nil
   }
