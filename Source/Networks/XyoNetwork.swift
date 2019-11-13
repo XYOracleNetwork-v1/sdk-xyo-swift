@@ -27,6 +27,8 @@ public class XyoNetwork {
     client?.scan = false
     server?.listen = false
     // TODO fix the retain cycles in relay node
+    client?.disableHeuristics()
+    server?.disableHeuristics()
     // Make them hold weak references to the heuristics delegates and listeners so we don't have to clean up here
     client?.relayNode.removeListener(key: "RELAY_NODE")
     server?.relayNode.removeListener(key: "RELAY_NODE")

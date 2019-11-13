@@ -9,7 +9,7 @@
 import Foundation
 import sdk_core_swift
 
-public protocol XyoClient: XyoBoundWitnessTarget, XyoHeuristicGetter {
+public protocol XyoClient: XyoBoundWitnessTarget {
   var pollingInterval: Int {get set}
   var scan: Bool {get set}
   var autoBoundWitness: Bool {get set}

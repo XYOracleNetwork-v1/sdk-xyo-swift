@@ -22,27 +22,20 @@
 		0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450802351485100AB2E76 /* XyoTcpipServer.swift */; };
 		0A1450972351485100AB2E76 /* XyoServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450812351485100AB2E76 /* XyoServer.swift */; };
 		0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1450822351485100AB2E76 /* XyoBleServer.swift */; };
+		0A5DC407237B68CA00258A06 /* XyoStringHeuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */; };
+		0A5DC40B237B68DC00258A06 /* XyoRssiHeuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */; };
+		0A5DC40C237B68DC00258A06 /* XyoGpsHeuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */; };
+		0A5DC40D237B68DC00258A06 /* XyoUnixTimeHeuristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */; };
+		0A5DC411237B953100258A06 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A5DC410237B953100258A06 /* README.md */; };
+		0A5DC413237B96EF00258A06 /* sdk-xyo-swift.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0A5DC412237B96EF00258A06 /* sdk-xyo-swift.podspec */; };
 		0ABBED1F2369205A0054BCEE /* StringResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED16236920590054BCEE /* StringResolver.swift */; };
 		0ABBED202369205A0054BCEE /* XyoHumanHeuristics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */; };
 		0ABBED212369205A0054BCEE /* XyoHumanName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED18236920590054BCEE /* XyoHumanName.swift */; };
 		0ABBED222369205A0054BCEE /* RssiResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED19236920590054BCEE /* RssiResolver.swift */; };
-		0ABBED232369205A0054BCEE /* XyoString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1A236920590054BCEE /* XyoString.swift */; };
-		0ABBED242369205A0054BCEE /* XyoUnixTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1B236920590054BCEE /* XyoUnixTime.swift */; };
 		0ABBED252369205A0054BCEE /* GpsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1C2369205A0054BCEE /* GpsResolver.swift */; };
 		0ABBED262369205A0054BCEE /* TimeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1D2369205A0054BCEE /* TimeResolver.swift */; };
-		0ABBED272369205A0054BCEE /* XyoGps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1E2369205A0054BCEE /* XyoGps.swift */; };
 		E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0AC06A58235140D6001FEBCC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 607FACD01AFB9204008FA782;
-			remoteInfo = "sdk-xyo-ios-example";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0A14505C235145C800AB2E76 /* sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,17 +54,19 @@
 		0A1450802351485100AB2E76 /* XyoTcpipServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipServer.swift; sourceTree = "<group>"; };
 		0A1450812351485100AB2E76 /* XyoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoServer.swift; sourceTree = "<group>"; };
 		0A1450822351485100AB2E76 /* XyoBleServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleServer.swift; sourceTree = "<group>"; };
+		0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoStringHeuristic.swift; path = Heuristics/XyoStringHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoRssiHeuristic.swift; path = Heuristics/XyoRssiHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoGpsHeuristic.swift; path = Heuristics/XyoGpsHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoUnixTimeHeuristic.swift; path = Heuristics/XyoUnixTimeHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC410237B953100258A06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0A5DC412237B96EF00258A06 /* sdk-xyo-swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sdk-xyo-swift.podspec"; sourceTree = "<group>"; };
 		0A999FF83CFBC6537BCD2FC14A5BD718 /* Pods-sdk-xyo-ios-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.release.xcconfig"; sourceTree = "<group>"; };
 		0ABBED16236920590054BCEE /* StringResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringResolver.swift; path = Heuristics/StringResolver.swift; sourceTree = "<group>"; };
 		0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoHumanHeuristics.swift; path = Heuristics/XyoHumanHeuristics.swift; sourceTree = "<group>"; };
 		0ABBED18236920590054BCEE /* XyoHumanName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoHumanName.swift; path = Heuristics/XyoHumanName.swift; sourceTree = "<group>"; };
 		0ABBED19236920590054BCEE /* RssiResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RssiResolver.swift; path = Heuristics/RssiResolver.swift; sourceTree = "<group>"; };
-		0ABBED1A236920590054BCEE /* XyoString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoString.swift; path = Heuristics/XyoString.swift; sourceTree = "<group>"; };
-		0ABBED1B236920590054BCEE /* XyoUnixTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoUnixTime.swift; path = Heuristics/XyoUnixTime.swift; sourceTree = "<group>"; };
 		0ABBED1C2369205A0054BCEE /* GpsResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GpsResolver.swift; path = Heuristics/GpsResolver.swift; sourceTree = "<group>"; };
 		0ABBED1D2369205A0054BCEE /* TimeResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeResolver.swift; path = Heuristics/TimeResolver.swift; sourceTree = "<group>"; };
-		0ABBED1E2369205A0054BCEE /* XyoGps.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoGps.swift; path = Heuristics/XyoGps.swift; sourceTree = "<group>"; };
-		0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = XyoSdkExample.xcodeproj; path = ../XyoSdkExample.xcodeproj; sourceTree = "<group>"; };
 		0AEC99242359375D00E47796 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Promises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993523593AE700E47796 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,11 +109,12 @@
 				0ABBED19236920590054BCEE /* RssiResolver.swift */,
 				0ABBED16236920590054BCEE /* StringResolver.swift */,
 				0ABBED1D2369205A0054BCEE /* TimeResolver.swift */,
-				0ABBED1E2369205A0054BCEE /* XyoGps.swift */,
 				0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */,
 				0ABBED18236920590054BCEE /* XyoHumanName.swift */,
-				0ABBED1A236920590054BCEE /* XyoString.swift */,
-				0ABBED1B236920590054BCEE /* XyoUnixTime.swift */,
+				0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */,
+				0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */,
+				0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */,
+				0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */,
 				0A1450692351485100AB2E76 /* Clients */,
 				0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */,
 				0A1450702351485100AB2E76 /* Networks */,
@@ -177,14 +173,6 @@
 			path = Heuristics;
 			sourceTree = "<group>";
 		};
-		0AC06A54235140D6001FEBCC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0AC06A59235140D6001FEBCC /* sdk-xyo-ios-example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2D85C207F3C7298430CBF6818F75B1ED /* Pods-sdk-xyo-ios-example */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,7 +211,7 @@
 				0A1450682351485100AB2E76 /* Source */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				8A44CDBE27480A443BAB45E4E89344D8 /* Products */,
-				E9D8D4BFC452049F67769084B98735BB /* Targets Support Files */,
+				E9D8D4BFC452049F67769084B98735BB /* Support Files */,
 				D21ABAC83CEB0E0A6DDF3A5D /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -255,13 +243,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E9D8D4BFC452049F67769084B98735BB /* Targets Support Files */ = {
+		E9D8D4BFC452049F67769084B98735BB /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */,
+				0A5DC412237B96EF00258A06 /* sdk-xyo-swift.podspec */,
+				0A5DC410237B953100258A06 /* README.md */,
 				2D85C207F3C7298430CBF6818F75B1ED /* Pods-sdk-xyo-ios-example */,
 			);
-			name = "Targets Support Files";
+			name = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,12 +311,6 @@
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 8A44CDBE27480A443BAB45E4E89344D8 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 0AC06A54235140D6001FEBCC /* Products */;
-					ProjectRef = 0AC06A53235140D6001FEBCC /* XyoSdkExample.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0A14505B235145C800AB2E76 /* sdk-xyo-swift */,
@@ -335,21 +318,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		0AC06A59235140D6001FEBCC /* sdk-xyo-ios-example.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "sdk-xyo-ios-example.app";
-			remoteRef = 0AC06A58235140D6001FEBCC /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		0A14505A235145C800AB2E76 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5DC413237B96EF00258A06 /* sdk-xyo-swift.podspec in Resources */,
+				0A5DC411237B953100258A06 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,11 +362,12 @@
 			files = (
 				0ABBED1F2369205A0054BCEE /* StringResolver.swift in Sources */,
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
+				0A5DC40C237B68DC00258A06 /* XyoGpsHeuristic.swift in Sources */,
+				0A5DC407237B68CA00258A06 /* XyoStringHeuristic.swift in Sources */,
+				0A5DC40B237B68DC00258A06 /* XyoRssiHeuristic.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
-				0ABBED242369205A0054BCEE /* XyoUnixTime.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
-				0ABBED272369205A0054BCEE /* XyoGps.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
 				0ABBED212369205A0054BCEE /* XyoHumanName.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,
@@ -399,6 +375,7 @@
 				0A1450972351485100AB2E76 /* XyoServer.swift in Sources */,
 				0ABBED222369205A0054BCEE /* RssiResolver.swift in Sources */,
 				0ABBED252369205A0054BCEE /* GpsResolver.swift in Sources */,
+				0A5DC40D237B68DC00258A06 /* XyoUnixTimeHeuristic.swift in Sources */,
 				0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */,
 				0ABBED262369205A0054BCEE /* TimeResolver.swift in Sources */,
 				0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */,
@@ -406,7 +383,6 @@
 				0A1450902351485100AB2E76 /* XyoNode.swift in Sources */,
 				0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */,
 				0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */,
-				0ABBED232369205A0054BCEE /* XyoString.swift in Sources */,
 				0ABBED202369205A0054BCEE /* XyoHumanHeuristics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +408,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "XYOracleNetwork.sdk-xyo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
@@ -458,7 +434,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "XYOracleNetwork.sdk-xyo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;

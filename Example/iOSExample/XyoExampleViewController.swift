@@ -42,15 +42,18 @@ class XyoExampleViewController: UIViewController {
     }
     if var bleClient = (xyoNode?.networks["ble"] as? XyoBleNetwork)?.client {
       bleClient.pollingInterval = 10
+      bleClient.stringHeuristic = "Hi I'm Client"
     }
     
+    if var bleServer = (xyoNode?.networks["ble"] as? XyoBleNetwork)?.server {
+      bleServer.stringHeuristic = "Yo I'm Server"
+    }
     // Start client/server scanning and listening
     setupNodeScanningListening(on: true)
     updateBridging(on: false)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
-    print("Xyo VC going away, remove retain cycle")
     XyoSdk.nodes.removeAll()
     xyoNode = nil
   }
@@ -162,6 +165,9 @@ extension XyoExampleViewController : BoundWitnessDelegate {
     if let resolveStr1 = withBoundWitness?.resolveString(forParty: 1) {
       dataStr += " Client: " + resolveStr1
     }
+    if let rssistr = withBoundWitness?.resolveRssiPayload(forParty: 1) {
+      dataStr += " Rssi: " + rssistr
+    }
     boundWitnesses.append(BoundWitnessResult(device: withDeviceId, dataString: dataStr, debugString: withBoundWitness.debugDescription))
     tableView.reloadData()
     
@@ -178,12 +184,6 @@ extension XyoExampleViewController : BoundWitnessDelegate {
     print("Errored BW with \(String(describing: withDeviceId)) \(String(describing: withError))")
   }
   
-  func getPayloadData() -> [UInt8]? {
-    if isClient {
-      return [UInt8]("Hey, I'm client".utf8)
-    }
-    return [UInt8]("Yo, I'm the server".utf8)
-  }
 }
 
 

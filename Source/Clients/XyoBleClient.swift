@@ -21,18 +21,23 @@ struct XyoBleClientError: Error {
 }
 
 
-class XyoBleClient: XyoClient {
+class XyoBleClient: XyoClient, XyoHeuristicGetter {  
+ 
   static let DefaultPollingTime = 6 // seconds
 
   var knownBridges: [String] = []
   var relayNode: XyoRelayNode
   var procedureCatalog: XyoProcedureCatalog
-  weak var delegate: BoundWitnessDelegate?
-
   var acceptBridging: Bool = false
   var autoBoundWitness: Bool = false
   var autoBridge: Bool = false
-  var scan: Bool = false {
+  var stringHeuristic: String?
+  var enabledHeuristics: [XyoHeuristicEnum : XyoHeuristicGetter] = [:]
+
+  weak var delegate: BoundWitnessDelegate?
+  
+  public var pollingInterval = DefaultPollingTime // seconds
+  public var scan: Bool = false {
     didSet {
       if (scan) {
         startScanningForDevices()
@@ -43,15 +48,18 @@ class XyoBleClient: XyoClient {
   }
   
   private weak var scanner = XYSmartScan.instance
-  public var pollingInterval = DefaultPollingTime // seconds
+  private var currentRssi : Int? = nil
+
   private var lastBoundWitnessTime = Date().addingTimeInterval(TimeInterval(-1 * DefaultPollingTime))
   
 //  private var semaphore = DispatchSemaphore(value: 1)
   private var semaphore = true
-
+  
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.relayNode = relayNode
     self.procedureCatalog = procedureCatalog
+    self.enableHeursitics(heuristics: [.time, .string], enabled: true)
+
     XyoBluetoothDevice.family.enable(enable: true)
     XyoBluetoothDeviceCreator.enable(enable: true)
   }
@@ -66,13 +74,13 @@ class XyoBleClient: XyoClient {
   func startScanningForDevices() {
     scanner?.setDelegate(self, key: "xyo_client")
     scanner?.start(mode: XYSmartScanMode.foreground)
-    relayNode.addHeuristic(key: "XyoBleClient", getter: self)
+    relayNode.addHeuristic(key: "rssi_client", getter: self)
   }
   
   func stopScanningForDevices() {
     scanner?.removeDelegate(for: "xyo_client")
     scanner?.stop()
-    relayNode.removeHeuristic(key: "XyoBleClient")
+    relayNode.removeHeuristic(key: "rssi_client")
   }
 
   deinit {
@@ -82,8 +90,9 @@ class XyoBleClient: XyoClient {
   typealias BoundWitnessCallback = ((_ boundWitness: XyoBoundWitness?, _ device: XyoBluetoothDevice?, _ error: Error?) -> Void)?
   
   func doBoundWitness(withDevice: XyoBluetoothDevice, withCompletion: BoundWitnessCallback) throws {
+    
       self.delegate?.boundWitness(started: withDevice.id)
-//    DispatchQueue.main.sync {
+
       withDevice.connection {
         [weak self] in
         withDevice.connect()
@@ -111,7 +120,8 @@ class XyoBleClient: XyoClient {
               strong.delegate?.boundWitness(failed: withDevice.id, withError: XyoError.RESPONSE_IS_NULL)
                return
              }
-              
+            
+            
             strong.delegate?.boundWitness(completed: withDevice.id, withBoundWitness: bw)
              withCompletion?(bw, withDevice, nil)
           }
@@ -124,10 +134,18 @@ class XyoBleClient: XyoClient {
         print("CAUGHT ERROR \(err)")
         withCompletion?(nil, nil, err)
     }
-//    }
   }
-}
+  
+  /// XyoHeuristicGetter
+  func getHeuristic() -> XyoObjectStructure? {
+    guard let rssi = currentRssi else { return nil }
 
+    let unsignedRssi = UInt8(bitPattern: Int8(rssi))
+    let rssiTag = XyoObjectStructure.newInstance(schema: XyoSchemas.RSSI, bytes: XyoBuffer().put(bits: (unsignedRssi)))
+    return rssiTag
+  }
+
+}
 
 extension XyoBleClient : XYSmartScanDelegate {
     func smartScan(entered device: XYBluetoothDevice) {
@@ -148,6 +166,8 @@ extension XyoBleClient : XYSmartScanDelegate {
       if let xyoDevice = device as? XyoBluetoothDevice {
         if (Int(Date().timeIntervalSince(self.lastBoundWitnessTime)) > self.pollingInterval) {
           self.semaphore = false
+          self.currentRssi = xyoDevice.rssi
+
           print("Initiatiting auto-boundwithness from scan")
 
           do {
@@ -155,7 +175,11 @@ extension XyoBleClient : XYSmartScanDelegate {
             try self.doBoundWitness(withDevice: xyoDevice)
             {
               [weak self]
-              _,_,_ in
+              _,_,error in
+              if let err = error {
+                print("Error completing bound witness \(err)")
+              }
+
               self?.semaphore = true
             }
 

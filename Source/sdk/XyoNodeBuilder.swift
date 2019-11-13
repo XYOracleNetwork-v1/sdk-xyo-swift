@@ -23,10 +23,11 @@ public class XyoNodeBuilder {
   private var storage: XyoStorageProvider?
   private var relayNode: XyoRelayNode?
   private var procedureCatalog: XyoProcedureCatalog?
-  private var hashingProvider: XyoHasher?
   private var stateRepository: XyoOriginChainStateRepository?
   private var bridgeQueueRepository: XyoStorageBridgeQueueRepository?
-  private var blockRepository: XyoStorageProviderOriginBlockRepository?
+  
+  public var blockRepository: XyoStorageProviderOriginBlockRepository?
+  public var hashingProvider: XyoHasher?
 
   weak private var delegate: BoundWitnessDelegate?
   
@@ -148,6 +149,10 @@ public class XyoNodeBuilder {
                 repositoryConfiguration: repositoryConfiguration,
                 queueRepository: bq
               )
+              let signer = XyoSecp256k1Signer()
+              relayNode?.originState.addSigner(signer: signer)
+
+              try? relayNode?.selfSignOriginChain()
               return
           }
           print("Missing hashingProvider")

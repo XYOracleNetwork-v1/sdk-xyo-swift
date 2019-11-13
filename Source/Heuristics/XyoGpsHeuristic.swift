@@ -11,7 +11,7 @@ import sdk_core_swift
 import sdk_objectmodel_swift
 import CoreLocation
 
-public struct XyoGps: XyoHueresticGetter {
+public struct XyoGpsHeuristic: XyoHeuristicGetter {
     let locManager = CLLocationManager()
 
     init() {

@@ -29,7 +29,7 @@ public struct RssiResolver: XyoHumanHeuristicResolver {
 }
 
 extension XyoBoundWitness {
-    public func resolveRssiPayload(forParty: Int) -> String {
+    public func resolveRssiPayload(forParty: Int) -> String? {
       let resolver = RssiResolver()
     XyoHumanHeuristics.resolvers[XyoSchemas.RSSI.id] = resolver
       
