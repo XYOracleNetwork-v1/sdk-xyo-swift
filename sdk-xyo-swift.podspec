@@ -51,7 +51,6 @@ Pod::Spec.new do |s|
   s.documentation_url = 'https://github.com/XYOracleNetwork/sdk-xyo-swift'
 
   s.ios.deployment_target = '11.0'
-  s.osx.deployment_target = '10.12'
 
   s.source_files = 'Source/**/*.swift'
   
