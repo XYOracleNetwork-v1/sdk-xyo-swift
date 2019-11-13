@@ -16,7 +16,11 @@ struct TcpipClientError : Error {
   let kind : ErrorKind
 }
 
-class XyoTcpipClient: XyoClient {  
+class XyoTcpipClient: XyoClient {
+  var stringHeuristic: String?
+  
+  var enabledHeuristics: [XyoHeuristicEnum : XyoHeuristicGetter] = [:]
+
   var knownBridges: [String] = []
   var relayNode: XyoRelayNode
   var procedureCatalog: XyoProcedureCatalog
@@ -39,6 +43,7 @@ class XyoTcpipClient: XyoClient {
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.procedureCatalog = procedureCatalog
     self.relayNode = relayNode
+    self.enableHeursitics(heuristics: [.time, .string], enabled: true)
   }
   
   convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBridge: Bool, acceptBridging: Bool, autoBoundWitness: Bool) {

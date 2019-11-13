@@ -34,7 +34,7 @@ public struct TimeResolver: XyoHumanHeuristicResolver {
 }
 
 extension XyoBoundWitness {
-  public func resolveTime(forParty: Int) -> String {
+  public func resolveTime(forParty: Int) -> String? {
     let resolver = TimeResolver()
     XyoHumanHeuristics.resolvers[XyoSchemas.UNIX_TIME.id] = resolver
     return resolver.getName(forParty: forParty, boundWitness: self)

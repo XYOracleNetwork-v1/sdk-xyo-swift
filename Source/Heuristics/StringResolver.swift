@@ -22,13 +22,13 @@ public struct StringResolver: XyoHumanHeuristicResolver {
       if let blob = objectValue?.toByteArray() {
         return  String(bytes: blob, encoding: .utf8)
       }
-      return ""
+      return nil
     }
 }
 
 extension XyoBoundWitness {
 
-  public func resolveString(forParty: Int) -> String {
+  public func resolveString(forParty: Int) -> String? {
     let resolver = StringResolver()
     XyoHumanHeuristics.resolvers[XyoSchemas.BLOB.id] = resolver
     return resolver.getName(forParty: forParty, boundWitness: self)

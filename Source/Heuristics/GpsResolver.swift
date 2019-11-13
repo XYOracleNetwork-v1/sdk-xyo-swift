@@ -42,8 +42,8 @@ public struct GpsResolver: XyoHumanHeuristicResolver {
 }
 
 extension XyoBoundWitness {
-    public func resolveGPSPayload(forParty: Int) -> String {
-      let resolver = RssiResolver()
+    public func resolveGPSPayload(forParty: Int) -> String? {
+      let resolver = GpsResolver()
     XyoHumanHeuristics.resolvers[XyoSchemas.GPS.id] = resolver
       
       return resolver.getName(forParty: forParty, boundWitness: self)

@@ -10,6 +10,10 @@ import Foundation
 import sdk_core_swift
 
 class XyoTcpipServer: XyoServer {
+  var stringHeuristic: String?
+    
+  var enabledHeuristics: [XyoHeuristicEnum : XyoHeuristicGetter] = [:]
+
   var delegate: BoundWitnessDelegate?
   
   var relayNode: XyoRelayNode
@@ -23,6 +27,7 @@ class XyoTcpipServer: XyoServer {
   required init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog) {
     self.relayNode = relayNode
     self.procedureCatalog = procedureCatalog
+    self.enableHeursitics(heuristics: [.time], enabled: true)
   }
   
   convenience init(relayNode: XyoRelayNode, procedureCatalog: XyoProcedureCatalog, autoBridge: Bool, acceptBridging: Bool) {

@@ -9,15 +9,17 @@ import Foundation
 import sdk_core_swift
 import sdk_objectmodel_swift
 
-public struct XyoString : XyoHeuristicGetter {
-  private let bytes : [UInt8]
-  
-  public init(bytes : [UInt8]) {
-    self.bytes = bytes
+public struct XyoStringHeuristic : XyoHeuristicGetter {
+  public let _getStringHeuristic : () -> String?
+  public init(_ getStringHeuristic : @escaping () -> String?) {
+    _getStringHeuristic = getStringHeuristic
   }
     
   public func getHeuristic() -> XyoObjectStructure? {
-
+    guard let str = _getStringHeuristic() else {
+      return nil
+    }
+    let bytes = [UInt8](str.utf8)
     return XyoObjectStructure.newInstance(schema: XyoSchemas.BLOB, bytes: XyoBuffer.init(data: bytes))
   }
 }

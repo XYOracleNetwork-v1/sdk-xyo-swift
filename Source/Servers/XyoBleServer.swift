@@ -12,6 +12,11 @@ import sdk_xyobleinterface_swift
 import XyBleSdk
 
 class XyoBleServer: XyoServer {
+  
+  var enabledHeuristics: [XyoHeuristicEnum : XyoHeuristicGetter] = [:]
+
+  var stringHeuristic: String?
+  
   weak var delegate: BoundWitnessDelegate?
   
   var relayNode: XyoRelayNode
@@ -40,15 +45,14 @@ class XyoBleServer: XyoServer {
     self.procedureCatalog = procedureCatalog
     self.relayNode = relayNode
     self.advertiser = XyoBluetoothServer()
+    self.enableHeursitics(heuristics: [.time, .string], enabled: true)
   }
   
   func startListening() {
-    relayNode.addHeuristic(key: "XyoBleServer", getter: self)
     advertiser.start(listener: self)
   }
   
   func stopListening() {
-    relayNode.removeHeuristic(key: "XyoBleServer")
     advertiser.stop()
   }
   
@@ -68,7 +72,7 @@ extension XyoBleServer : XyoPipeCharacteristicListener {
     
     let handler = XyoNetworkHandler(pipe: pipe)
     DispatchQueue.global().async {
-
+    
     self.relayNode.boundWitness(handler: handler, procedureCatalogue: self.procedureCatalog, completion: { [weak self] (boundWitness, error)  in
       DispatchQueue.main.async {
         guard error == nil else {
@@ -85,8 +89,6 @@ extension XyoBleServer : XyoPipeCharacteristicListener {
         
           pipe.close()
       }
-        
-
       })
     }
   }

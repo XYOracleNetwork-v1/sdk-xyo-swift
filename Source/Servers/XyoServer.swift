@@ -9,7 +9,7 @@
 import Foundation
 import sdk_core_swift
 
-public protocol XyoServer: XyoBoundWitnessTarget, XyoHeuristicGetter {
+public protocol XyoServer: XyoBoundWitnessTarget {
   var listen : Bool {get set}
 }
 
