@@ -4,6 +4,8 @@
 
 # sdk-xyo-swift
 
+[![](https://img.shields.io/cocoapods/v/sdk-xyo-swift.svg?style=flat)](https://cocoapods.org/pods/sdk-xyo-swift) [![Build Status](https://travis-ci.com/XYOracleNetwork/sdk-xyo-swift.svg?branch=master)](https://travis-ci.com/XYOracleNetwork/sdk-xyo-swift) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a10ff4a324d4d02a74a7a6724a53eef)](https://www.codacy.com/manual/pllearns/sdk-xyo-swift?utm_source=github.com&utm_medium=referral&utm_content=XYOracleNetwork/sdk-xyo-swift&utm_campaign=Badge_Grade)
+
 ## Table of Contents
 
 -   [Title](#sdk-xyo-swift)
