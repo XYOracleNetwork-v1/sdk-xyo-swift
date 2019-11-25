@@ -11,7 +11,7 @@ import sdk_core_swift
 import sdk_objectmodel_swift
 
 public struct XyoHumanName {
-    static func getHumanName (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {
+    public static func getHumanName (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {
         do {
             guard let numberOfParties = try boundWitmess.getNumberOfParties() else {
                 return "Invalid"
