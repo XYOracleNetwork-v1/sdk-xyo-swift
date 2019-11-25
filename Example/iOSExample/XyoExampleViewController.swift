@@ -9,6 +9,7 @@
 import UIKit
 import sdk_xyo_swift
 import sdk_core_swift
+import XyBleSdk
 
 struct BoundWitnessResult {
   var device: String
@@ -19,14 +20,15 @@ struct BoundWitnessResult {
 class XyoExampleViewController: UIViewController {
   @IBOutlet weak var scanLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
-  
+  private weak var scanner = XYSmartScan.instance
+
   public var isClient: Bool = true
   
   var isLockedOnBottom: Bool = true
   var isScrolling = false
   var boundWitnesses : [BoundWitnessResult] = []
   var xyoNode : XyoNode?
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     title = isClient ? "Client" : "Server"
@@ -51,6 +53,7 @@ class XyoExampleViewController: UIViewController {
     // Start client/server scanning and listening
     setupNodeScanningListening(on: true)
     updateBridging(on: false)
+    
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -71,8 +74,6 @@ class XyoExampleViewController: UIViewController {
     setupNodeScanningListening(on: sender.isOn)
   }
   
-  
-  
   func setupNodeScanningListening(on: Bool) {
     let ble = xyoNode?.networks["ble"] as? XyoBleNetwork
 
@@ -92,8 +93,6 @@ class XyoExampleViewController: UIViewController {
       tcp?.server?.autoBridge = on
     }
   }
-    
-  
 }
 
 extension XyoExampleViewController : UITableViewDelegate, UITableViewDataSource {
@@ -185,7 +184,5 @@ extension XyoExampleViewController : BoundWitnessDelegate {
   }
   
 }
-
-
 
 
