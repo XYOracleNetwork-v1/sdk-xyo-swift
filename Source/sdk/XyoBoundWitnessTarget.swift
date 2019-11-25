@@ -10,7 +10,6 @@ import Foundation
 import sdk_objectmodel_swift
 import sdk_core_swift
 import XyBleSdk
-import sdk_xyobleinterface_swift
 
 public enum XyoHeuristicEnum: String {
   case string, gps, time
