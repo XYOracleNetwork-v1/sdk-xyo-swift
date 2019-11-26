@@ -23,7 +23,7 @@ before_script:
 script:
   - pod install &&
     xcodebuild -workspace sdk-xyo-swift.xcworkspace -scheme sdk-xyo-swift -destination platform\=iOS\ Simulator,OS\=12.1,name\=iPhone\ X build test | xcpretty
-  - sonar-scanner
 
 after_script:
   - ./cc-test-reporter after-build
+  - sonar-scanner
