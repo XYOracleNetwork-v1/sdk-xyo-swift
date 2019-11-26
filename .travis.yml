@@ -7,7 +7,7 @@ addons:
   sonarcloud:
     organization: xyo-network
     token:
-      secure: "BFyoXN71802TBTuiYg5Nl72hKjTjJYrRQzapTGy+HgVZHT7SjJ0vyyyNwBtxXp68EqQRwT8XQPwDOq3vjqzQt8+nqDrkIsnfHk3N2FfDORl86mIaNYmo+/IzFODhigEkKAyVZi68uUfF09ObLBFvDzhrYFxnLbG6ABkNWjNvEeGpN4nMBqZ66p2y5RC0ro+XvdZPWteJrWv/nHve6FiYfeuH9UmR+SXrjgvc0pqcg52WbCBrWCeScbR+mfjw4xvMcEFX5OYHdqy1MzqOiMCctCsucVQV0NxkY3iVsu25MGOYUXQDPorMkvjRlAzxmSIW6j8NjnJzsFDAIV3qcZZUHadyVwLV3dkWZPtcaSk6woM5Tp8GXFKGLX/KiAGRGjVfJ1S6tM9iBwebQuh8FroqZ8KlRzA+MruHf1wV0LwP/Hrtpj91A2Ktvoui8Ur99xuS1TqSd9skfwTPsFSoDS7yQS9rT7Tcf7uHijmrCigQa+XCsbLuWN8C/jyiSZZQ8GDmA5eWGRg1UgsOUmvBAwPWdgQ5/Aez+PHfBTo5AWZKSsUbJCmbtg2oTHW+Sd2OJ1XguBYpv0KcAlU8K7vIjlAwLmhXXhTLpBvcEyICQEPW0V0ow3mJp2DtDr6lteYoRvA04SCrPb+LDSutuH7T83t5mVnj5nQRjc0l8njNl4fFnuk="
+      secure: "Q7P23SmCyEouGNjaah/zTwFoufHHQ5YbEP2uadqUIkXfXu6RUqS22LN7rvBFnqTKKqMFB83mHB1CTnOSQK4rAjnfnlczcuMJ/ZcYPKvTc7rNOYCLzHxusiSd9yfVIPgjaUBKROaYdCF4svwCCF5tUUvrUveESucWUsqcm8ukzBCrGgZvhbzZppfZjUrY6NE/nzuguQGftMoI8RmGCEr0ynl6p3Ww13uvPVlCY1FPmrVJcAAwl7I0IqzxHspTuWouxBhzQNm4ubCfGv00zEaWIXIB5vSSI2NB2bLw/6yoXmkzLSpkc8AwgNJRTJ+fEwe53Z7IsZxHAfq5ZR03gETjIMQg3d2LYC400196ENCFSe4v5nDkN6T2t+I/OAtBRtuj/49rMEqlYRBIncr3VdhJ/TWFDaKM0dHS2+M5dedBFlFyIbbJqtPwcwQxTRFVoFkOINX3DCGo84jE3DYP9e+ZBycbBm2+3nJm/+bbxmSQKTUTQI6fKA4JP2m0nOBtb2+3HJ4P9G5t28crFd/lakyRltqId5TlAm8EBkorvJhlKlMNlY9bbto4bVqMUkUsaJ60lev0J7rbKikaE9jVXp+FFY0X8Rig3QCj0DFwad1f0DEpApuvb7OBHbWX+beTivEjAokoLZEAnvJsfwD+47fh2zOkVSz+Lj/Cg1FUKhaNcFM="
 
     
 before_install:
@@ -22,9 +22,9 @@ before_script:
   - chmod 777 ./cc-test-reporter
 
 script:
-  - sonar-scanner
   - pod install &&
     xcodebuild -workspace sdk-xyo-swift.xcworkspace -scheme sdk-xyo-swift -destination platform\=iOS\ Simulator,OS\=12.1,name\=iPhone\ X build test | xcpretty
+  - sonar-scanner
 
 after_script:
   - ./cc-test-reporter after-build
