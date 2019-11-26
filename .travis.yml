@@ -6,9 +6,7 @@ xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 addons:
   sonarcloud:
     organization: xyo-network
-    token:
-      secure: "jsMFt238iSUT0SyNcHfiXQX+GqMETYvYYuqd6BQ1C4lVT6dcK+TMfPVuxkUUizUniW1QxMaDMZA28hy4sQWnf8O8q+YdPyoVsCiVcRqLesjxd+ZhqOtjoRhxHTx5n5KtIxcmmRaaF+R52vnOhpoAC2qsw3nw4rnVv9TcproiSQwWSmebSs7Fg41Q8P00zfjvc1/iLBSajKoi/kIpe23+PQllAvHF5gsG5ikZO8k1xxw98UZuL6cgTosq4H/7fjtUlofEdvmtjQwb04TCLZQ5sqpXK4JP7yrUVT5nUyZkwuR2wsLsssyqP5xC9jaWV/RfOgqtj6G5oTPu3DjYUK0phbJUokYvp4uybf8Q2T40oDBWukLzmCbux4DiMt+r1w/F4i9Gm5vUKqYdc6mKore4bBqNT2K/mxu7UD2qGMgd7haW2wzKHX84iSVH9s4CPiswfKM6nSeLycukTchcXqeddf50ivOiewhLzvdKvOC/rEaRiXLqk7ldmFbtY1ZJcAmmNHkEbHZ9ijFvDz9qRDLdhXhSoYoOAHa3UvdQFsk3gzvre6Z6GaxnnyYgD+I+G5TgO4YYcroX+R+MhsWCqr8KDJzC5zk0cZCY9s2Qt1A4ikbTnQ3Q44fJ1wOXZfaGV0Z11xa0tt/3UfI3yA5szMJq6cKViKvbmI/qrLFWN9W8WLA="
-
+    
 before_install:
   - gem install cocoapods --pr
   - pod repo update
