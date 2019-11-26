@@ -6,6 +6,9 @@ xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
 addons:
   sonarcloud:
     organization: xyo-network
+    token:
+      secure: "BFyoXN71802TBTuiYg5Nl72hKjTjJYrRQzapTGy+HgVZHT7SjJ0vyyyNwBtxXp68EqQRwT8XQPwDOq3vjqzQt8+nqDrkIsnfHk3N2FfDORl86mIaNYmo+/IzFODhigEkKAyVZi68uUfF09ObLBFvDzhrYFxnLbG6ABkNWjNvEeGpN4nMBqZ66p2y5RC0ro+XvdZPWteJrWv/nHve6FiYfeuH9UmR+SXrjgvc0pqcg52WbCBrWCeScbR+mfjw4xvMcEFX5OYHdqy1MzqOiMCctCsucVQV0NxkY3iVsu25MGOYUXQDPorMkvjRlAzxmSIW6j8NjnJzsFDAIV3qcZZUHadyVwLV3dkWZPtcaSk6woM5Tp8GXFKGLX/KiAGRGjVfJ1S6tM9iBwebQuh8FroqZ8KlRzA+MruHf1wV0LwP/Hrtpj91A2Ktvoui8Ur99xuS1TqSd9skfwTPsFSoDS7yQS9rT7Tcf7uHijmrCigQa+XCsbLuWN8C/jyiSZZQ8GDmA5eWGRg1UgsOUmvBAwPWdgQ5/Aez+PHfBTo5AWZKSsUbJCmbtg2oTHW+Sd2OJ1XguBYpv0KcAlU8K7vIjlAwLmhXXhTLpBvcEyICQEPW0V0ow3mJp2DtDr6lteYoRvA04SCrPb+LDSutuH7T83t5mVnj5nQRjc0l8njNl4fFnuk="
+
     
 before_install:
   - gem install cocoapods --pr
@@ -19,9 +22,9 @@ before_script:
   - chmod 777 ./cc-test-reporter
 
 script:
+  - sonar-scanner
   - pod install &&
     xcodebuild -workspace sdk-xyo-swift.xcworkspace -scheme sdk-xyo-swift -destination platform\=iOS\ Simulator,OS\=12.1,name\=iPhone\ X build test | xcpretty
 
 after_script:
   - ./cc-test-reporter after-build
-  - sonar-scanner
