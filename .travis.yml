@@ -3,7 +3,10 @@ language: swift
 xcode_project: sdk-xyo-swift.xcworkspace
 xcode_scheme: sdk-xyo-swift
 xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
-
+addons:
+  sonarcloud:
+    organization: xyo-network
+    
 before_install:
   - gem install cocoapods --pr
   - pod repo update
@@ -18,6 +21,7 @@ before_script:
 script:
   - pod install &&
     xcodebuild -workspace sdk-xyo-swift.xcworkspace -scheme sdk-xyo-swift -destination platform\=iOS\ Simulator,OS\=12.1,name\=iPhone\ X build test | xcpretty
+  - sonar-scanner
 
 after_script:
   - ./cc-test-reporter after-build
