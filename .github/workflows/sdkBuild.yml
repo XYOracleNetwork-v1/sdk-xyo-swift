@@ -1,0 +1,22 @@
+name: SDK Build
+
+on: 
+  push: 
+
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    strategy: 
+      matrix:
+        destination: ['platform=iOS Simulator,iOS=13.1,name=iPhone11']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: |
+            swift package init --type library
+            swift package generate-xcodeproj
+            swift build -v
+      env: 
+        destination: ${{ matrix.destination }}
