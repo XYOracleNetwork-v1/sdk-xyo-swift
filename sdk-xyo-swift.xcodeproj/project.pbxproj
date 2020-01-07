@@ -34,7 +34,33 @@
 		0ABBED222369205A0054BCEE /* RssiResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED19236920590054BCEE /* RssiResolver.swift */; };
 		0ABBED252369205A0054BCEE /* GpsResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1C2369205A0054BCEE /* GpsResolver.swift */; };
 		0ABBED262369205A0054BCEE /* TimeResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBED1D2369205A0054BCEE /* TimeResolver.swift */; };
-		E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */; };
+		468A9AFD237F31D100A73985 /* XyoBluetoothDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AF6237F31D000A73985 /* XyoBluetoothDevice.swift */; };
+		468A9AFE237F31D100A73985 /* XyoBluetoothServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AF7237F31D000A73985 /* XyoBluetoothServer.swift */; };
+		468A9AFF237F31D100A73985 /* XyoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AF8237F31D000A73985 /* XyoService.swift */; };
+		468A9B00237F31D100A73985 /* XyoManufactorDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AF9237F31D000A73985 /* XyoManufactorDeviceCreator.swift */; };
+		468A9B01237F31D100A73985 /* XyoGattServerNetworkPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AFA237F31D100A73985 /* XyoGattServerNetworkPipe.swift */; };
+		468A9B02237F31D100A73985 /* XyoPipeCharacteristic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AFB237F31D100A73985 /* XyoPipeCharacteristic.swift */; };
+		468A9B03237F31D100A73985 /* XyoBluetoothDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9AFC237F31D100A73985 /* XyoBluetoothDeviceCreator.swift */; };
+		468A9B09237F31EF00A73985 /* XyoOutputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B06237F31EF00A73985 /* XyoOutputStream.swift */; };
+		468A9B0A237F31EF00A73985 /* XyoGattNameEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B07237F31EF00A73985 /* XyoGattNameEncoder.swift */; };
+		468A9B0B237F31EF00A73985 /* XyoInputStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B08237F31EF00A73985 /* XyoInputStream.swift */; };
+		468A9B13237F323800A73985 /* XyoAndroidXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B10237F323800A73985 /* XyoAndroidXDevice.swift */; };
+		468A9B14237F323800A73985 /* XyoAndroidXDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B11237F323800A73985 /* XyoAndroidXDeviceCreator.swift */; };
+		468A9B15237F323800A73985 /* XyoAndroidXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B12237F323800A73985 /* XyoAndroidXService.swift */; };
+		468A9B19237F324300A73985 /* XyoBridgeXDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B16237F324300A73985 /* XyoBridgeXDeviceCreator.swift */; };
+		468A9B1A237F324300A73985 /* XyoBridgeXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B17237F324300A73985 /* XyoBridgeXDevice.swift */; };
+		468A9B1B237F324300A73985 /* XyoBridgeXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B18237F324300A73985 /* XyoBridgeXService.swift */; };
+		468A9B1F237F324D00A73985 /* XyoIosXDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B1C237F324C00A73985 /* XyoIosXDeviceCreator.swift */; };
+		468A9B20237F324D00A73985 /* XyoIosXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B1D237F324C00A73985 /* XyoIosXDevice.swift */; };
+		468A9B21237F324D00A73985 /* XyoIosXService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B1E237F324C00A73985 /* XyoIosXService.swift */; };
+		468A9B25237F325600A73985 /* XyoSentinelXDeviceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B22237F325500A73985 /* XyoSentinelXDeviceCreator.swift */; };
+		468A9B26237F325600A73985 /* XyoSentinelXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B23237F325600A73985 /* XyoSentinelXManager.swift */; };
+		468A9B27237F325600A73985 /* XyoSentinelXDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B24237F325600A73985 /* XyoSentinelXDevice.swift */; };
+		468A9B29237F326200A73985 /* XyoDifferentiableDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B28237F326200A73985 /* XyoDifferentiableDevice.swift */; };
+		468A9B2D237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2A237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift */; };
+		468A9B2E237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2B237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift */; };
+		468A9B2F237F331C00A73985 /* XyoBleToTcpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2C237F331C00A73985 /* XyoBleToTcpBridge.swift */; };
+		6978AFDE62A5A9336A220A2F /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,19 +80,19 @@
 		0A1450802351485100AB2E76 /* XyoTcpipServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoTcpipServer.swift; sourceTree = "<group>"; };
 		0A1450812351485100AB2E76 /* XyoServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoServer.swift; sourceTree = "<group>"; };
 		0A1450822351485100AB2E76 /* XyoBleServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleServer.swift; sourceTree = "<group>"; };
-		0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoStringHeuristic.swift; path = Heuristics/XyoStringHeuristic.swift; sourceTree = "<group>"; };
-		0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoRssiHeuristic.swift; path = Heuristics/XyoRssiHeuristic.swift; sourceTree = "<group>"; };
-		0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoGpsHeuristic.swift; path = Heuristics/XyoGpsHeuristic.swift; sourceTree = "<group>"; };
-		0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoUnixTimeHeuristic.swift; path = Heuristics/XyoUnixTimeHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoStringHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoRssiHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoGpsHeuristic.swift; sourceTree = "<group>"; };
+		0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoUnixTimeHeuristic.swift; sourceTree = "<group>"; };
 		0A5DC410237B953100258A06 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0A5DC412237B96EF00258A06 /* sdk-xyo-swift.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "sdk-xyo-swift.podspec"; sourceTree = "<group>"; };
 		0A999FF83CFBC6537BCD2FC14A5BD718 /* Pods-sdk-xyo-ios-example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.release.xcconfig"; sourceTree = "<group>"; };
-		0ABBED16236920590054BCEE /* StringResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringResolver.swift; path = Heuristics/StringResolver.swift; sourceTree = "<group>"; };
-		0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoHumanHeuristics.swift; path = Heuristics/XyoHumanHeuristics.swift; sourceTree = "<group>"; };
-		0ABBED18236920590054BCEE /* XyoHumanName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XyoHumanName.swift; path = Heuristics/XyoHumanName.swift; sourceTree = "<group>"; };
-		0ABBED19236920590054BCEE /* RssiResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RssiResolver.swift; path = Heuristics/RssiResolver.swift; sourceTree = "<group>"; };
-		0ABBED1C2369205A0054BCEE /* GpsResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GpsResolver.swift; path = Heuristics/GpsResolver.swift; sourceTree = "<group>"; };
-		0ABBED1D2369205A0054BCEE /* TimeResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeResolver.swift; path = Heuristics/TimeResolver.swift; sourceTree = "<group>"; };
+		0ABBED16236920590054BCEE /* StringResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringResolver.swift; sourceTree = "<group>"; };
+		0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoHumanHeuristics.swift; sourceTree = "<group>"; };
+		0ABBED18236920590054BCEE /* XyoHumanName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoHumanName.swift; sourceTree = "<group>"; };
+		0ABBED19236920590054BCEE /* RssiResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RssiResolver.swift; sourceTree = "<group>"; };
+		0ABBED1C2369205A0054BCEE /* GpsResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GpsResolver.swift; sourceTree = "<group>"; };
+		0ABBED1D2369205A0054BCEE /* TimeResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeResolver.swift; sourceTree = "<group>"; };
 		0AEC99242359375D00E47796 /* Promises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Promises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993523593AE700E47796 /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,15 +102,41 @@
 		0AEC993A23593AE700E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993B23593AE700E47796 /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993C23593AE700E47796 /* XyBleSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XyBleSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3ABB74A71CB0F42DC0FB6C37F7AABCB2 /* Pods-sdk-xyo-ios-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
+		468A9AF6237F31D000A73985 /* XyoBluetoothDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBluetoothDevice.swift; sourceTree = "<group>"; };
+		468A9AF7237F31D000A73985 /* XyoBluetoothServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBluetoothServer.swift; sourceTree = "<group>"; };
+		468A9AF8237F31D000A73985 /* XyoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoService.swift; sourceTree = "<group>"; };
+		468A9AF9237F31D000A73985 /* XyoManufactorDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoManufactorDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9AFA237F31D100A73985 /* XyoGattServerNetworkPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoGattServerNetworkPipe.swift; sourceTree = "<group>"; };
+		468A9AFB237F31D100A73985 /* XyoPipeCharacteristic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoPipeCharacteristic.swift; sourceTree = "<group>"; };
+		468A9AFC237F31D100A73985 /* XyoBluetoothDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBluetoothDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9B06237F31EF00A73985 /* XyoOutputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoOutputStream.swift; sourceTree = "<group>"; };
+		468A9B07237F31EF00A73985 /* XyoGattNameEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoGattNameEncoder.swift; sourceTree = "<group>"; };
+		468A9B08237F31EF00A73985 /* XyoInputStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoInputStream.swift; sourceTree = "<group>"; };
+		468A9B10237F323800A73985 /* XyoAndroidXDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoAndroidXDevice.swift; sourceTree = "<group>"; };
+		468A9B11237F323800A73985 /* XyoAndroidXDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoAndroidXDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9B12237F323800A73985 /* XyoAndroidXService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoAndroidXService.swift; sourceTree = "<group>"; };
+		468A9B16237F324300A73985 /* XyoBridgeXDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeXDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9B17237F324300A73985 /* XyoBridgeXDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeXDevice.swift; sourceTree = "<group>"; };
+		468A9B18237F324300A73985 /* XyoBridgeXService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeXService.swift; sourceTree = "<group>"; };
+		468A9B1C237F324C00A73985 /* XyoIosXDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoIosXDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9B1D237F324C00A73985 /* XyoIosXDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoIosXDevice.swift; sourceTree = "<group>"; };
+		468A9B1E237F324C00A73985 /* XyoIosXService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoIosXService.swift; sourceTree = "<group>"; };
+		468A9B22237F325500A73985 /* XyoSentinelXDeviceCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoSentinelXDeviceCreator.swift; sourceTree = "<group>"; };
+		468A9B23237F325600A73985 /* XyoSentinelXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoSentinelXManager.swift; sourceTree = "<group>"; };
+		468A9B24237F325600A73985 /* XyoSentinelXDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoSentinelXDevice.swift; sourceTree = "<group>"; };
+		468A9B28237F326200A73985 /* XyoDifferentiableDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoDifferentiableDevice.swift; sourceTree = "<group>"; };
+		468A9B2A237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeProcedureStrictCatalogue.swift; sourceTree = "<group>"; };
+		468A9B2B237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeProcedureCatalogue.swift; sourceTree = "<group>"; };
+		468A9B2C237F331C00A73985 /* XyoBleToTcpBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleToTcpBridge.swift; sourceTree = "<group>"; };
+		6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		8CEE246B5667FB9712A47039694F5F8F /* Pods-sdk-xyo-ios-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE0330358CBD6ACD228AAA4F13D0409 /* Pods-sdk-xyo-ios-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sdk-xyo-ios-example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		965CE630912E663F2BBAAF4489BA1C97 /* Pods-sdk-xyo-ios-example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-Info.plist"; sourceTree = "<group>"; };
 		9A8CAAF8D9BB6AD4CD82457F1E151D3B /* Pods-sdk-xyo-ios-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sdk-xyo-ios-example-dummy.m"; sourceTree = "<group>"; };
-		BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
 		D77C3823E93CA8B352BDB65BFB592723 /* Pods-sdk-xyo-ios-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sdk-xyo-ios-example.modulemap"; sourceTree = "<group>"; };
 		E213F1BC38F12C4172E84C3F67B68739 /* Pods-sdk-xyo-ios-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sdk-xyo-ios-example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E28EF5A1CF6AECB2B44271A3 /* Pods_sdk_xyo_swift.framework in Frameworks */,
+				6978AFDE62A5A9336A220A2F /* Pods_sdk_xyo_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,17 +156,9 @@
 		0A1450682351485100AB2E76 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				468A9AF5237F316700A73985 /* BleTcpBridge */,
+				468A9AF4237F315200A73985 /* BleInterface */,
 				0ABBECEC2368BD470054BCEE /* Heuristics */,
-				0ABBED1C2369205A0054BCEE /* GpsResolver.swift */,
-				0ABBED19236920590054BCEE /* RssiResolver.swift */,
-				0ABBED16236920590054BCEE /* StringResolver.swift */,
-				0ABBED1D2369205A0054BCEE /* TimeResolver.swift */,
-				0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */,
-				0ABBED18236920590054BCEE /* XyoHumanName.swift */,
-				0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */,
-				0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */,
-				0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */,
-				0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */,
 				0A1450692351485100AB2E76 /* Clients */,
 				0A14506F2351485100AB2E76 /* sdk_xyo_swift.h */,
 				0A1450702351485100AB2E76 /* Networks */,
@@ -169,6 +213,16 @@
 		0ABBECEC2368BD470054BCEE /* Heuristics */ = {
 			isa = PBXGroup;
 			children = (
+				0ABBED1C2369205A0054BCEE /* GpsResolver.swift */,
+				0ABBED19236920590054BCEE /* RssiResolver.swift */,
+				0ABBED16236920590054BCEE /* StringResolver.swift */,
+				0ABBED1D2369205A0054BCEE /* TimeResolver.swift */,
+				0ABBED17236920590054BCEE /* XyoHumanHeuristics.swift */,
+				0ABBED18236920590054BCEE /* XyoHumanName.swift */,
+				0A5DC409237B68DC00258A06 /* XyoGpsHeuristic.swift */,
+				0A5DC408237B68DC00258A06 /* XyoRssiHeuristic.swift */,
+				0A5DC40A237B68DC00258A06 /* XyoUnixTimeHeuristic.swift */,
+				0A5DC406237B68CA00258A06 /* XyoStringHeuristic.swift */,
 			);
 			path = Heuristics;
 			sourceTree = "<group>";
@@ -187,6 +241,94 @@
 			);
 			name = "Pods-sdk-xyo-ios-example";
 			path = "Target Support Files/Pods-sdk-xyo-ios-example";
+			sourceTree = "<group>";
+		};
+		468A9AF4237F315200A73985 /* BleInterface */ = {
+			isa = PBXGroup;
+			children = (
+				468A9AF6237F31D000A73985 /* XyoBluetoothDevice.swift */,
+				468A9AFC237F31D100A73985 /* XyoBluetoothDeviceCreator.swift */,
+				468A9AF7237F31D000A73985 /* XyoBluetoothServer.swift */,
+				468A9AFA237F31D100A73985 /* XyoGattServerNetworkPipe.swift */,
+				468A9AF9237F31D000A73985 /* XyoManufactorDeviceCreator.swift */,
+				468A9AFB237F31D100A73985 /* XyoPipeCharacteristic.swift */,
+				468A9AF8237F31D000A73985 /* XyoService.swift */,
+				468A9B04237F31D400A73985 /* data */,
+				468A9B05237F31E200A73985 /* devices */,
+			);
+			path = BleInterface;
+			sourceTree = "<group>";
+		};
+		468A9AF5237F316700A73985 /* BleTcpBridge */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B2C237F331C00A73985 /* XyoBleToTcpBridge.swift */,
+				468A9B2B237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift */,
+				468A9B2A237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift */,
+			);
+			path = BleTcpBridge;
+			sourceTree = "<group>";
+		};
+		468A9B04237F31D400A73985 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B07237F31EF00A73985 /* XyoGattNameEncoder.swift */,
+				468A9B08237F31EF00A73985 /* XyoInputStream.swift */,
+				468A9B06237F31EF00A73985 /* XyoOutputStream.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		468A9B05237F31E200A73985 /* devices */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B28237F326200A73985 /* XyoDifferentiableDevice.swift */,
+				468A9B0F237F322600A73985 /* sentinelX */,
+				468A9B0E237F321700A73985 /* iosX */,
+				468A9B0D237F320D00A73985 /* bridgeX */,
+				468A9B0C237F31FC00A73985 /* androidX */,
+			);
+			path = devices;
+			sourceTree = "<group>";
+		};
+		468A9B0C237F31FC00A73985 /* androidX */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B10237F323800A73985 /* XyoAndroidXDevice.swift */,
+				468A9B11237F323800A73985 /* XyoAndroidXDeviceCreator.swift */,
+				468A9B12237F323800A73985 /* XyoAndroidXService.swift */,
+			);
+			path = androidX;
+			sourceTree = "<group>";
+		};
+		468A9B0D237F320D00A73985 /* bridgeX */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B17237F324300A73985 /* XyoBridgeXDevice.swift */,
+				468A9B16237F324300A73985 /* XyoBridgeXDeviceCreator.swift */,
+				468A9B18237F324300A73985 /* XyoBridgeXService.swift */,
+			);
+			path = bridgeX;
+			sourceTree = "<group>";
+		};
+		468A9B0E237F321700A73985 /* iosX */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B1D237F324C00A73985 /* XyoIosXDevice.swift */,
+				468A9B1C237F324C00A73985 /* XyoIosXDeviceCreator.swift */,
+				468A9B1E237F324C00A73985 /* XyoIosXService.swift */,
+			);
+			path = iosX;
+			sourceTree = "<group>";
+		};
+		468A9B0F237F322600A73985 /* sentinelX */ = {
+			isa = PBXGroup;
+			children = (
+				468A9B24237F325600A73985 /* XyoSentinelXDevice.swift */,
+				468A9B22237F325500A73985 /* XyoSentinelXDeviceCreator.swift */,
+				468A9B23237F325600A73985 /* XyoSentinelXManager.swift */,
+			);
+			path = sentinelX;
 			sourceTree = "<group>";
 		};
 		8A44CDBE27480A443BAB45E4E89344D8 /* Products */ = {
@@ -229,7 +371,7 @@
 				0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */,
 				0AEC99242359375D00E47796 /* Promises.framework */,
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-				4A1845A387C8B31F88A8C3B5 /* Pods_sdk_xyo_swift.framework */,
+				0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -237,8 +379,8 @@
 		D21ABAC83CEB0E0A6DDF3A5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */,
-				BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */,
+				6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */,
+				4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -271,7 +413,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A145061235145C800AB2E76 /* Build configuration list for PBXNativeTarget "sdk-xyo-swift" */;
 			buildPhases = (
-				D3993BF54BAF7EB3C187E9C5 /* [CP] Check Pods Manifest.lock */,
+				8F9505420B49EDBB097B3876 /* [CP] Check Pods Manifest.lock */,
 				0A145057235145C800AB2E76 /* Headers */,
 				0A145058235145C800AB2E76 /* Sources */,
 				0A145059235145C800AB2E76 /* Frameworks */,
@@ -331,7 +473,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D3993BF54BAF7EB3C187E9C5 /* [CP] Check Pods Manifest.lock */ = {
+		8F9505420B49EDBB097B3876 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -361,29 +503,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBED1F2369205A0054BCEE /* StringResolver.swift in Sources */,
+				468A9B20237F324D00A73985 /* XyoIosXDevice.swift in Sources */,
 				0A14508A2351485100AB2E76 /* XyoTcpipNetwork.swift in Sources */,
+				468A9B26237F325600A73985 /* XyoSentinelXManager.swift in Sources */,
 				0A5DC40C237B68DC00258A06 /* XyoGpsHeuristic.swift in Sources */,
+				468A9AFD237F31D100A73985 /* XyoBluetoothDevice.swift in Sources */,
+				468A9B2F237F331C00A73985 /* XyoBleToTcpBridge.swift in Sources */,
+				468A9B2D237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift in Sources */,
 				0A5DC407237B68CA00258A06 /* XyoStringHeuristic.swift in Sources */,
+				468A9B21237F324D00A73985 /* XyoIosXService.swift in Sources */,
+				468A9B29237F326200A73985 /* XyoDifferentiableDevice.swift in Sources */,
+				468A9B2E237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift in Sources */,
 				0A5DC40B237B68DC00258A06 /* XyoRssiHeuristic.swift in Sources */,
 				0A1450862351485100AB2E76 /* XyoTcpipClient.swift in Sources */,
 				0A1450982351485100AB2E76 /* XyoBleServer.swift in Sources */,
+				468A9B03237F31D100A73985 /* XyoBluetoothDeviceCreator.swift in Sources */,
 				0A14508D2351485100AB2E76 /* XyoNetworkDevice.swift in Sources */,
 				0A14508B2351485100AB2E76 /* XyoBleNetwork.swift in Sources */,
+				468A9B00237F31D100A73985 /* XyoManufactorDeviceCreator.swift in Sources */,
+				468A9B02237F31D100A73985 /* XyoPipeCharacteristic.swift in Sources */,
+				468A9B09237F31EF00A73985 /* XyoOutputStream.swift in Sources */,
+				468A9B25237F325600A73985 /* XyoSentinelXDeviceCreator.swift in Sources */,
+				468A9B01237F31D100A73985 /* XyoGattServerNetworkPipe.swift in Sources */,
 				0ABBED212369205A0054BCEE /* XyoHumanName.swift in Sources */,
 				0A1450842351485100AB2E76 /* XyoClient.swift in Sources */,
+				468A9B13237F323800A73985 /* XyoAndroidXDevice.swift in Sources */,
+				468A9B0A237F31EF00A73985 /* XyoGattNameEncoder.swift in Sources */,
+				468A9AFF237F31D100A73985 /* XyoService.swift in Sources */,
 				0A1450962351485100AB2E76 /* XyoTcpipServer.swift in Sources */,
 				0A1450972351485100AB2E76 /* XyoServer.swift in Sources */,
+				468A9B14237F323800A73985 /* XyoAndroidXDeviceCreator.swift in Sources */,
+				468A9AFE237F31D100A73985 /* XyoBluetoothServer.swift in Sources */,
+				468A9B1A237F324300A73985 /* XyoBridgeXDevice.swift in Sources */,
 				0ABBED222369205A0054BCEE /* RssiResolver.swift in Sources */,
 				0ABBED252369205A0054BCEE /* GpsResolver.swift in Sources */,
 				0A5DC40D237B68DC00258A06 /* XyoUnixTimeHeuristic.swift in Sources */,
 				0A1450942351485100AB2E76 /* XyoSdk.swift in Sources */,
 				0ABBED262369205A0054BCEE /* TimeResolver.swift in Sources */,
+				468A9B19237F324300A73985 /* XyoBridgeXDeviceCreator.swift in Sources */,
 				0A14508C2351485100AB2E76 /* XyoNetwork.swift in Sources */,
+				468A9B1B237F324300A73985 /* XyoBridgeXService.swift in Sources */,
+				468A9B1F237F324D00A73985 /* XyoIosXDeviceCreator.swift in Sources */,
 				0A1450852351485100AB2E76 /* XyoBleClient.swift in Sources */,
+				468A9B27237F325600A73985 /* XyoSentinelXDevice.swift in Sources */,
+				468A9B15237F323800A73985 /* XyoAndroidXService.swift in Sources */,
 				0A1450902351485100AB2E76 /* XyoNode.swift in Sources */,
 				0A1450912351485100AB2E76 /* XyoNodeBuilder.swift in Sources */,
 				0A1450932351485100AB2E76 /* XyoBoundWitnessTarget.swift in Sources */,
 				0ABBED202369205A0054BCEE /* XyoHumanHeuristics.swift in Sources */,
+				468A9B0B237F31EF00A73985 /* XyoInputStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +560,7 @@
 /* Begin XCBuildConfiguration section */
 		0A145062235145C800AB2E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CC45F3914E2A354E7510DF4 /* Pods-sdk-xyo-swift.debug.xcconfig */;
+			baseConfigurationReference = 6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -422,7 +590,7 @@
 		};
 		0A145063235145C800AB2E76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF4124E9A269CC61E65D5EDE /* Pods-sdk-xyo-swift.release.xcconfig */;
+			baseConfigurationReference = 4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
