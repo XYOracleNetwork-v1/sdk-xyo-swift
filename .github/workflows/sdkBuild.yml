@@ -12,13 +12,8 @@ jobs:
         destination: ['platform=iOS Simulator,iOS=13.1,name=iPhone11']
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Build
-      run: | 
-        pod deintegrate
-        xcrun simctl delete all
-        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-1
-        pod install
-        xcodebuild clean test -workspace sdk-core-swift.xcworkspace -scheme sdk-core-swift -destination "${destination}" -UseModernBuildSystem=NO | xcpretty
+      run: swift build -v
       env: 
         destination: ${{ matrix.destination }}
