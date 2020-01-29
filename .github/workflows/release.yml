@@ -1,4 +1,4 @@
-name: SDK Release
+name: Swift PKG Release
 
 on: 
   push:
