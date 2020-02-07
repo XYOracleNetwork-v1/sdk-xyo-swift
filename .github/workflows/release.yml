@@ -1,9 +1,8 @@
 name: Swift PKG Release
 
 on: 
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [created]
 
 
 jobs:
