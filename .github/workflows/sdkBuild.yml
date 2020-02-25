@@ -27,6 +27,7 @@ jobs:
     - name: Example Build
       env: 
         destination: ${{ matrix.destination }}      
+      run: |
         xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
         pod deintegrate
         pod install
