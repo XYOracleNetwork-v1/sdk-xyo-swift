@@ -1,23 +1,24 @@
-name: Swift PKG Release
+
+name: Release
 
 on: 
-  release:
-    types: [created]
+  push:
+    branches:
+      - 'master'
 
-
-jobs:
-  build:
-    runs-on: macOS-latest
+jobs: 
+  publish:
     strategy: 
-      matrix:
-        destination: ['platform=iOS Simulator,iOS=13.1,name=iPhone11']
+      fail-fast: true
+
+    runs-on: macOS-latest 
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: |
-            swift package init --type library
-            swift package generate-xcodeproj
-            swift build -c release
-      env: 
-        destination: ${{ matrix.destination }}
+      - uses: actions/checkout@v2
+      - name: publish to cocoapod register
+        env: 
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
+        run: |
+          pod trunk me
+          pod lib lint
+          pod trunk push sdk-xyo-swift.podspec
