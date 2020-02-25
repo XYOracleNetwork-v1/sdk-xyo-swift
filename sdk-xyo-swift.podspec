@@ -53,6 +53,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'Source/**/*.swift'
+  s.dependency 'sdk-core-swift', '~> 3.0.1'
+  s.dependency 'XyBleSdk', '~> 3.0.7'
   
   # s.resource_bundles = {
   #   'sdk-xyo-swift' => ['sdk-xyo-swift/Assets/*.png']
