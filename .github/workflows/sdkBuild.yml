@@ -8,17 +8,21 @@ on:
 jobs:
   build:
     runs-on: macOS-latest
-    strategy: 
-      matrix:
-        destination: ['platform=iOS Simulator,iOS=13.1,name=iPhone11']
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
-      continue-on-error: false
+    - name: Set Up
       run: |
-            swift package init --type library
-            swift package generate-xcodeproj
-            swift build -v
-      env: 
-        destination: ${{ matrix.destination }}
+        gem install cocoapods --pr
+        pod repo update
+    - name: install
+      run: |
+        pod deintegrate
+        pod install
+    - name: Example Build 
+      run: |
+        cd Example
+        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
+        pod deintegrate
+        pod install
+        xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11" -UseModernBuildSystem=NO 
