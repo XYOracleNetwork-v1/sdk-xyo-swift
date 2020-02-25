@@ -19,8 +19,6 @@ jobs:
       run: |
         pod deintegrate
         pod install
-    - name: Force xcode 11 
-      run: sudo xcode-select -switch /Applications/Xcode_11.1.app  
     - name: Example Build 
       run: |
         cd Example
