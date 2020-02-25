@@ -29,4 +29,4 @@ jobs:
         cd Example
         pod repo update
         pod install
-        xcodebuild -scheme iOSExample build
+        xcodebuild -scheme iOSExample -allowProvisioningUpdates build
