@@ -26,6 +26,7 @@ jobs:
       env: 
         destination: ${{ matrix.destination }}
       run: |
+        pod repo update
         pod install
         cd Example
         xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
