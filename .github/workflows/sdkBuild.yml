@@ -15,18 +15,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      continue-on-error: false
       run: |
-            swift package init --type library
-            swift package generate-xcodeproj
-            swift build -v
-      env: 
-        destination: ${{ matrix.destination }}
+        gem install cocoapods --pr
+        pod repo update
     - name: Example Build
       run: |
-        pod repo update
+        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
+        pod deintegrate
         pod install
         cd Example
-        pod repo update
         pod install
-        xcodebuild -scheme iOSExample -allowProvisioningUpdates build
+        xcodebuild -scheme iOSExample -allowProvisioningUpdates -destination "${destination}" -UseModernBuildSystem=NO build
