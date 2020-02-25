@@ -22,3 +22,9 @@ jobs:
             swift build -v
       env: 
         destination: ${{ matrix.destination }}
+    - name: Example Build
+      run: |
+        pod install
+        cd Example
+        pod install
+        open XyoSdkExample.xcworkspace
