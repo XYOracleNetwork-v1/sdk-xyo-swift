@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'sdk-xyo-swift'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'An easy to use XYO Platform wrapper for swift developers.'
 
   s.description      = <<-DESC
