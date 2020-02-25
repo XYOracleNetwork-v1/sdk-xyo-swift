@@ -10,7 +10,7 @@ jobs:
     runs-on: macOS-latest
     strategy: 
       matrix:
-        destination: ['platform=iOS Simulator,iOS=13.1,name=iPhone11']
+        destination: ['platform=iOS Simulator,iOS=latest,name=iPhone11']
 
     steps:
     - uses: actions/checkout@v2
@@ -23,8 +23,11 @@ jobs:
       env: 
         destination: ${{ matrix.destination }}
     - name: Example Build
+      env: 
+        destination: ${{ matrix.destination }}
       run: |
         pod install
         cd Example
+        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
         pod install
-        open XyoSdkExample.xcworkspace
+        xcodebuild clean test -workspace XyoSdkExample.xcworkspace -scheme sdk-xyo-swift -destination "${destination}" -UseModernBuildSystem=NO | xcpretty
