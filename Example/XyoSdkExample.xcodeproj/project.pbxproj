@@ -203,7 +203,7 @@
 				TargetAttributes = {
 					0AEC989823592F4900E47796 = {
 						CreatedOnToolsVersion = 11.1;
-						DevelopmentTeam = U726CZ2EVC;
+						DevelopmentTeam = HFUC9P67W4;
 						ProvisioningStyle = Automatic;
 					};
 					0AEC98B023592F4A00E47796 = {
@@ -290,7 +290,6 @@
 				"${BUILT_PRODUCTS_DIR}/sdk-core-swift/sdk_core_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/sdk-objectmodel-swift/sdk_objectmodel_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/sdk-xyo-swift/sdk_xyo_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/sdk-xyobleinterface-swift/sdk_xyobleinterface_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1.swift/secp256k1.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -301,7 +300,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sdk_core_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sdk_objectmodel_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sdk_xyo_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sdk_xyobleinterface_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +367,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSExample/Preview Content\"";
-				DEVELOPMENT_TEAM = U726CZ2EVC;
+				DEVELOPMENT_TEAM = HFUC9P67W4;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = iOSExample/Info.plist;
@@ -400,7 +398,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iOSExample/Preview Content\"";
-				DEVELOPMENT_TEAM = U726CZ2EVC;
+				DEVELOPMENT_TEAM = HFUC9P67W4;
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = iOSExample/Info.plist;
