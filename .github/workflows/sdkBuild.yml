@@ -18,13 +18,16 @@ jobs:
       run: |
         gem install cocoapods --pr
         pod repo update
-    - name: Example Build
-      env: 
-        destination: ${{ matrix.destination }}    
+    - name: Build  
       run: |
-        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
         pod deintegrate
         pod install
-        cd Example
+    - name: Start Example
+      run: cd Example
+    - name: Example Build
+      env: 
+        destination: ${{ matrix.destination }}      
+        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
+        pod deintegrate
         pod install
         xcodebuild -scheme iOSExample -allowProvisioningUpdates -destination "${destination}" -UseModernBuildSystem=NO build
