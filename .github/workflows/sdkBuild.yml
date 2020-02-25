@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
+    - name: Set Up
       run: |
         gem install cocoapods --pr
         pod repo update
