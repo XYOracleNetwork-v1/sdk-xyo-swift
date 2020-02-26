@@ -15,6 +15,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Set Up
+        run: |
+          gem install cocoapods --pr
+          pod repo update
+      - name: install
+        run: |
+          pod deintegrate
+          pod install      
       - name: publish to cocoapod register
         env: 
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
