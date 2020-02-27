@@ -1,0 +1,88 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Apollo",
+        "repositoryURL": "https://github.com/apollographql/apollo-ios.git",
+        "state": {
+          "branch": null,
+          "revision": "1b3758593f927212f43a2d567aff86ef34513dc2",
+          "version": "0.23.1"
+        }
+      },
+      {
+        "package": "Promises",
+        "repositoryURL": "https://github.com/google/promises",
+        "state": {
+          "branch": null,
+          "revision": "6b6f4fe3385ed37389fb231bc40be81de2f1230f",
+          "version": "1.2.8"
+        }
+      },
+      {
+        "package": "XyBaseSdk",
+        "repositoryURL": "https://github.com/XYOracleNetwork/sdk-base-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "837e268d9b167d02fa8a047b15b0f7cca6eff75b",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "XyBleSdk",
+        "repositoryURL": "https://github.com/XYOracleNetwork/sdk-ble-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "84332adab9e928c55df2cd05b894121df9d8fe53",
+          "version": "3.1.5"
+        }
+      },
+      {
+        "package": "sdk-core-swift",
+        "repositoryURL": "https://github.com/XYOracleNetwork/sdk-core-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "98b42d01174c3c39bd0a7d88b55f3b1aafa3eb83",
+          "version": "3.1.1"
+        }
+      },
+      {
+        "package": "secp256k1",
+        "repositoryURL": "https://github.com/Boilertalk/secp256k1.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "823281fe9def21b384099b72a9a53ca988317b20",
+          "version": "0.1.4"
+        }
+      },
+      {
+        "package": "SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",
+          "version": "0.12.2"
+        }
+      },
+      {
+        "package": "Starscream",
+        "repositoryURL": "https://github.com/daltoniam/Starscream",
+        "state": {
+          "branch": null,
+          "revision": "e6b65c6d9077ea48b4a7bdda8994a1d3c6969c8d",
+          "version": "3.1.1"
+        }
+      },
+      {
+        "package": "swift-nio-zlib-support",
+        "repositoryURL": "https://github.com/apple/swift-nio-zlib-support.git",
+        "state": {
+          "branch": null,
+          "revision": "37760e9a52030bb9011972c5213c3350fa9d41fd",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
