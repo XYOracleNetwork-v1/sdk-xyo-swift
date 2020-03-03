@@ -18,7 +18,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/XYOracleNetwork/sdk-ble-swift.git", from: "3.1.5"),
+        .package(url: "https://github.com/XYOracleNetwork/sdk-ble-swift.git", from: "3.1.6"),
         .package(url: "https://github.com/XYOracleNetwork/sdk-core-swift.git", from: "3.1.1"),
     ],
     targets: [
