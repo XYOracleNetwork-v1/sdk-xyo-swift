@@ -1,0 +1,2 @@
+github "https://github.com/XYOracleNetwork/sdk-core-swift"
+github "https://github.com/XYOracleNetwork/sdk-ble-swift" == 3.1.5

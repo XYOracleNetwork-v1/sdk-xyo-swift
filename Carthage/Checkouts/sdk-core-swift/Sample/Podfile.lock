@@ -1,0 +1,23 @@
+PODS:
+  - sdk-core-swift (3.1.0):
+    - secp256k1.swift
+  - secp256k1.swift (0.1.4)
+
+DEPENDENCIES:
+  - sdk-core-swift (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - secp256k1.swift
+
+EXTERNAL SOURCES:
+  sdk-core-swift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  sdk-core-swift: 40edace5bf972330453f8ddcf69333383a158fb3
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+
+PODFILE CHECKSUM: 6c8b4ca17326145f2c3c31286ddf08c27702d711
+
+COCOAPODS: 1.8.4
