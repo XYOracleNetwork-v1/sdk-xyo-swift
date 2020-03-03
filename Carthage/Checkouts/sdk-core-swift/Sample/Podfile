@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.4'
+use_frameworks!
+
+target 'StarterCoreSwiftXYO' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  
+    pod 'sdk-core-swift', :path => '../'
+
+  # Pods for StarterCoreSwiftXYO
+
+  target 'StarterCoreSwiftXYOTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

@@ -1,0 +1,23 @@
+name: Release
+
+on: 
+  push:
+    branches:
+      - 'master'
+
+jobs: 
+  publish:
+    strategy: 
+      fail-fast: true
+
+    runs-on: macOS-latest 
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: publish to cocoapod register
+        env: 
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
+        run: |
+          pod trunk me
+          pod lib lint
+          pod trunk push sdk-core-swift.podspec
