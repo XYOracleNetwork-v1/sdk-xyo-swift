@@ -19,6 +19,13 @@ jobs:
       run: |
         pod deintegrate
         pod install
+    - name: Cache pod dependencies
+      uses: actions/cache@v1
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-        
     - name: Example Build 
       run: |
         cd Example

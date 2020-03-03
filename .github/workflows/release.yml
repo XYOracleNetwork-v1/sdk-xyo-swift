@@ -19,6 +19,13 @@ jobs:
         run: |
           gem install cocoapods --pr
           pod repo update
+      - name: Cache pod dependencies
+        uses: actions/cache@v1
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-            
       - name: install
         run: |
           pod deintegrate
