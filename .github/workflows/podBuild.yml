@@ -30,6 +30,7 @@ jobs:
       run: |
         cd Example
         xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
+        pod repo update
         pod deintegrate
         pod install
         xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11" -UseModernBuildSystem=NO 
