@@ -14,6 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: install
+        run: |
+          pod deintegrate
+          pod install
+          pod update      
       - name: publish to cocoapod register
         env: 
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
