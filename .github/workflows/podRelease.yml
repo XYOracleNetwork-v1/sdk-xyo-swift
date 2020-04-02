@@ -1,13 +1,17 @@
-name: Pod Build
+name: Pod Release
 
-on: 
-  push: 
-    branches-ignore:
-      - 'master'
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
   build:
+
     runs-on: macOS-latest
+    strategy: 
+      matrix:
+        destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
 
     steps:
     - uses: actions/checkout@v2
@@ -30,7 +34,8 @@ jobs:
       run: |
         cd Example
         xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
-        pod repo update
         pod deintegrate
         pod install
         xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11" -UseModernBuildSystem=NO 
+    - name: Release
+      run: cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh
