@@ -8,6 +8,7 @@
 import Foundation
 import XyBleSdk
 import CoreBluetooth
+import sdk_core_swift
 
 public enum XyoBridgeWifiStatus {
     case notConnected

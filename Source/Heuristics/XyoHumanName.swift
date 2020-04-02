@@ -71,7 +71,7 @@ public struct XyoHumanName {
             throw XyoError.UNKNOWN_ERROR
         }
 
-        guard let index = try fetter.get(id: XyoSchemas.INDEX.id).first else {
+        guard let index = try fetter.get(objectId: XyoSchemas.INDEX.id).first else {
             throw XyoError.UNKNOWN_ERROR
         }
         
@@ -92,7 +92,7 @@ public struct XyoHumanName {
             throw XyoError.UNKNOWN_ERROR
         }
 
-        guard let hashSet = try fetter.get(id: XyoSchemas.BRIDGE_HASH_SET.id).first as? XyoIterableStructure else {
+        guard let hashSet = try fetter.get(objectId: XyoSchemas.BRIDGE_HASH_SET.id).first as? XyoIterableStructure else {
             return nil
         }
 
