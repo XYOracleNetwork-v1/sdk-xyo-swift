@@ -32,6 +32,6 @@ jobs:
           ${{ runner.os }}-pods-        
     - name: Build 
       run: |
-        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -UseModernBuildSystem=NO
+        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO
     - name: Release
       run: cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh
