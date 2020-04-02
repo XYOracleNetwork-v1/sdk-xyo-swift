@@ -1,3 +1,3 @@
-pod trunk register phillip.lorenzo@xyo.network 'XYO Team' --description='github actions token'
+pod trunk me
 pod lib lint
-pod --allow-warnings trunk push sdk-xyo-swift.podspec
+pod trunk push sdk-xyo-swift.podspec
