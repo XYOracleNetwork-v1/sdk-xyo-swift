@@ -36,7 +36,6 @@ public struct GpsResolver: XyoHumanHeuristicResolver {
         let lngNumData = Double(bitPattern: lng.getUInt64(offset: 0))
 
         return "\(latNumData), \(lngNumData)"
-
     }
 }
 
