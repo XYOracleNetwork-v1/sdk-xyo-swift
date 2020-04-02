@@ -28,7 +28,7 @@ jobs:
 
     - name: Clean 
       run: |
-        xcodebuild clean -workspace XyBleSdk.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
+        xcodebuild clean -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
     
     - name: Release
       run: |
