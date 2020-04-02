@@ -18,7 +18,8 @@ jobs:
         run: |
           pod deintegrate
           pod install
-          pod update      
+          pod update  
+              
       - name: publish to cocoapod register
         env: 
           COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
