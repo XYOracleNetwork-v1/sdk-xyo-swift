@@ -1,37 +1,23 @@
 name: Pod Release
 
-on:
+on: 
   push:
     branches:
-      - "master"
+      - 'master'
 
-jobs:
-  build:
-
-    runs-on: macOS-latest
+jobs: 
+  publish:
     strategy: 
-      matrix:
-        destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
+      fail-fast: true
+
+    runs-on: macOS-latest 
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set Up
-      run: |
-        gem install cocoapods --pr
-        pod repo update
-
-    - name: install
-      run: |
-        pod deintegrate
-        pod install
-        pod update
-
-    - name: Clean 
-      run: |
-        xcodebuild clean -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
-    
-    - name: Release
-      run: |
-        pod trunk register phillip.lorenzo@xyo.network 'XYO Team' --description='github actions token'
-        pod lib lint
-        pod --allow-warnings trunk push sdk-xyo-swift.podspec
+      - uses: actions/checkout@v2
+      - name: publish to cocoapod register
+        env: 
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.TRUNK_TOKEN }}
+        run: |
+          pod trunk me
+          pod lib lint
+          pod trunk push sdk-core-swift.podspec
