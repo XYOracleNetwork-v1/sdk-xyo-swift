@@ -1,0 +1,41 @@
+name: Pod Release
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+    strategy: 
+      matrix:
+        destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Up
+      run: |
+        gem install cocoapods --pr
+        pod repo update
+    - name: install
+      run: |
+        pod deintegrate
+        pod install
+    - name: Cache pod dependencies
+      uses: actions/cache@v1
+      with:
+        path: Pods
+        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-pods-        
+    - name: Example Build 
+      run: |
+        cd Example
+        xcrun simctl create iPhone11 com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-13-3
+        pod deintegrate
+        pod install
+        xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11" -UseModernBuildSystem=NO 
+    - name: Release
+      run: cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh
