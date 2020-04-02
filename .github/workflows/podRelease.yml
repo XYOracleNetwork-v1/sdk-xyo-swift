@@ -20,4 +20,4 @@ jobs:
         run: |
           pod trunk me
           pod lib lint
-          pod trunk push sdk-core-swift.podspec
+          pod trunk push sdk-xyo-swift.podspec
