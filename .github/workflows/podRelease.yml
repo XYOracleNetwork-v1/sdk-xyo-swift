@@ -27,7 +27,7 @@ jobs:
     
     - name: Build 
       run: |
-        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO -destination "${destination}"
+        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
     
     - name: Release
       run: |
