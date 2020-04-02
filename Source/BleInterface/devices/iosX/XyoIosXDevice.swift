@@ -8,6 +8,8 @@
 import Foundation
 import XyBleSdk
 import CoreBluetooth
+import sdk_core_swift
+
 
 public enum XyoIosWifiStatus {
   case notConnected

@@ -81,7 +81,7 @@ class XyoPipeCharacteristic : XYMutableCharacteristic, XyoGattServerLisitener {
                 return false
             }
             
-            let catData = buffer.copyRangeOf(from: 4, to: buffer.getSize())
+            let catData = buffer.copyRangeOf(from: 4, toEnd: buffer.getSize())
             let advPacket = XyoAdvertisePacket(data: catData.toByteArray())
             let pipe = XyoGattServerNetworkPipe(initiationData: advPacket,peripheral: peripheral,centrel: request.central, char: cbCharacteristic, listener: self)
             
