@@ -11,7 +11,6 @@ import Promises
 import CoreBluetooth
 import XyBleSdk
 import sdk_core_swift
-import sdk_objectmodel_swift
 
 /// A class that gets created with XYO pipe enabled devices arround the world. Each device complies to the
 /// XyoNetworkPipe interface, meaning that data can be send and recived beetwen them. Please note that

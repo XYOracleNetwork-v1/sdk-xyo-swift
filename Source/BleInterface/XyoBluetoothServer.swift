@@ -11,7 +11,6 @@ import CoreLocation
 import CoreBluetooth
 import Promises
 import sdk_core_swift
-import sdk_objectmodel_swift
 
 /// A class to manage the creating of XYO pipes at a high level on the bluetooth peripheral side.
 public struct XyoBluetoothServer {

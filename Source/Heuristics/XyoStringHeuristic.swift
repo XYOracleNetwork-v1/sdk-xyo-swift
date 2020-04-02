@@ -7,7 +7,6 @@
 
 import Foundation
 import sdk_core_swift
-import sdk_objectmodel_swift
 
 public struct XyoStringHeuristic : XyoHeuristicGetter {
   public let _getStringHeuristic : () -> String?

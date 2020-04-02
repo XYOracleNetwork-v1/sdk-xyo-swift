@@ -10,7 +10,6 @@ import Foundation
 import Promises
 import sdk_core_swift
 import XyBleSdk
-import sdk_objectmodel_swift
 
 struct XyoBleClientError: Error {
     enum ErrorKind {

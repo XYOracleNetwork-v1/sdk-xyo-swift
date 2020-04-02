@@ -8,7 +8,6 @@
 import Foundation
 import CoreBluetooth
 import XyBleSdk
-import sdk_objectmodel_swift
 import sdk_core_swift
 
 

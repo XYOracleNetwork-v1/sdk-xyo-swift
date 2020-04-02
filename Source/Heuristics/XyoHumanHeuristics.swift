@@ -7,7 +7,6 @@
 
 import Foundation
 import sdk_core_swift
-import sdk_objectmodel_swift
 
 extension XyoHumanHeuristicResolver {
   public func getName (forParty: Int, boundWitness: XyoBoundWitness) -> String? {

@@ -8,7 +8,6 @@
 
 import Foundation
 import sdk_core_swift
-import sdk_objectmodel_swift
 
 public struct XyoHumanName {
     public static func getHumanName (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {

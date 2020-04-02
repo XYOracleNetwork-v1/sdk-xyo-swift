@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import sdk_objectmodel_swift
 import XyBleSdk
 import CoreBluetooth
 
