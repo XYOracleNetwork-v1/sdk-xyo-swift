@@ -24,6 +24,11 @@ jobs:
       run: |
         pod deintegrate
         pod install
+        pod update
+
+    - name: Clean 
+      run: |
+        xcodebuild clean -workspace XyBleSdk.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
     
     - name: Release
       run: |
