@@ -53,6 +53,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'Source/**/*.swift'
+  s.exclude_files = 'Source/**/*.plist'
+  
   s.dependency 'sdk-core-swift', '~> 3.1.1'
   s.dependency 'XyBleSdk', '~> 3.1.2'
 
