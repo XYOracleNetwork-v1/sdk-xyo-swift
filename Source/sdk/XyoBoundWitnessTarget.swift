@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import sdk_objectmodel_swift
 import sdk_core_swift
 import XyBleSdk
 

@@ -24,14 +24,11 @@ jobs:
       run: |
         pod deintegrate
         pod install
-
-    - name: Clean 
-      run: |
-        xcodebuild clean -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO -destination "${destination}"
     
-        - name: Build 
+    - name: Build 
       run: |
-        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO -destination "${destination}"
+        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos
     
-        - name: Release
-      run: cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh
+    - name: Release
+      run: |
+        cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh

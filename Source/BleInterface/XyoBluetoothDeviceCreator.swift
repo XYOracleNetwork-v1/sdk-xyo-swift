@@ -7,7 +7,6 @@
 
 import Foundation
 import XyBleSdk
-import sdk_objectmodel_swift
 
 /// A struct to manage the creation of XYO Devices to create pipes with.
 public struct XyoBluetoothDeviceCreator : XYDeviceCreator {

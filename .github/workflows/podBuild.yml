@@ -33,4 +33,4 @@ jobs:
         pod repo update
         pod deintegrate
         pod install
-        xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11" -UseModernBuildSystem=NO 
+        xcodebuild clean test -scheme iOSExample -workspace XyoSdkExample.xcworkspace -destination "platform=iOS Simulator,OS=13.3,name=iPhone11"
