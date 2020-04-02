@@ -19,19 +19,19 @@ jobs:
       run: |
         gem install cocoapods --pr
         pod repo update
+
     - name: install
       run: |
         pod deintegrate
         pod install
-    - name: Cache pod dependencies
-      uses: actions/cache@v1
-      with:
-        path: Pods
-        key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-pods-        
-    - name: Build 
+
+    - name: Clean 
       run: |
-        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO
-    - name: Release
+        xcodebuild clean -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO -destination "${destination}"
+    
+        - name: Build 
+      run: |
+        xcodebuild build -workspace sdk-xyo-swift.xcworkspace -scheme "sdk-xyo-swift" -sdk iphoneos -UseModernBuildSystem=NO -destination "${destination}"
+    
+        - name: Release
       run: cd $GITHUB_WORKSPACE && bash $GITHUB_WORKSPACE/scripts/deploy.sh
