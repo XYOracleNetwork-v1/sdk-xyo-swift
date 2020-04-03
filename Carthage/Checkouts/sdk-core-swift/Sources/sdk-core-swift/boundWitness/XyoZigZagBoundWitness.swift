@@ -64,8 +64,8 @@ class XyoZigZagBoundWitness : XyoBoundWitness {
         
         try signBoundWitness(payload: unsignedPayload)
         
-        let fetters = try self.get(objectId: XyoSchemas.FETTER.id)
-        let witnesses = try self.get(objectId: XyoSchemas.WITNESS.id)
+        let fetters = try self.get(id: XyoSchemas.FETTER.id)
+        let witnesses = try self.get(id: XyoSchemas.WITNESS.id)
         
         let x = numberOfWitnesses + 1
         let y = fetters.count - 1
@@ -111,7 +111,7 @@ class XyoZigZagBoundWitness : XyoBoundWitness {
     }
     
     private func getNumberOfWitnessesFromTransfer (transfer: XyoIterableStructure?) throws -> Int {
-        return (try transfer?.get(objectId: XyoSchemas.WITNESS.id).count) ?? 0
+        return (try transfer?.get(id: XyoSchemas.WITNESS.id).count) ?? 0
     }
     
     private func addTransfer (transfer : XyoIterableStructure) throws {

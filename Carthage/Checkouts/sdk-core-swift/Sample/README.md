@@ -68,10 +68,11 @@ For this integration guide we will do our work in the view controller.
 
 [Go here for the source code of the complete project](https://github.com/XYOracleNetwork/sdk-core-swift/blob/master/Sample/StarterCoreSwiftXYO/ViewController.swift)
 
-We want to start by importing our `core_swift` SDK
+We want to start by importing our `core_swift` and `objectmodel` SDKs
 
 ```swift
 import sdk_core_swift
+import sdk_objectmodel_swift
 ```
 
 We should see the following in our `ViewController.swift`
@@ -240,6 +241,7 @@ Once you update the `viewDidLoad()`, your code should currently look like this
 ```swift
 import UIKit
 import sdk_core_swift
+import sdk_objectmodel_swift
 
 class ViewController: UIViewController {
     private let locationManager = CLLocationManager()

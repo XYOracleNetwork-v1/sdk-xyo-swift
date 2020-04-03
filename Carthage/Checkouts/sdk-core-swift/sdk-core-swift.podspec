@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'sdk-core-swift'
-  s.version          = '3.1.0'
+  s.version          = '3.1.2'
   s.summary          = 'Core Library for XYO Network in Swift.'
   s.swift_version    = '5.0'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A library to perform all core XYO Network functions. This includes creating an origin chain, maintaining an origin chain, negotiations for talking to other nodes, and other basic functionality. The library has heavily abstracted modules so that all operations will work with any crypto, storage, networking, ect.
+A library to perform all core XYO Network functions. This includes creating an origin chain, maintaining an origin chain, negotiations for talking to other nodes, and other basic functionality. The library has heavily abstracted modules so that all operations will work with any crypto, storage, networking, etc.
 
 The XYO protocol for creating origin-blocks is specified in the XYO Yellow Paper. In it, it describes the behavior of how a node on the XYO network should create Bound Witnesses. Note, the behavior is not coupled with any particular technology constraints around transport layers, cryptographic algorithms, or hashing algorithms.
 DESC
