@@ -3,5 +3,5 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'iOSExample' do
-  pod 'sdk-xyo-swift', '~> 1.0.8'
+  pod 'sdk-xyo-swift', '~> 1.0.11'
 end

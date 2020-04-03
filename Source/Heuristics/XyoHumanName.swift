@@ -10,17 +10,17 @@ import Foundation
 import sdk_core_swift
 
 public struct XyoHumanName {
-    public static func getHumanName (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {
+    public static func getHumanName (boundWitness: XyoBoundWitness, publicKey: XyoObjectStructure?) -> String {
         do {
-            guard let numberOfParties = try boundWitmess.getNumberOfParties() else {
+            guard let numberOfParties = try boundWitness.getNumberOfParties() else {
                 return "Invalid"
             }
             
             if (numberOfParties == 1) {
-                return try XyoHumanName.handleSinglePartyBlock(boundWitmess: boundWitmess, publicKey: publicKey)
+                return try XyoHumanName.handleSinglePartyBlock(boundWitness: boundWitness, publicKey: publicKey)
             }
             
-            return try XyoHumanName.handleMultiPartyBlock(boundWitmess: boundWitmess, publicKey: publicKey)
+            return try XyoHumanName.handleMultiPartyBlock(boundWitness: boundWitness, publicKey: publicKey)
 
         } catch {
             return "Invalid"
@@ -28,8 +28,8 @@ public struct XyoHumanName {
 
     }
     
-    private static func handleSinglePartyBlock (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) throws -> String {
-        let indexOfParty = try XyoHumanName.getIndexForParty(boundWitness: boundWitmess, index: 0)
+    private static func handleSinglePartyBlock (boundWitness: XyoBoundWitness, publicKey: XyoObjectStructure?) throws -> String {
+        let indexOfParty = try XyoHumanName.getIndexForParty(boundWitness: boundWitness, index: 0)
 
         if (indexOfParty == 0) {
             return "Genesis Block!"
@@ -38,17 +38,17 @@ public struct XyoHumanName {
         return "Self signed block"
     }
     
-    private static func handleMultiPartyBlock (boundWitmess: XyoBoundWitness, publicKey: XyoObjectStructure?) throws -> String {
+    private static func handleMultiPartyBlock (boundWitness: XyoBoundWitness, publicKey: XyoObjectStructure?) throws -> String {
         guard let safePublicKey = publicKey else {
             return "Regular Interaction"
         }
 
-        guard let indexOfSelf = try XyoBoundWitnessUtil.getPartyNumberFromPublicKey(publickey: safePublicKey, boundWitness: boundWitmess) else {
+        guard let indexOfSelf = try XyoBoundWitnessUtil.getPartyNumberFromPublicKey(publickey: safePublicKey, boundWitness: boundWitness) else {
             return "Regular Interaction"
         }
         
-        guard let numberOfBlocksSent = try XyoHumanName.getNumberOfBridgeBlocksForParty(boundWitness: boundWitmess, index: indexOfSelf) else {
-            guard let numberOfBlocksRecived = try XyoHumanName.getNumberOfBridgeBlocksForParty(boundWitness: boundWitmess, index: XyoHumanName.getInverse(index: indexOfSelf)) else {
+        guard let numberOfBlocksSent = try XyoHumanName.getNumberOfBridgeBlocksForParty(boundWitness: boundWitness, index: indexOfSelf) else {
+            guard let numberOfBlocksRecived = try XyoHumanName.getNumberOfBridgeBlocksForParty(boundWitness: boundWitness, index: XyoHumanName.getInverse(index: indexOfSelf)) else {
                 return "Regular Interaction"
             }
 
