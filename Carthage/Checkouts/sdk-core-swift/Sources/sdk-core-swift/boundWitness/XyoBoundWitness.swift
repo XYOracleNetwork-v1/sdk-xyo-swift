@@ -11,19 +11,19 @@ import Foundation
 open class XyoBoundWitness : XyoIterableStructure {
     
     public func getIsCompleted () throws -> Bool {
-        if try self.get(objectId: XyoSchemas.WITNESS.id).count > 0 {
-            return try self.get(objectId: XyoSchemas.FETTER.id).count == (try self.get(objectId: XyoSchemas.WITNESS.id).count)
+        if try self.get(id: XyoSchemas.WITNESS.id).count > 0 {
+            return try self.get(id: XyoSchemas.FETTER.id).count == (try self.get(id: XyoSchemas.WITNESS.id).count)
         }
         
         return false
     }
     
     public func getNumberOfFetters () throws -> Int {
-        return try self.get(objectId: XyoSchemas.FETTER.id).count
+        return try self.get(id: XyoSchemas.FETTER.id).count
     }
     
     public func getNumberOfWitnesses () throws -> Int {
-        return try self.get(objectId: XyoSchemas.WITNESS.id).count
+        return try self.get(id: XyoSchemas.WITNESS.id).count
     }
     
     public func getHash (hasher : XyoHasher) throws -> XyoObjectStructure {
@@ -48,8 +48,8 @@ open class XyoBoundWitness : XyoIterableStructure {
     }
     
     public func getNumberOfParties () throws -> Int? {
-        let numberOfFetters = try self.get(objectId: XyoSchemas.FETTER.id).count
-        let numberOfWitness = try self.get(objectId: XyoSchemas.WITNESS.id).count
+        let numberOfFetters = try self.get(id: XyoSchemas.FETTER.id).count
+        let numberOfWitness = try self.get(id: XyoSchemas.WITNESS.id).count
         
         if (numberOfFetters == numberOfWitness) {
             return numberOfFetters
@@ -85,7 +85,7 @@ open class XyoBoundWitness : XyoIterableStructure {
     }
     
     private func getWitnessFetterBoundry () throws -> Int {
-        let fetters = try self.get(objectId: XyoSchemas.FETTER.id)
+        let fetters = try self.get(id: XyoSchemas.FETTER.id)
         var offsetIndex = 0
         
         for fetter in fetters {

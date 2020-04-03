@@ -44,14 +44,14 @@ open class XyoIterableStructure: XyoObjectStructure {
         throw XyoObjectError.OUTOFINDEX
     }
 
-    public func get (objectId: UInt8) throws -> [XyoObjectStructure] {
+    public func get (id: UInt8) throws -> [XyoObjectStructure] {
         let iterator = try getNewIterator()
         var itemsThatFollowId = [XyoObjectStructure]()
 
         while try iterator.hasNext() {
             let item = try iterator.next()
 
-            if try item.getSchema().id == objectId {
+            if try item.getSchema().id == id {
                 itemsThatFollowId.append(item)
             }
 

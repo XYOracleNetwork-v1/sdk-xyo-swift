@@ -20,11 +20,11 @@ public struct GpsResolver: XyoHumanHeuristicResolver {
             return nil
         }
 
-        guard let lat = try gps.get(objectId: XyoSchemas.LAT.id).first?.getValueCopy() else {
+        guard let lat = try gps.get(id: XyoSchemas.LAT.id).first?.getValueCopy() else {
             return nil
         }
 
-        guard let lng = try gps.get(objectId: XyoSchemas.LNG.id).first?.getValueCopy() else {
+        guard let lng = try gps.get(id: XyoSchemas.LNG.id).first?.getValueCopy() else {
             return nil
         }
 

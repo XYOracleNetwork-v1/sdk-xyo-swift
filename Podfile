@@ -3,6 +3,6 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'sdk-xyo-swift' do
-  pod 'sdk-core-swift', '~> 3.1.1'
+  pod 'sdk-core-swift', '~> 3.1.2'
   pod 'XyBleSdk', '~> 3.1.2'
 end
