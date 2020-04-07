@@ -43,7 +43,7 @@ public class XyoNodeBuilder {
   }
   
   deinit {
-    print("Deallocing XYO Builder")
+    print("Deallocating XYO Builder")
     networks.removeAll()
   }
   
