@@ -4,5 +4,5 @@ use_frameworks!
 
 target 'sdk-xyo-swift' do
   pod 'sdk-core-swift', '~> 3.1.2'
-  pod 'XyBleSdk', '~> 3.1.2'
+  pod 'XyBleSdk', '~> 3.1.6'
 end
