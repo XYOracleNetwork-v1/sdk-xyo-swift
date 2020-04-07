@@ -12,7 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - sdk-core-swift (~> 3.1.2)
-  - XyBleSdk (~> 3.1.2)
+  - XyBleSdk (~> 3.1.6)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -31,6 +31,6 @@ SPEC CHECKSUMS:
   XyBaseSdk: 679d4f8ddbfc70ec1ff8a4cbdccf5bf81a1894f2
   XyBleSdk: be5259286588d290cf79d9dfe2dce193de504f49
 
-PODFILE CHECKSUM: f62766566ec2653e871d2b7e67dbb6941aa11738
+PODFILE CHECKSUM: 7a02e3251b143b5219263eaafb01eb94ce4ad3e6
 
 COCOAPODS: 1.9.1
