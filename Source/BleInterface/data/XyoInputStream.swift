@@ -61,7 +61,7 @@ public class XyoInputStream {
     /// Checks to see if the currentBuffer is ready to to be added to the donePackets queue.
     private func checkDone () {
         if (nextWaitingSize ?? 0 <= currentBuffer?.getSize() ?? 4) {
-            let donePacket = currentBuffer?.copyRangeOf(from: 4, toEnd: (Int(nextWaitingSize ?? 4))).toByteArray() ?? []
+            let donePacket = currentBuffer?.copyRangeOf(from: 4, to: (Int(nextWaitingSize ?? 4))).toByteArray() ?? []
             donePackets.append(donePacket)
         }
     }
