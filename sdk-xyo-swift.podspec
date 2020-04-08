@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'sdk-xyo-swift'
-  s.version          = '1.0.13'
+  s.version          = '1.0.14'
   s.summary          = 'An easy to use XYO Platform wrapper for swift developers.'
 
   s.description      = <<-DESC
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Source/**/*.swift'
   
-  s.dependency 'sdk-core-swift', '~> 3.1.2'
+  s.dependency 'sdk-core-swift', '~> 3.1.3'
   s.dependency 'XyBleSdk', '~> 3.1.6'
 
   # s.resource_bundles = {
