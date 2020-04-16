@@ -9,6 +9,7 @@
 
 [![](https://img.shields.io/cocoapods/v/sdk-xyo-swift.svg?style=flat)](https://cocoapods.org/pods/sdk-xyo-swift) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6a10ff4a324d4d02a74a7a6724a53eef)](https://www.codacy.com/manual/pllearns/sdk-xyo-swift?utm_source=github.com&utm_medium=referral&utm_content=XYOracleNetwork/sdk-xyo-swift&utm_campaign=Badge_Grade) [![BCH compliance](https://bettercodehub.com/edge/badge/XYOracleNetwork/sdk-xyo-swift?branch=master)](https://bettercodehub.com/) [![Maintainability](https://api.codeclimate.com/v1/badges/eeabbe44d086edf6b032/maintainability)](https://codeclimate.com/github/XYOracleNetwork/sdk-xyo-swift/maintainability)
 
+> The XYO Foundation provides this source code available in our efforts to advance the understanding of the XYO Procotol and its possible uses. We continue to maintain this software in the interest of developer education. Usage of this source code is not intended for production.
 
 ## Table of Contents
 
