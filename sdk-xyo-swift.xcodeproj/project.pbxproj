@@ -60,7 +60,7 @@
 		468A9B2D237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2A237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift */; };
 		468A9B2E237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2B237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift */; };
 		468A9B2F237F331C00A73985 /* XyoBleToTcpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468A9B2C237F331C00A73985 /* XyoBleToTcpBridge.swift */; };
-		6978AFDE62A5A9336A220A2F /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */; };
+		C4C88AB61844DC73AEDD18FD /* Pods_sdk_xyo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3AAA474086AE95DB3FE4DE /* Pods_sdk_xyo_swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,10 +102,8 @@
 		0AEC993A23593AE700E47796 /* sdk_xyobleinterface_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = sdk_xyobleinterface_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993B23593AE700E47796 /* secp256k1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = secp256k1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEC993C23593AE700E47796 /* XyBleSdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = XyBleSdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3ABB74A71CB0F42DC0FB6C37F7AABCB2 /* Pods-sdk-xyo-ios-example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-acknowledgements.plist"; sourceTree = "<group>"; };
-		4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
 		468A9AF6237F31D000A73985 /* XyoBluetoothDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBluetoothDevice.swift; sourceTree = "<group>"; };
 		468A9AF7237F31D000A73985 /* XyoBluetoothServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBluetoothServer.swift; sourceTree = "<group>"; };
 		468A9AF8237F31D000A73985 /* XyoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoService.swift; sourceTree = "<group>"; };
@@ -132,11 +130,13 @@
 		468A9B2A237F331C00A73985 /* XyoBridgeProcedureStrictCatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeProcedureStrictCatalogue.swift; sourceTree = "<group>"; };
 		468A9B2B237F331C00A73985 /* XyoBridgeProcedureCatalogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBridgeProcedureCatalogue.swift; sourceTree = "<group>"; };
 		468A9B2C237F331C00A73985 /* XyoBleToTcpBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XyoBleToTcpBridge.swift; sourceTree = "<group>"; };
-		6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		4E3AAA474086AE95DB3FE4DE /* Pods_sdk_xyo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk_xyo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEE246B5667FB9712A47039694F5F8F /* Pods-sdk-xyo-ios-example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-sdk-xyo-ios-example.debug.xcconfig"; sourceTree = "<group>"; };
 		8DE0330358CBD6ACD228AAA4F13D0409 /* Pods-sdk-xyo-ios-example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-sdk-xyo-ios-example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		965CE630912E663F2BBAAF4489BA1C97 /* Pods-sdk-xyo-ios-example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-sdk-xyo-ios-example-Info.plist"; sourceTree = "<group>"; };
 		9A8CAAF8D9BB6AD4CD82457F1E151D3B /* Pods-sdk-xyo-ios-example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-sdk-xyo-ios-example-dummy.m"; sourceTree = "<group>"; };
+		D28E7E6B17F276267B3011CE /* Pods-sdk-xyo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.debug.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.debug.xcconfig"; sourceTree = "<group>"; };
+		D3052B2220E75A2A03D03A43 /* Pods-sdk-xyo-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk-xyo-swift.release.xcconfig"; path = "Target Support Files/Pods-sdk-xyo-swift/Pods-sdk-xyo-swift.release.xcconfig"; sourceTree = "<group>"; };
 		D77C3823E93CA8B352BDB65BFB592723 /* Pods-sdk-xyo-ios-example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-sdk-xyo-ios-example.modulemap"; sourceTree = "<group>"; };
 		E213F1BC38F12C4172E84C3F67B68739 /* Pods-sdk-xyo-ios-example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-sdk-xyo-ios-example-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6978AFDE62A5A9336A220A2F /* Pods_sdk_xyo_swift.framework in Frameworks */,
+				C4C88AB61844DC73AEDD18FD /* Pods_sdk_xyo_swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +371,7 @@
 				0AEC99282359376200E47796 /* sdk_xyobleinterface_swift.framework */,
 				0AEC99242359375D00E47796 /* Promises.framework */,
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-				0E77BE0168BDD0A05DBFD9EE /* Pods_sdk_xyo_swift.framework */,
+				4E3AAA474086AE95DB3FE4DE /* Pods_sdk_xyo_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -379,8 +379,8 @@
 		D21ABAC83CEB0E0A6DDF3A5D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */,
-				4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */,
+				D28E7E6B17F276267B3011CE /* Pods-sdk-xyo-swift.debug.xcconfig */,
+				D3052B2220E75A2A03D03A43 /* Pods-sdk-xyo-swift.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A145061235145C800AB2E76 /* Build configuration list for PBXNativeTarget "sdk-xyo-swift" */;
 			buildPhases = (
-				8F9505420B49EDBB097B3876 /* [CP] Check Pods Manifest.lock */,
+				DE4D21F9CF7615D5ADE048B1 /* [CP] Check Pods Manifest.lock */,
 				0A145057235145C800AB2E76 /* Headers */,
 				0A145058235145C800AB2E76 /* Sources */,
 				0A145059235145C800AB2E76 /* Frameworks */,
@@ -473,7 +473,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8F9505420B49EDBB097B3876 /* [CP] Check Pods Manifest.lock */ = {
+		DE4D21F9CF7615D5ADE048B1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,7 +560,7 @@
 /* Begin XCBuildConfiguration section */
 		0A145062235145C800AB2E76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BA698985223B3F1A594425A /* Pods-sdk-xyo-swift.debug.xcconfig */;
+			baseConfigurationReference = D28E7E6B17F276267B3011CE /* Pods-sdk-xyo-swift.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -590,7 +590,7 @@
 		};
 		0A145063235145C800AB2E76 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4246E6890703637FE6CDD264 /* Pods-sdk-xyo-swift.release.xcconfig */;
+			baseConfigurationReference = D3052B2220E75A2A03D03A43 /* Pods-sdk-xyo-swift.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

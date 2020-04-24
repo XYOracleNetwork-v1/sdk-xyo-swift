@@ -24,7 +24,7 @@ public class XyoBleToTcpBridge: XyoRelayNode {
     private var haulted: Bool = false
     public var bleBridgeLimit: Int = 10
     public var tcpBridgeLimit: Int = 150
-    public var bridgeInterval: UInt32 = 4
+    public var bridgeInterval: UInt32 = 5
     public var archivists = [String : XyoTcpPeer]()
     
     
@@ -148,7 +148,7 @@ extension XyoBleToTcpBridge: XYSmartScanDelegate {
                     awaiter.fulfill(nil)
                     self.lastConnectTime = Date()
                     
-                    self.bridgeIfNeccacry()
+                    self.bridgeIfNecessary()
                 })
                 
                 _ = try await(awaiter)
@@ -159,7 +159,7 @@ extension XyoBleToTcpBridge: XYSmartScanDelegate {
         }
     }
     
-    private func bridgeIfNeccacry () {
+    private func bridgeIfNecessary () {
         do {
             if (try originState.getIndex().getValueCopy().getUInt32(offset: 0) % self.bridgeInterval == 0) {
                 self.bridge()
@@ -182,7 +182,7 @@ extension XyoBleToTcpBridge: XyoPipeCharacteristicListener {
                     self.enableBoundWitnessesSoft(enable: true)
                     pipe.close()
                     
-                    self.bridgeIfNeccacry()
+                    self.bridgeIfNecessary()
                 })
             }
         } else {
