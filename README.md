@@ -34,8 +34,7 @@ Include the library in your Podfile
 
 ```Podfile
 target 'YourAppName' do
-  pod 'sdk-xyo-swift', '1.0.16'
-
+  pod 'sdk-xyo-swift', '1.0.17'
 ```
 
 Try some code to test. Look below for specific usage. 
